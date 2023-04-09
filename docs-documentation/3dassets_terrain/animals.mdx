@@ -1,0 +1,239 @@
+---
+sidebar_label: "Read this"
+sidebar_position: 1
+---
+
+# Create your first documentation page
+
+import AssetPreview from "../../src/components/AssetPreview";
+import PreRendered3D from "../../src/components/PreRendered3D";
+
+## Creating a section with pages (e.g. 'Example Section')
+
+To add a new section, create a folder `docs-documentation/<folder_name>`.
+
+Add the following json. You can replace `label` and `position` with whatever:
+
+```json title="docs-documentation/3dassets_terrain/_category_.json" {2-3}
+{
+  "label": "Example Section",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Option description. Not sure what for."
+  }
+}
+```
+
+import Tabs from "@theme/Tabs";
+
+import TabItem from "@theme/TabItem";
+
+:::info Potentially useful tab functionality
+
+<Tabs>
+  <TabItem value="apple" label="Apple">
+    This is an apple 🍎
+  </TabItem>
+  <TabItem value="orange" label="Orange">
+    This is an orange 🍊
+  </TabItem>
+  <TabItem value="banana" label="Banana">
+    This is a banana 🍌
+  </TabItem>
+</Tabs>
+
+:::
+
+```mdx-code-block
+<Tabs>
+<TabItem value="docusaurus.config.js">
+```
+
+```js
+module.exports = {
+  themeConfig: {
+    prism: {
+      magicComments: [
+        // Remember to extend the default highlight class name as well!
+        {
+          className: "theme-code-block-highlighted-line",
+          line: "highlight-next-line",
+          block: { start: "highlight-start", end: "highlight-end" },
+        },
+        // highlight-start
+        {
+          className: "code-block-error-line",
+          line: "This will error",
+        },
+        // highlight-end
+      ],
+    },
+  },
+};
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="src/css/custom.css">
+```
+
+```css
+.code-block-error-line {
+  background-color: #ff000020;
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+  border-left: 3px solid #ff000080;
+}
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="myDoc.md">
+```
+
+````md
+In JavaScript, trying to access properties on `null` will error.
+
+```js
+const name = null;
+// This will error
+console.log(name.toUpperCase());
+// Uncaught TypeError: Cannot read properties of null (reading 'toUpperCase')
+```
+````
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
+
+To add new pages to this section, create new markdown pages under `<folder_name>`, identical to this page.
+
+:::tip My tip
+
+These markdown files will be interpreted as `.mdx` meaning they support JSX as well. Not essential, but if you want VSCode to stop yelling at you for "syntax errors", download **[this extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx)**.
+
+:::
+
+## Code Blocks
+
+Markdown code blocks are supported with Syntax highlighting. For instance, writing this:
+
+    ```python title="procgen/worldgen/generate.py" {2-3,5} showLineNumbers
+    def add_ground_twigs(target):
+        use_leaves = uniform() < 0.5
+        selection = density.get_placement_distribution(scale=0.15, select_thresh=0.55, normal_thresh=0.7, return_scalar=True)
+        ground_twigs.apply(target, selection=selection, use_leaves=use_leaves)
+    p.run_stage('ground_twigs', add_ground_twigs, terrain_inview)
+    ```
+
+will produce this:
+
+```python title="procgen/worldgen/generate.py" {2-3,5} showLineNumbers
+def add_ground_twigs(target):
+    use_leaves = uniform() < 0.5
+    selection = density.get_placement_distribution(scale=0.15, select_thresh=0.55, normal_thresh=0.7, return_scalar=True)
+    ground_twigs.apply(target, selection=selection, use_leaves=use_leaves)
+p.run_stage('ground_twigs', add_ground_twigs, terrain_inview)
+```
+
+<details>
+  <summary>Here is the <code>same</code> item in an expandable block:</summary>
+
+```python title="procgen/worldgen/generate.py" {2-3,5} showLineNumbers
+def add_ground_twigs(target):
+    use_leaves = uniform() < 0.5
+    selection = density.get_placement_distribution(scale=0.15, select_thresh=0.55, normal_thresh=0.7, return_scalar=True)
+    ground_twigs.apply(target, selection=selection, use_leaves=use_leaves)
+p.run_stage('ground_twigs', add_ground_twigs, terrain_inview)
+```
+
+</details>
+
+## Showing images
+
+We can include image viewers like this directly in markdown:
+
+<AssetPreview
+  image_urls={[
+    "random_images_for_testing/17319.png",
+    "random_images_for_testing/26958.png",
+    "random_images_for_testing/4248.png",
+  ]}
+/>
+
+This was creating using:
+
+```jsx
+<AssetPreview
+  image_urls={[
+    "random_images_for_testing/17319.png",
+    "random_images_for_testing/26958.png",
+    "random_images_for_testing/4248.png",
+  ]}
+/>
+```
+
+:::caution You should know
+
+It is assumed that all image paths are relative to https://infinigen.cs.princeton.edu/, and that there exists a `<name>_thumbnail.png` for every `<name>.png`
+
+On ionic, this website root is `/n/fs/pvl-progen/website/www`. For example:
+
+```mdx-code-block
+| Name    | thumbnail           | Folder     | Description                          |
+| ------- | -------------- | ----------- | ------------------------------------ |
+| `17319.png` | `17319_thumbnail.png` | `www/random_images_for_testing` | Pretty image. |
+| `26958.png` | `26958_thumbnail.png` | `www/random_images_for_testing` | Another pretty image              |
+```
+
+:::
+
+:::note Creating thumbnails
+
+To create the low-res thumbnails, run
+
+```bash
+find /n/fs/pvl-progen/website/www/<path-to-your-images>/ -name "*.png" \
+-exec python /n/fs/pvl-progen/website/create_thumbnail_size.py {} \;
+```
+
+:::
+
+Markdown also supports regular images:
+
+![Alt Text](https://infinigen.cs.princeton.edu/random_images_for_testing/20342.png)
+
+using:
+
+```md
+![Alt Text](https://infinigen.cs.princeton.edu/random_images_for_testing/20342.png)
+```
+
+## Showing 3D models
+
+Our 3D models are too hi-res to load online. Instead, we can pre-render video frames and view them like so:
+
+<PreRendered3D folder={"example"} begin={1} end={160} />
+
+This was created using
+
+```jsx
+<PreRendered3D folder={"example"} begin={1} end={160} />
+```
+
+where the frames are stored locally as
+
+- `static/pre_rendered/example/000001.jpeg`
+- ...
+- `static/pre_rendered/example/000160.jpeg`
+
+Storing them online led to a crappy user experimence, imo.
+
+:::danger Take care
+
+Don't use too many frames. They stored with the website.
+
+:::

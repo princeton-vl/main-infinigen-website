@@ -1,0 +1,8 @@
+{
+  "label": "Example Section",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Option description. Not sure what for."
+  }
+}
