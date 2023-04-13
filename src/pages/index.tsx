@@ -68,15 +68,20 @@ const InfinigenHeader = () => {
     <header className={clsx(styles.heroBanner, styles.bg_img)}>
       <div className="container">
         <div>
-          <h1 className={clsx("hero__title", styles.main_title)}>
+          <img
+            src="logos/infg_logo.svg"
+            style={{ height: "250px" }}
+            className="padding-bottom--lg"
+          />
+          {/* <h1 className={clsx("hero__title", styles.main_title)}>
             {siteConfig.title}
-          </h1>
-          <p className={clsx("hero__subtitle", styles.main_taglinetitle)}>
+          </h1> */}
+          {/* <p className={clsx("hero__subtitle", styles.main_taglinetitle)}>
             A Dataset Generator
           </p>
           <p className={clsx("hero__subtitle", styles.main_taglinetitle)}>
             Fully Procedural and Open-Source
-          </p>
+          </p> */}
         </div>
         <div className={styles.buttons}>
           <Link
@@ -86,8 +91,37 @@ const InfinigenHeader = () => {
             Get Started - 5min ⏱️
           </Link>
         </div>
+        <div className="container">
+          <div className={clsx("row", "margin-top--lg")}>
+            <div className={clsx("col col--3")}></div>
+            <MainLink text="Code" />
+            <MainLink text="Paper" />
+            <MainLink text="Downloads" />
+
+            <div className={clsx("col col--3")}></div>
+          </div>
+        </div>
       </div>
     </header>
+  );
+};
+
+const MainLink = (props) => {
+  return (
+    <div className={clsx("col col--2")}>
+      <div className={styles.buttons}>
+        <Link
+          className="button button--secondary button--lg"
+          to="/docs/intro"
+          style={{ minWidth: "180px" }}
+        >
+          <div>
+            <img src="/github-mark.png" style={{ height: "50px" }} />
+          </div>
+          <div style={{ textAlign: "center" }}>{props.text}</div>
+        </Link>
+      </div>
+    </div>
   );
 };
 
