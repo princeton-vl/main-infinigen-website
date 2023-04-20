@@ -34,11 +34,14 @@ const config = {
 
   presets: [
     [
-      "classic",
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      "@docusaurus/preset-classic",
+      {
         docs: {
+          routeBasePath: "docs",
+          path: "docs",
           sidebarPath: require.resolve("./sidebars.js"),
+          lastVersion: "current",
+          onlyIncludeVersions: ["current"],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -54,7 +57,27 @@ const config = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
-      }),
+      },
+    ],
+  ],
+  plugins: [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "docs-documentation",
+        path: "docs-documentation",
+        routeBasePath: "docs-documentation",
+        sidebarPath: require.resolve("./sidebars.js"),
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "docs-get-started",
+        path: "docs-get-started",
+        routeBasePath: "docs-get-started",
+        sidebarPath: require.resolve("./sidebars.js"),
+      },
     ],
   ],
 
@@ -64,9 +87,9 @@ const config = {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "My Site",
+        title: "",
         logo: {
-          alt: "My Site Logo",
+          alt: "Infinigen Logo",
           src: "logos/infg_logo.svg",
         },
         items: [
@@ -75,6 +98,18 @@ const config = {
             sidebarId: "tutorialSidebar",
             position: "left",
             label: "Tutorial",
+          },
+          {
+            to: "/docs-documentation/begin", // ./docs-documentation/Intro.md
+            label: "Documentation",
+            position: "left",
+            activeBaseRegex: `/docs-documentation/`,
+          },
+          {
+            to: "/docs-get-started/begin", // ./docs-documentation/Intro.md
+            label: "Get Started",
+            position: "left",
+            activeBaseRegex: `/docs-get-started/`,
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
