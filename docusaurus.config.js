@@ -70,6 +70,15 @@ const config = {
         sidebarPath: require.resolve("./sidebars.js"),
       },
     ],
+    // [
+    //   "@docusaurus/plugin-content-docs",
+    //   {
+    //     id: "docs-faq",
+    //     path: "docs-faq",
+    //     routeBasePath: "docs-faq",
+    //     sidebarPath: require.resolve("./sidebars.js"),
+    //   },
+    // ],
     [
       "@docusaurus/plugin-content-docs",
       {
@@ -105,6 +114,13 @@ const config = {
             position: "left",
             activeBaseRegex: `/docs-documentation/`,
           },
+          // {
+          //   to: "/docs-faq/begin", // ./docs-faq/Intro.md
+          //   label: "FAQ",
+          //   position: "left",
+          //   activeBaseRegex: `/docs-faq/`,
+          // },
+          { to: "faq", label: "FAQ", position: "left" },
           {
             to: "/docs-get-started/begin", // ./docs-documentation/Intro.md
             label: "Get Started",
