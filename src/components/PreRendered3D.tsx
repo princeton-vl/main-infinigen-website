@@ -36,6 +36,7 @@ const PreRendered3D = (props) => {
         <div className="row">
           <div className={clsx("col col--8")} style={{ textAlign: "center" }}>
             <SliderInput
+              className="padding-bottom--lg"
               onChange={setImageIndex}
               min={frame_begin}
               max={frame_end}
