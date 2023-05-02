@@ -107,7 +107,7 @@ const config = {
             type: "docSidebar",
             sidebarId: "tutorialSidebar",
             position: "left",
-            label: "Tutorial",
+            label: "Get Started",
           },
           {
             to: "/docs-documentation/begin", // ./docs-documentation/Intro.md
@@ -121,13 +121,13 @@ const config = {
           //   position: "left",
           //   activeBaseRegex: `/docs-faq/`,
           // },
-          { to: "faq", label: "FAQ", position: "left" },
           {
             to: "/docs-get-started/begin", // ./docs-documentation/Intro.md
-            label: "Get Started",
+            label: "Downloads",
             position: "left",
             activeBaseRegex: `/docs-get-started/`,
           },
+          { to: "faq", label: "FAQ", position: "left" },
           { to: "/blog", label: "Blog", position: "left" },
           {
             href: "https://github.com/princeton-vl",
@@ -143,7 +143,7 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Tutorial",
+                label: "Get Started",
                 to: "/docs/intro",
               },
             ],
