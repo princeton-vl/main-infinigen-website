@@ -26,6 +26,90 @@ Add the following json. You can replace `label` and `position` with whatever:
 }
 ```
 
+import Tabs from "@theme/Tabs";
+
+import TabItem from "@theme/TabItem";
+
+:::info Potentially useful tab functionality
+
+<Tabs>
+  <TabItem value="apple" label="Apple">
+    This is an apple 🍎
+  </TabItem>
+  <TabItem value="orange" label="Orange">
+    This is an orange 🍊
+  </TabItem>
+  <TabItem value="banana" label="Banana">
+    This is a banana 🍌
+  </TabItem>
+</Tabs>
+
+:::
+
+```mdx-code-block
+<Tabs>
+<TabItem value="docusaurus.config.js">
+```
+
+```js
+module.exports = {
+  themeConfig: {
+    prism: {
+      magicComments: [
+        // Remember to extend the default highlight class name as well!
+        {
+          className: "theme-code-block-highlighted-line",
+          line: "highlight-next-line",
+          block: { start: "highlight-start", end: "highlight-end" },
+        },
+        // highlight-start
+        {
+          className: "code-block-error-line",
+          line: "This will error",
+        },
+        // highlight-end
+      ],
+    },
+  },
+};
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="src/css/custom.css">
+```
+
+```css
+.code-block-error-line {
+  background-color: #ff000020;
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+  border-left: 3px solid #ff000080;
+}
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="myDoc.md">
+```
+
+````md
+In JavaScript, trying to access properties on `null` will error.
+
+```js
+const name = null;
+// This will error
+console.log(name.toUpperCase());
+// Uncaught TypeError: Cannot read properties of null (reading 'toUpperCase')
+```
+````
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
+
 To add new pages to this section, create new markdown pages under `<folder_name>`, identical to this page.
 
 :::tip My tip
@@ -38,7 +122,7 @@ These markdown files will be interpreted as `.mdx` meaning they support JSX as w
 
 Markdown code blocks are supported with Syntax highlighting. For instance, writing this:
 
-    ```python title="procgen/worldgen/generate.py" {2-3}
+    ```python title="procgen/worldgen/generate.py" {2-3,5} showLineNumbers
     def add_ground_twigs(target):
         use_leaves = uniform() < 0.5
         selection = density.get_placement_distribution(scale=0.15, select_thresh=0.55, normal_thresh=0.7, return_scalar=True)
@@ -48,13 +132,26 @@ Markdown code blocks are supported with Syntax highlighting. For instance, writi
 
 will produce this:
 
-```python title="procgen/worldgen/generate.py" {3-4}
+```python title="procgen/worldgen/generate.py" {2-3,5} showLineNumbers
 def add_ground_twigs(target):
     use_leaves = uniform() < 0.5
     selection = density.get_placement_distribution(scale=0.15, select_thresh=0.55, normal_thresh=0.7, return_scalar=True)
     ground_twigs.apply(target, selection=selection, use_leaves=use_leaves)
 p.run_stage('ground_twigs', add_ground_twigs, terrain_inview)
 ```
+
+<details>
+  <summary>Here is the <code>same</code> item in an expandable block:</summary>
+
+```python title="procgen/worldgen/generate.py" {2-3,5} showLineNumbers
+def add_ground_twigs(target):
+    use_leaves = uniform() < 0.5
+    selection = density.get_placement_distribution(scale=0.15, select_thresh=0.55, normal_thresh=0.7, return_scalar=True)
+    ground_twigs.apply(target, selection=selection, use_leaves=use_leaves)
+p.run_stage('ground_twigs', add_ground_twigs, terrain_inview)
+```
+
+</details>
 
 ## Showing images
 
@@ -84,7 +181,14 @@ This was creating using:
 
 It is assumed that all image paths are relative to https://infinigen.cs.princeton.edu/, and that there exists a `<name>_thumbnail.png` for every `<name>.png`
 
-On ionic, this website root is `/n/fs/pvl-progen/website/www`
+On ionic, this website root is `/n/fs/pvl-progen/website/www`. For example:
+
+```mdx-code-block
+| Name    | thumbnail           | Folder     | Description                          |
+| ------- | -------------- | ----------- | ------------------------------------ |
+| `17319.png` | `17319_thumbnail.png` | `www/random_images_for_testing` | Pretty image. |
+| `26958.png` | `26958_thumbnail.png` | `www/random_images_for_testing` | Another pretty image              |
+```
 
 :::
 
@@ -107,19 +211,6 @@ using:
 
 ```md
 ![Alt Text](https://infinigen.cs.princeton.edu/random_images_for_testing/20342.png)
-```
-
-```mdx-code-block
-<APITable name="footer-links">
-```
-
-| Name    | Type           | Default     | Description                          |
-| ------- | -------------- | ----------- | ------------------------------------ |
-| `title` | `string`       | `undefined` | Label of the section of these links. |
-| `items` | `FooterItem[]` | `[]`        | Links in this section.               |
-
-```mdx-code-block
-</APITable>
 ```
 
 ## Showing 3D models
