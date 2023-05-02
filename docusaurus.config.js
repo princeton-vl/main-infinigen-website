@@ -100,6 +100,7 @@ const config = {
         logo: {
           alt: "Infinigen Logo",
           src: "logos/infg_logo.svg",
+          srcDark: "logos/infg_logo_dark.svg",
         },
         items: [
           {
@@ -151,10 +152,6 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
                 label: "Discord",
                 href: "https://discordapp.com/invite/docusaurus",
               },
@@ -178,7 +175,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Infinigen`,
       },
       prism: {
         theme: lightCodeTheme,
