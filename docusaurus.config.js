@@ -70,6 +70,15 @@ const config = {
         sidebarPath: require.resolve("./sidebars.js"),
       },
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "docs-contributing",
+        path: "docs-contributing",
+        routeBasePath: "docs-contributing",
+        sidebarPath: require.resolve("./sidebars.js"),
+      },
+    ],
     // [
     //   "@docusaurus/plugin-content-docs",
     //   {
@@ -115,20 +124,20 @@ const config = {
             position: "left",
             activeBaseRegex: `/docs-documentation/`,
           },
-          // {
-          //   to: "/docs-faq/begin", // ./docs-faq/Intro.md
-          //   label: "FAQ",
-          //   position: "left",
-          //   activeBaseRegex: `/docs-faq/`,
-          // },
           {
             to: "/docs-get-started/begin", // ./docs-documentation/Intro.md
             label: "Downloads",
             position: "left",
             activeBaseRegex: `/docs-get-started/`,
           },
+          {
+            to: "/docs-contributing/begin", // ./docs-documentation/Intro.md
+            label: "Contributing",
+            position: "left",
+            activeBaseRegex: `/docs-contributing/`,
+          },
           { to: "faq", label: "FAQ", position: "left" },
-          { to: "/blog", label: "Blog", position: "left" },
+          // { to: "/blog", label: "Blog", position: "left" },
           {
             href: "https://github.com/princeton-vl",
             label: "GitHub",
@@ -164,10 +173,10 @@ const config = {
           {
             title: "More",
             items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
+              // {
+              //   label: "Blog",
+              //   to: "/blog",
+              // },
               {
                 label: "GitHub",
                 href: "https://github.com/facebook/docusaurus",
