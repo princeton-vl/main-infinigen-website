@@ -161,12 +161,12 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
+                label: "Youtube",
+                href: "https://google.com",
               },
               {
                 label: "Twitter",
-                href: "https://twitter.com/docusaurus",
+                href: "https://google.com",
               },
             ],
           },
@@ -179,7 +179,7 @@ const config = {
               // },
               {
                 label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                href: "https://google.com",
               },
             ],
           },

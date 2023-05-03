@@ -4,7 +4,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
-import RowOfStuff from "@site/src/components/RowOfStuff";
+import RowOfInfinigenFeatures from "@site/src/components/RowOfInfinigenFeatures";
 import ImageGallery from "react-image-gallery";
 import GTPreview from "../../src/components/GTPreview.tsx";
 
@@ -59,10 +59,8 @@ const HomepageHeader = () => {
     </header>
   );
 };
-///<img src={bg_img} />
-//style={{ backgroundImage: "/showcase_highres/0005.png" }}
+
 const InfinigenHeader = () => {
-  // const parallax = useRef<IParallax>(null!);
   const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx(styles.heroBanner, styles.bg_img)}>
@@ -73,15 +71,6 @@ const InfinigenHeader = () => {
             style={{ height: "250px" }}
             className="padding-bottom--lg"
           />
-          {/* <h1 className={clsx("hero__title", styles.main_title)}>
-            {siteConfig.title}
-          </h1> */}
-          {/* <p className={clsx("hero__subtitle", styles.main_taglinetitle)}>
-            A Dataset Generator
-          </p>
-          <p className={clsx("hero__subtitle", styles.main_taglinetitle)}>
-            Fully Procedural and Open-Source
-          </p> */}
         </div>
         <div className={styles.buttons}>
           <Link
@@ -105,7 +94,7 @@ const InfinigenHeader = () => {
     </header>
   );
 };
-//
+
 const MainLink = (props) => {
   return (
     <div className={clsx("col col--2")}>
@@ -134,10 +123,12 @@ export default function Home(): JSX.Element {
     >
       <InfinigenHeader />
       <main>
-        <RowOfStuff />
+        <RowOfInfinigenFeatures />
         <MyGallery />
-        <div class="container">
-          <div class="row">
+
+        <RowOfInfinigenFeatures />
+        <div className="container">
+          <div className="row">
             <div className="col col--0" />
             <div className="col col--12">
               <GTPreview />
