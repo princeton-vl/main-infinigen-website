@@ -49,7 +49,7 @@ const GTPreview = () => {
           clickable: true,
         }}
         modules={[Grid, Pagination, Navigation]}
-        className="mySwiper"
+        className={clsx("mySwiper", "padding-bottom--lg")}
       >
         <SwiperSlide>
           <GTTile />

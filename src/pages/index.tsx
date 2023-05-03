@@ -94,9 +94,9 @@ const InfinigenHeader = () => {
         <div className="container">
           <div className={clsx("row", "margin-top--lg")}>
             <div className={clsx("col col--3")}></div>
-            <MainLink text="Code" />
-            <MainLink text="Paper" />
-            <MainLink text="Downloads" />
+            <MainLink text="Code" svg_name="github-mark.svg" />
+            <MainLink text="Trailer" svg_name="film-svgrepo-com.svg" />
+            <MainLink text="Paper" svg_name="document-svgrepo-com.svg" />
 
             <div className={clsx("col col--3")}></div>
           </div>
@@ -105,7 +105,7 @@ const InfinigenHeader = () => {
     </header>
   );
 };
-
+//
 const MainLink = (props) => {
   return (
     <div className={clsx("col col--2")}>
@@ -116,7 +116,7 @@ const MainLink = (props) => {
           style={{ minWidth: "180px" }}
         >
           <div>
-            <img src="/github-mark.png" style={{ height: "50px" }} />
+            <img src={"/" + props.svg_name} style={{ height: "50px" }} />
           </div>
           <div style={{ textAlign: "center" }}>{props.text}</div>
         </Link>
