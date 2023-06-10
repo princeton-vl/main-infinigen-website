@@ -25,13 +25,13 @@
   margin-top: -10px;
 }
 
-@media (min-width: 1416px) {
+/* @media (min-width: 1416px) {
 	.main-wrapper {
 		align-self: center;
 		max-width: 1400px;
 		width: 1400px;
 	}
-}
+} */
 
 .navbar .navbar__inner {
     margin: 0 auto;
