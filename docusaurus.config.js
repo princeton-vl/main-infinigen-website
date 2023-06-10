@@ -108,8 +108,8 @@ const config = {
         title: "",
         logo: {
           alt: "Infinigen Logo",
-          src: "logos/infg_logo.svg",
-          srcDark: "logos/infg_logo_dark.svg",
+          src: "logos/INFINIGEN_White_Background.svg",
+          srcDark: "logos/INFINIGEN_Dark_Background.svg",
         },
         items: [
           {
