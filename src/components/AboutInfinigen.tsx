@@ -5,7 +5,8 @@ import styles from "../pages/index.module.css";
 const ListItem = () => {
   return (
     <li className={styles.list_item}>
-      Compilation of deep learning models into minimum deployable modules.
+      tellus orci ac auctor augue mauris augue neque gravida in fermentum et
+      sollicitudin
     </li>
   );
 };
@@ -27,12 +28,11 @@ export default function AboutInfinigen(): JSX.Element {
           <div className={clsx("col col--5")}>
             <h1>About Infinigen</h1>
             <p>
-              The vision of the Apache TVM Project is to host a diverse
-              community of experts and practitioners in machine learning,
-              compilers, and systems architecture to build an accessible,
-              extensible, and automated open-source framework that optimizes
-              current and emerging machine learning models for any hardware
-              platform. TVM provides the following main features:
+              tellus orci ac auctor augue mauris augue neque gravida in
+              fermentum et sollicitudin ac orci phasellus egestas tellus rutrum
+              tellu tellus orci ac auctor augue mauris augue neque gravida in
+              fermentum et sollicitudin ac orci phasellus egestas tellus rutrum
+              tellu
             </p>
             <ul>
               <ListItem />
