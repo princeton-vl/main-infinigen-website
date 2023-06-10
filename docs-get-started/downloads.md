@@ -1,7 +1,9 @@
 ---
-sidebar_label: "Begin here!"
-sidebar_position: 1
+sidebar_label: "Downloads"
+sidebar_position: 2
 ---
+
+Hello
 
 # Documentation
 

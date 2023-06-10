@@ -125,8 +125,8 @@ const config = {
             activeBaseRegex: `/docs-documentation/`,
           },
           {
-            to: "/docs-get-started/begin", // ./docs-documentation/Intro.md
-            label: "Downloads",
+            to: "/docs-get-started/gallery", // ./docs-documentation/Intro.md
+            label: "Data",
             position: "left",
             activeBaseRegex: `/docs-get-started/`,
           },
