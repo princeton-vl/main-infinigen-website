@@ -7,6 +7,7 @@ import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import RowOfInfinigenFeatures from "@site/src/components/RowOfInfinigenFeatures";
 import ImageGallery from "react-image-gallery";
 import GTPreview from "../../src/components/GTPreview.tsx";
+import YouTube, { YouTubeProps } from "react-youtube";
 
 import styles from "./index.module.css";
 
@@ -60,38 +61,40 @@ const HomepageHeader = () => {
   );
 };
 
+function Example() {
+  const onPlayerReady: YouTubeProps["onReady"] = (event) => {
+    // access to player in all event handlers via event.target
+    event.target.pauseVideo();
+  };
+
+  const opts: YouTubeProps["opts"] = {
+    height: "390",
+    width: "640",
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
+
+  return (
+    <YouTube
+      className={styles.youtube_example}
+      videoId="2g811Eo7K8U"
+      opts={opts}
+      onReady={onPlayerReady}
+    />
+  );
+}
+
 const InfinigenHeader = () => {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx(styles.heroBanner, styles.bg_img)}>
-      <div className="container">
-        <div>
-          <img
-            src="logos/infg_logo.svg"
-            style={{ height: "250px" }}
-            className="padding-bottom--lg"
-          />
-        </div>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro"
-          >
-            Get Started - 5min ⏱️
-          </Link>
-        </div>
-        <div className="container">
-          <div className={clsx("row", "margin-top--lg")}>
-            <div className={clsx("col col--3")}></div>
-            <MainLink text="Code" svg_name="github-mark.svg" />
-            <MainLink text="Trailer" svg_name="film-svgrepo-com.svg" />
-            <MainLink text="Paper" svg_name="document-svgrepo-com.svg" />
-
-            <div className={clsx("col col--3")}></div>
-          </div>
-        </div>
-      </div>
-    </header>
+    <div className={styles.youtube_example}>
+      <iframe
+        className={styles.iframe_youtube}
+        src="https://www.youtube.com/embed/tgbNymZ7vqY"
+      ></iframe>
+    </div>
   );
 };
 
@@ -121,8 +124,8 @@ export default function Home(): JSX.Element {
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />"
     >
-      <InfinigenHeader />
       <main>
+        <InfinigenHeader />
         <RowOfInfinigenFeatures />
         <MyGallery />
 
