@@ -2,10 +2,14 @@ import React from "react";
 import clsx from "clsx";
 import styles from "../pages/index.module.css";
 
-// export default function Highlight({ children, color }) {
-export default function Highlight({ children, filename, website }) {
+export default function Contributor({
+  children,
+  name,
+  filename,
+  website,
+  description,
+}) {
   var path = require("@site/static/img/contributors/" + filename).default;
-  //   return <img className={styles.contributor_image} src={path} />;
 
   return (
     <div class="card margin-top--sm">
@@ -14,10 +18,8 @@ export default function Highlight({ children, filename, website }) {
           <div class="avatar">
             <img class="avatar__photo" src={path} />
             <div class="avatar__intro">
-              <div class="avatar__name">Alexander Raistrick</div>
-              <small class="avatar__subtitle">
-                Consultant, Speaker, Lead Engineer
-              </small>
+              <div class="avatar__name">{name}</div>
+              <small class="avatar__subtitle">{description}</small>
             </div>
           </div>
         </div>

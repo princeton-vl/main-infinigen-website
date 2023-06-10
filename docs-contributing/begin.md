@@ -9,12 +9,21 @@ We welcome contributioons. Stay tuned.
 
 # Current Contributors
 
-import Highlight from '@site/src/components/Highlight';
+import Contributor from '@site/src/components/Highlight';
 
-<!-- <Highlight color="#25c2a0">Docusaurus green</Highlight> -->
+<Contributor filename="raistrick.jpeg" name="Alexander Raistrick" website="https://www.google.com" description="lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor"/>
+<Contributor filename="raistrick.jpeg" name="Alexander Raistrick" website="https://www.google.com" description="lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor"/>
+<Contributor filename="raistrick.jpeg" name="Alexander Raistrick" website="https://www.google.com" description="lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor"/>
+<Contributor filename="raistrick.jpeg" name="Alexander Raistrick" website="https://www.google.com" description="lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor"/>
+<Contributor filename="raistrick.jpeg" name="Alexander Raistrick" website="https://www.google.com" description="lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor"/>
+<Contributor filename="raistrick.jpeg" name="Alexander Raistrick" website="https://www.google.com" description="lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor"/>
+<Contributor filename="raistrick.jpeg" name="Alexander Raistrick" website="https://www.google.com" description="lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor"/>
+&nbsp;
 
-<Highlight filename="raistrick.jpeg" website="https://www.google.com"/><Highlight filename="raistrick.jpeg" />
+# Past Contributors
 
-<!-- <img src={imageUrl} alt="Image alt" /> -->
-
-<!-- ![Example f](./../static/img/raistrick.jpeg) -->
+<Contributor filename="raistrick.jpeg" name="Alexander Raistrick" website="https://www.google.com" description="lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor"/>
+<Contributor filename="raistrick.jpeg" name="Alexander Raistrick" website="https://www.google.com" description="lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor"/>
+<Contributor filename="raistrick.jpeg" name="Alexander Raistrick" website="https://www.google.com" description="lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor"/>
+<Contributor filename="raistrick.jpeg" name="Alexander Raistrick" website="https://www.google.com" description="lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor"/>
+<Contributor filename="raistrick.jpeg" name="Alexander Raistrick" website="https://www.google.com" description="lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor"/>
