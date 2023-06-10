@@ -132,7 +132,7 @@ const config = {
           },
           {
             to: "/docs-contributing/begin", // ./docs-documentation/Intro.md
-            label: "Contributing",
+            label: "Community",
             position: "left",
             activeBaseRegex: `/docs-contributing/`,
           },
