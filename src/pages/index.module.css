@@ -23,6 +23,46 @@
 
 }
 
+.capability_image {
+  width: 200px;
+}
+
+.list_item {
+  margin: 20px 0;
+}
+
+.col_demo {
+  text-align: center;
+  background-color: grey;
+}
+
+.capability_outer {
+  padding-top: 50px;
+  margin-top: 60px;
+  /* width: 500px; */
+  height: 500px;
+  background-color: lightblue;
+}
+
+.about_infinigen_left {
+  /* background-color: red; */
+}
+
+.vertical_center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.about_infinigen_img {
+  width: 100%;
+  /* margin-top: 50px; */
+  /* top: 50%; */
+  /* background-color: red; */
+}
+
 .youtube_example {
   display: flex;
   flex-direction: column;

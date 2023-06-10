@@ -8,6 +8,8 @@ import RowOfInfinigenFeatures from "@site/src/components/RowOfInfinigenFeatures"
 import ImageGallery from "react-image-gallery";
 import GTPreview from "../../src/components/GTPreview.tsx";
 import YouTube, { YouTubeProps } from "react-youtube";
+import AboutInfinigen from "@site/src/components/AboutInfinigen";
+import KeyFeaturesAndCapabilities from "@site/src/components/KeyFeaturesAndCapabilities";
 
 import styles from "./index.module.css";
 
@@ -126,6 +128,8 @@ export default function Home(): JSX.Element {
     >
       <main>
         <InfinigenHeader />
+        <AboutInfinigen />
+        <KeyFeaturesAndCapabilities />
         <RowOfInfinigenFeatures />
         <MyGallery />
 
