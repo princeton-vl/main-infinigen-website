@@ -143,7 +143,7 @@ const config = {
             href: "https://twitter.com",
             // label: "GitHub",
             position: "right",
-            className: "header-github-link",
+            className: "header-twitter-link",
             "aria-label": "GitHub repository",
           },
           {
