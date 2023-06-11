@@ -136,6 +136,13 @@ const config = {
           },
           { to: "InfGridGallery", label: "Gallery", position: "left" },
           {
+            to: "https://github.com/princeton-vl",
+            label: "GitHub",
+            position: "left",
+            // className: "header-github-link",
+            "aria-label": "GitHub repository",
+          },
+          {
             to: "/docs-contributing/begin", // ./docs-documentation/Intro.md
             label: "Community",
             position: "left",
@@ -149,13 +156,6 @@ const config = {
             position: "right",
             className: "header-twitter-link",
             "aria-label": "Twitter page",
-          },
-          {
-            to: "https://github.com/princeton-vl",
-            label: "GitHub",
-            position: "right",
-            // className: "header-github-link",
-            "aria-label": "GitHub repository",
           },
         ],
       },
