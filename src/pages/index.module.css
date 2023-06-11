@@ -80,16 +80,23 @@
   /* background-color: red; */
 }
 
-.youtube_example {
+.youtube_outer {
+  justify-content: center;
   display: flex;
-  flex-direction: column;
-  background-color: black;
+}
+
+.youtube_inner {
+  width: 1070px;
 }
 
 .iframe_youtube {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   height:  600px;
+  border: 0.05em solid red;
+  width:100%;
+  display: flex;
+  justify-content: center;
 
 }
 

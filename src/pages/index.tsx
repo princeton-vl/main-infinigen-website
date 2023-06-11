@@ -91,11 +91,13 @@ function Example() {
 const InfinigenHeader = () => {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <div className={styles.youtube_example}>
-      <iframe
-        className={styles.iframe_youtube}
-        src="https://www.youtube.com/embed/tgbNymZ7vqY"
-      ></iframe>
+    <div className={styles.youtube_outer}>
+      <div className={styles.youtube_inner}>
+        <iframe
+          className={styles.iframe_youtube}
+          src="https://www.youtube.com/embed/tgbNymZ7vqY"
+        ></iframe>
+      </div>
     </div>
   );
 };
