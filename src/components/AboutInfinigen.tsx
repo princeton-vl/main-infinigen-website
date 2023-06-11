@@ -14,7 +14,7 @@ const ListItem = () => {
 export default function AboutInfinigen(): JSX.Element {
   return (
     <section className={clsx("margin-top--lg")}>
-      <div className="container">
+      <div className={styles.stay_within_navbar + " container"}>
         <div className="row">
           <div className={clsx("col col--7", styles.about_infinigen_left)}>
             <img

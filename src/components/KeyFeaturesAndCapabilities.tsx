@@ -35,7 +35,7 @@ const Capability = () => {
 export default function KeyFeaturesAndCapabilities(): JSX.Element {
   return (
     <section className={clsx("margin-top--lg")}>
-      <div className="container">
+      <div className={"container " + styles.stay_within_navbar}>
         <h1 className="hero__title">Key Features & Capabilities</h1>
         <div className={"row"}>
           <div className="col col--6">
