@@ -213,6 +213,10 @@ export const images: CustomImage[] = [
 export default function InfGridGallery({ children }) {
   const { siteConfig } = useDocusaurusContext();
 
+  let url =
+    "https://infinigen.cs.princeton.edu/gallery_images/gallery_data.json";
+  const res = fetch(url);
+
   const [index, setIndex] = useState(-1);
 
   const currentImage = images[index];
