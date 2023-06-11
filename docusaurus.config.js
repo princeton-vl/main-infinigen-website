@@ -126,10 +126,11 @@ const config = {
           },
           {
             to: "/docs-get-started/gallery", // ./docs-documentation/Intro.md
-            label: "Data",
+            label: "Downloads",
             position: "left",
             activeBaseRegex: `/docs-get-started/`,
           },
+          { to: "InfGridGallery", label: "Gallery", position: "left" },
           {
             to: "/docs-contributing/begin", // ./docs-documentation/Intro.md
             label: "Community",
