@@ -104,6 +104,10 @@ const config = {
     ({
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
+      colorMode: {
+        defaultMode: "light",
+        disableSwitch: true,
+      },
       navbar: {
         title: "",
         logo: {
@@ -144,13 +148,13 @@ const config = {
             // label: "GitHub",
             position: "right",
             className: "header-twitter-link",
-            "aria-label": "GitHub repository",
+            "aria-label": "Twitter page",
           },
           {
-            href: "https://github.com/princeton-vl",
-            // label: "GitHub",
+            to: "https://github.com/princeton-vl",
+            label: "GitHub",
             position: "right",
-            className: "header-github-link",
+            // className: "header-github-link",
             "aria-label": "GitHub repository",
           },
         ],
