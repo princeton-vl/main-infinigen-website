@@ -90,13 +90,8 @@
 }
 
 .iframe_youtube {
-  /* display: flex;
-  flex-direction: column; */
-  height:  600px;
-  border: 0.05em solid red;
+  height: 600px;
   width:100%;
-  display: flex;
-  justify-content: center;
 
 }
 
