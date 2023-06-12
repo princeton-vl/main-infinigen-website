@@ -5,10 +5,8 @@ import { useState } from "react";
 import { Gallery } from "react-grid-gallery";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
-// import { images, CustomImage } from "../components/images";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-
 import { Image } from "react-grid-gallery";
 
 export interface CustomImage extends Image {
@@ -18,13 +16,7 @@ export interface CustomImage extends Image {
 export default function InfGridGallery({ children }) {
   const { siteConfig } = useDocusaurusContext();
 
-  const [images, setMyImages] = useState([]);
-
-  let url =
-    "https://infinigen.cs.princeton.edu/gallery_images/gallery_data.json";
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => setMyImages(data));
+  var images = require("@site/static/gallery_data.json"); //(with path)
 
   const [index, setIndex] = useState(-1);
 
