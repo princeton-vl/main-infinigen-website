@@ -8,15 +8,30 @@ import "react-image-lightbox/style.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import { Image } from "react-grid-gallery";
+import ReactPaginate from "react-paginate";
 
 export interface CustomImage extends Image {
   original: string;
 }
 
+const itemsPerPage = 43;
+
+let items = require("@site/static/gallery_data.json"); //(with path)
+
 export default function InfGridGallery({ children }) {
   const { siteConfig } = useDocusaurusContext();
 
-  var images = require("@site/static/gallery_data.json"); //(with path)
+  const [itemOffset, setItemOffset] = useState(0);
+
+  // const num_total_pages = Math.max(
+  // 1,
+  // Math.ceil(images.length / IMAGES_PER_PAGE)
+  // );
+  const endOffset = itemOffset + itemsPerPage;
+  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  const images = items.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(items.length / itemsPerPage);
+  console.log("Pagecount: " + pageCount);
 
   const [index, setIndex] = useState(-1);
 
@@ -25,11 +40,21 @@ export default function InfGridGallery({ children }) {
   const nextImage = images[nextIndex] || currentImage;
   const prevIndex = (index + images.length - 1) % images.length;
   const prevImage = images[prevIndex] || currentImage;
+  console.log(prevIndex);
 
   const handleClick = (index: number, item: CustomImage) => setIndex(index);
   const handleClose = () => setIndex(-1);
   const handleMovePrev = () => setIndex(prevIndex);
   const handleMoveNext = () => setIndex(nextIndex);
+
+  // Invoke when user click to request another page.
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * itemsPerPage) % items.length;
+    console.log(
+      `User requested page number ${event.selected}, which is offset ${newOffset}`
+    );
+    setItemOffset(newOffset);
+  };
 
   return (
     <Layout
@@ -37,8 +62,30 @@ export default function InfGridGallery({ children }) {
       description="Description will go into a meta tag in <head />"
     >
       <div>
+        <div className={styles.gallery_pagination}>
+          <ReactPaginate
+            breakLabel="..."
+            nextLabel="next >"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={5}
+            pageCount={pageCount}
+            previousLabel="< previous"
+            pageClassName="page-item"
+            pageLinkClassName="page-link"
+            previousClassName="page-item"
+            previousLinkClassName="page-link"
+            nextClassName="page-item"
+            nextLinkClassName="page-link"
+            breakClassName="page-item"
+            breakLinkClassName="page-link"
+            containerClassName="pagination"
+            activeClassName="active"
+            renderOnZeroPageCount={null}
+          />
+        </div>
         <Gallery
           images={images}
+          defaultContainerWidth={300} // needed for some reason.
           onClick={handleClick}
           enableImageSelection={false}
         />
@@ -47,14 +94,12 @@ export default function InfGridGallery({ children }) {
           <Lightbox
             mainSrc={currentImage.original}
             imageTitle={currentImage.caption}
-            mainSrcThumbnail={currentImage.src}
             nextSrc={nextImage.original}
-            nextSrcThumbnail={nextImage.src}
             prevSrc={prevImage.original}
-            prevSrcThumbnail={prevImage.src}
             onCloseRequest={handleClose}
             onMovePrevRequest={handleMovePrev}
             onMoveNextRequest={handleMoveNext}
+            imagePadding={80}
           />
         )}
       </div>

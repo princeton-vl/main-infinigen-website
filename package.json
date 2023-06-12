@@ -29,6 +29,7 @@
     "react-grid-gallery": "^1.0.0",
     "react-image-gallery": "^1.2.11",
     "react-image-lightbox": "^5.1.4",
+    "react-paginate": "^8.2.0",
     "react-scroll-parallax": "^3.4.2",
     "react-youtube": "^10.1.0",
     "swiper": "^8.4.7"

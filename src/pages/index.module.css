@@ -27,6 +27,21 @@ h1 {
 }
 
 
+.gallery_pagination {
+  margin-top: 20px;
+  justify-content: center;
+  display: flex;
+}
+
+/* .ril__inner {
+  margin-right: 7005px;
+} */
+
+.lightbox_div {
+  /* margin-right: 40px; */
+  /* justify-content: center;
+  align-content: center; */
+}
 
 .bg_img {
 
@@ -129,6 +144,15 @@ h1 {
   font-weight: bold;
   font-family: "Helvetica";
 }
+
+.ReactGridGallery_tile {
+  flex-grow: 1;
+}
+
+
+/* .ReactGridGallery_tile {
+  margin-right: 2px;
+} */
 
 .blur_box {
   border-radius: 25px;
