@@ -25,14 +25,16 @@ function shuffle_list(array) {
 }
 
 function Contributor({ children, name, filename, website, description }) {
-  let path = require("@site/static/img/contributors/" + filename).default;
-
   return (
     <div className="card margin-top--sm">
       <a href={website}>
         <div className="card__header">
           <div className="avatar">
-            <img className="avatar__photo" key={path} src={path} />
+            <img
+              className="avatar__photo"
+              key={filename}
+              src={require("@site/static/img/contributors/" + filename).default}
+            />
             <div className="avatar__intro">
               <div className="avatar__name">{name}</div>
               <small className="avatar__subtitle">{description}</small>
