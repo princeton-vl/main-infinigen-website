@@ -1,18 +1,69 @@
-import React from "react";
-import clsx from "clsx";
-import styles from "../pages/index.module.css";
-import { useState } from "react";
-import { Gallery } from "react-grid-gallery";
-import Lightbox from "react-image-lightbox";
+import React, { useRef, useState } from "react";
 import "react-image-lightbox/style.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import { Image } from "react-grid-gallery";
-import ReactPaginate from "react-paginate";
-import ContributorsList from "@site/src/components/Highlight";
 
-export interface CustomImage extends Image {
-  original: string;
+// From https://stackoverflow.com/a/2450976
+function shuffle_list(array) {
+  let currentIndex = array.length,
+    randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
+}
+
+function ContributorsList({ children, people, shuffle }) {
+  const renderCounter = useRef(0);
+  renderCounter.current = renderCounter.current + 1;
+  // console.log("Rendered! " + renderCounter.current);
+  const num_items = people.length;
+
+  const [allDivs, setAllDivs] = useState([]);
+  let all_divs = [];
+
+  if (allDivs.length == 0) {
+    console.log("First");
+    for (let i = 0; i < num_items; i++) {
+      const person = people[i];
+      all_divs.push(
+        <div key={person.name}>
+          <img
+            className="avatar__photo"
+            key={person.filename}
+            src={
+              "https://infinigen.cs.princeton.edu/contributors/" +
+              person.filename +
+              "?time=" +
+              new Date()
+            }
+          />
+          {person.name}
+        </div>
+      );
+      // console.log(all_divs[i]);
+    }
+    if (shuffle) {
+      shuffle_list(all_divs);
+    }
+    setAllDivs(all_divs);
+  } else {
+    console.log("Second");
+    all_divs = allDivs;
+  }
+
+  return <div>{all_divs}</div>;
 }
 
 export default function Team({ children }) {
