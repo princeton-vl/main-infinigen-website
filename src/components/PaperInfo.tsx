@@ -26,7 +26,23 @@ export default function PaperInfo(): JSX.Element {
         <div className={"row"}>
           <div className={clsx("col col--12", styles.author_list)}>
             <span>
-              <a href="https://www.google.com">Alexander Raistrick</a>,
+              <a href="https://www.google.com">Alexander Raistrick*</a>,{" "}
+              <a href="https://www.google.com">Lahav Lipson*</a>,{" "}
+              <a href="https://www.google.com">Zeyu Ma*</a> ( * equal
+              contribution, alphabetical order )
+              <br />
+              <a href="https://www.google.com">Lingjie Mei</a>,{" "}
+              <a href="https://www.google.com">Mingzhe Wang</a>,{" "}
+              <a href="https://www.google.com">Yiming Zuo</a>,{" "}
+              <a href="https://www.google.com">Karhan Kayan</a>,{" "}
+              <a href="https://www.google.com">Hongyu Wen</a>,{" "}
+              <a href="https://www.google.com">Beining Han</a>, <br />
+              <a href="https://www.google.com">Yihan Wang</a>,
+              <a href="https://www.google.com">Alejandro Newell</a>,{" "}
+              <a href="https://www.google.com">Hei Law</a>,{" "}
+              <a href="https://www.google.com">Ankit Goyal</a>,{" "}
+              <a href="https://www.google.com">Kaiyu Yang</a>,{" "}
+              <a href="https://www.google.com">Jia Deng</a>
             </span>
           </div>
         </div>
