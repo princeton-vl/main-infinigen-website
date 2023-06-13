@@ -25,18 +25,17 @@ function shuffle_list(array) {
 }
 
 function Contributor({ children, name, filename, website, description }) {
+  let imgURL =
+    "https://infinigen.cs.princeton.edu/contributors/" +
+    filename +
+    "?time=" +
+    new Date();
   return (
     <div className="card margin-top--sm">
       <a href={website}>
         <div className="card__header">
           <div className="avatar">
-            <img
-              className="avatar__photo"
-              key={filename}
-              src={
-                "https://infinigen.cs.princeton.edu/contributors/" + filename
-              }
-            />
+            <img className="avatar__photo" key={filename} src={imgURL} />
             <div className="avatar__intro">
               <div className="avatar__name">{name}</div>
               <small className="avatar__subtitle">{description}</small>
