@@ -6,19 +6,21 @@ const Capability = (props) => {
   return (
     <div className="item shadow--lw">
       <div className={clsx(styles.capability_outer)}>
-        <div className={"row"}>
-          <div className="col col--1" />
-          <div className="col col--10">{props.children}</div>
-        </div>
-        <div className={"row"}>
-          <div className="col col--1" />
-          <div className="col col--10 margin-top--md">
-            <h1>{props.header}</h1>
+        <div className="container">
+          <div className={"row"}>
+            <div className="col col--1" />
+            <div className="col col--10">{props.children}</div>
           </div>
-        </div>
-        <div className={"row"}>
-          <div className="col col--1" />
-          <div className="col col--10">{props.text}</div>
+          <div className={"row"}>
+            <div className="col col--1" />
+            <div className="col col--10 margin-top--md">
+              <h1>{props.header}</h1>
+            </div>
+          </div>
+          <div className={"row"}>
+            <div className="col col--1" />
+            <div className="col col--10">{props.text}</div>
+          </div>
         </div>
       </div>
     </div>
@@ -31,7 +33,7 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
       <div className={"container " + styles.stay_within_navbar}>
         <h1>Key Features & Capabilities</h1>
         <div className={"row"}>
-          <div className="col col--6">
+          <div className="col-sm-6">
             <Capability
               header="Procedural"
               text={
@@ -53,7 +55,7 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
               ></img>
             </Capability>
           </div>
-          <div className="col col--6">
+          <div className="col-sm-6">
             <Capability
               header="Diverse"
               text={
@@ -75,7 +77,7 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
           </div>
         </div>
         <div className={clsx("row")}>
-          <div className="col col--6">
+          <div className="col-sm-6">
             <Capability
               header="Real Geometry"
               text={
@@ -90,13 +92,19 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
                 </p>
               }
             >
-              <div className={clsx("row", styles.real_vs_fake_imgs)}>
-                <div className="col col--6">
+              <div
+                className={clsx(
+                  "row",
+                  "justify-content-md-center",
+                  styles.real_vs_fake_imgs
+                )}
+              >
+                <div className={clsx("col-sm-6", styles.real_fake_img_col)}>
                   <div>
                     <img src={"img/fake_geo.png"}></img>
                   </div>
                   <div style={{ textAlign: "center" }}>
-                    Art, Games & Movies use
+                    Art, Games & Movies:
                     <br />
                     <span
                       style={{
@@ -109,7 +117,7 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
                     </span>
                   </div>
                 </div>
-                <div className="col col--6">
+                <div className={clsx("col-sm-6", styles.real_fake_img_col)}>
                   <div>
                     <img
                       src={"img/real_geo.png"}
@@ -117,8 +125,7 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
                     ></img>
                   </div>
                   <div style={{ textAlign: "center" }}>
-                    <span className={styles.infinigen_name}>Infinigen</span>{" "}
-                    uses
+                    <span className={styles.infinigen_name}>Infinigen</span>:{" "}
                     <br />
                     <span
                       style={{
@@ -135,7 +142,7 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
             </Capability>
           </div>
 
-          <div className="col col--6">
+          <div className="col-sm-6">
             <Capability
               header="High-Quality Annotations"
               text={
@@ -149,7 +156,9 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
               }
             >
               <div className={clsx("row", styles.real_vs_fake_imgs)}>
-                <div className="col col--6">
+                <div
+                  className={clsx("col-sm-6", styles.annotation_example_col)}
+                >
                   <div>
                     <img
                       style={{ border: "1px solid #1a1e13" }}
@@ -157,7 +166,9 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
                     ></img>
                   </div>
                 </div>
-                <div className="col col--6">
+                <div
+                  className={clsx("col-sm-6", styles.annotation_example_col)}
+                >
                   <div>
                     <img
                       style={{ border: "1px solid #1a1e13" }}
@@ -174,7 +185,9 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
                   styles.real_vs_fake_imgs
                 )}
               >
-                <div className="col col--6">
+                <div
+                  className={clsx("col-sm-6", styles.annotation_example_col)}
+                >
                   <div>
                     <img
                       style={{ border: "1px solid #1a1e13" }}
@@ -182,7 +195,9 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
                     ></img>
                   </div>
                 </div>
-                <div className="col col--6">
+                <div
+                  className={clsx("col-sm-6", styles.annotation_example_col)}
+                >
                   <div>
                     <img
                       style={{ border: "1px solid #1a1e13" }}

@@ -131,11 +131,19 @@ h1 {
 }
 
 .capability_image {
-  /* width: 200px; */
+  /* max-width: 600px; */
 }
 
 .real_vs_fake_imgs {
-  /* height: 100px; */
+  justify-content: center;
+}
+
+.annotation_example_col {
+  max-width: 200px;
+}
+
+.real_fake_img_col {
+  max-width: 200px;
 }
 
 .list_item {
@@ -151,8 +159,7 @@ h1 {
 .capability_outer {
   padding-top: 50px;
   margin-top: 60px;
-  /* width: 500px; */
-  height: 500px;
+  min-height: 550px;
   background-color: lightblue;
 }
 
