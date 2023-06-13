@@ -33,7 +33,9 @@ function Contributor({ children, name, filename, website, description }) {
             <img
               className="avatar__photo"
               key={filename}
-              src={require("@site/static/img/contributors/" + filename).default}
+              src={
+                "https://infinigen.cs.princeton.edu/contributors/" + filename
+              }
             />
             <div className="avatar__intro">
               <div className="avatar__name">{name}</div>
