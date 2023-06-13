@@ -62,6 +62,7 @@ function ContributorsList({ children, people, shuffle }) {
     console.log("Second");
     all_divs = allDivs;
   }
+  console.log(all_divs);
 
   return <div>{all_divs}</div>;
 }
