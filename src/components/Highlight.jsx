@@ -61,13 +61,19 @@ export default function ContributorsList({ children, people, shuffle }) {
     for (let i = 0; i < num_items; i++) {
       const person = people[i];
       all_divs.push(
-        <Contributor
-          key={person.name}
-          filename={person.filename}
-          name={person.name}
-          website={person.website}
-          description={person.description}
-        />
+        <div key={person.name}>
+          <img
+            className="avatar__photo"
+            key={person.filename}
+            src={
+              "https://infinigen.cs.princeton.edu/contributors/" +
+              person.filename +
+              "?time=" +
+              new Date()
+            }
+          />
+          {person.name}
+        </div>
       );
       // console.log(all_divs[i]);
     }
