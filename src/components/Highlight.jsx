@@ -32,7 +32,7 @@ function Contributor({ children, name, filename, website, description }) {
       <a href={website}>
         <div className="card__header">
           <div className="avatar">
-            <img className="avatar__photo" src={path} />
+            <img className="avatar__photo" key={path} src={path} />
             <div className="avatar__intro">
               <div className="avatar__name">{name}</div>
               <small className="avatar__subtitle">{description}</small>
