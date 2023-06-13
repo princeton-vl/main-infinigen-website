@@ -18,8 +18,8 @@ export default function PaperInfo(): JSX.Element {
         <div className={"row"}>
           <div className="col col--12">
             <h1>Research Paper</h1>
-            <h1 style={{ textAlign: "center" }}>
-              Infinite Photorealistic Worlds using Procedural Generation
+            <h1 className={styles.paper_header} style={{ textAlign: "center" }}>
+              <b>Infinite Photorealistic Worlds using Procedural Generation</b>
             </h1>
           </div>
         </div>
