@@ -58,7 +58,7 @@ export default function InfGridGallery({ children }) {
 
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      title={`${siteConfig.title} Gallery`}
       description="Description will go into a meta tag in <head />"
     >
       <div>
