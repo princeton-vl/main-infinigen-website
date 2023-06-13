@@ -27,7 +27,7 @@ export default function AboutInfinigen(): JSX.Element {
           </div>
           <div className={clsx("col col--5")}>
             <h1>
-              About <span className={styles.infinigen_name}>INFINIGEN</span>
+              About <span className={styles.infinigen_name}>Infinigen</span>
             </h1>
             <p>
               tellus orci ac auctor augue mauris augue neque gravida in

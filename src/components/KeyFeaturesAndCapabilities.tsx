@@ -40,7 +40,7 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
                 <p>
                   All assets, including the terrain, fauna and flora, are
                   generated entirely from code and a random seed.
-                  <span className={styles.infinigen_name}> INFINIGEN</span> does
+                  <span className={styles.infinigen_name}> Infinigen</span> does
                   not rely on any third-party asset libraries. Users can modify
                   the generation code for any asset to change the distribution
                   of resulting meshes and materials. The code for each asset
@@ -60,7 +60,7 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
               header="Diverse"
               text={
                 <p>
-                  <span className={styles.infinigen_name}>INFINIGEN </span>
+                  <span className={styles.infinigen_name}>Infinigen </span>
                   contains dozens of pre-written templates of different types of
                   terrain, fauna and flora. Each template is a Python class
                   defining a distribution of assets with randomizable
@@ -82,11 +82,11 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
               header="Real Geometry"
               text={
                 <p>
-                  <span className={styles.infinigen_name}>INFINIGEN </span>
+                  <span className={styles.infinigen_name}>Infinigen </span>
                   treats researchers as first-class citizens; all high-frequency
                   detail is modeled using high-resolution geometry, so our
                   annotations are 100% accurate.{" "}
-                  <span className={styles.infinigen_name}>INFINIGEN</span>{" "}
+                  <span className={styles.infinigen_name}>Infinigen</span>{" "}
                   doesn't use bump/normal-maps, full-transparency, or any other
                   techniques which add the illusion of detail that isn't there.
                 </p>
@@ -119,7 +119,7 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
                     ></img>
                   </div>
                   <div style={{ textAlign: "center" }}>
-                    <span className={styles.infinigen_name}>INFINIGEN</span>{" "}
+                    <span className={styles.infinigen_name}>Infinigen</span>{" "}
                     uses
                     <br />
                     <span
@@ -142,7 +142,7 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
               header="High-Quality Annotations"
               text={
                 <p>
-                  <span className={styles.infinigen_name}>INFINIGEN </span>
+                  <span className={styles.infinigen_name}>Infinigen </span>
                   generates dense annotations for a variety of computer vision
                   tasks, including optical flow, 3D scene flow, depth, surface
                   normals, panoptic segmentation, occlusion boundaries, and
