@@ -16,10 +16,10 @@ export default function PaperInfo(): JSX.Element {
       <div className={"container " + styles.stay_within_navbar}>
         {/* <h1 className="hero__title">Paper</h1> */}
         <div className={"row"}>
-          <div className="col col--12" style={{ textAlign: "center" }}>
-            <h1 className="hero__title">
-              Infinite Photorealistic Worlds using <br />
-              Procedural Generation
+          <div className="col col--12">
+            <h1>Research Paper</h1>
+            <h1 style={{ textAlign: "center" }}>
+              Infinite Photorealistic Worlds using Procedural Generation
             </h1>
           </div>
         </div>
