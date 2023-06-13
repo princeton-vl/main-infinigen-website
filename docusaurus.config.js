@@ -144,7 +144,7 @@ const config = {
           },
           {
             to: "/docs-contributing/begin", // ./docs-documentation/Intro.md
-            label: "Community",
+            label: "Team",
             position: "left",
             activeBaseRegex: `/docs-contributing/`,
           },
@@ -156,6 +156,13 @@ const config = {
             position: "right",
             className: "header-twitter-link",
             "aria-label": "Twitter page",
+          },
+          {
+            href: "https://www.google.com",
+            // label: "GitHub",
+            position: "right",
+            className: "header-lab-link",
+            // "aria-label": "Twitter page",
           },
         ],
       },

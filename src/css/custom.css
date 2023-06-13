@@ -81,3 +81,12 @@
   height: 24px;
   width: 24px;
 }
+
+.header-lab-link:before {
+  background: url("@site/static/logos/lab_logo_name.svg") no-repeat;
+  content: "";
+  display: flex;
+  height: 240px;
+  width: 240px;
+  margin-bottom: -185px;
+}
