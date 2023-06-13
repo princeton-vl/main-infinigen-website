@@ -36,10 +36,18 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
           <div className="col col--6">
             <Capability
               header="Procedural"
-              text="All assets, including the terrain, fauna and flora, are generated entirely from code and a random seed.
-              Infinigen does not rely on any third-party asset libraries.
-              Users can modify the generation code for any asset to change the distribution of resulting meshes and materials.
-              The code for each asset contains a set of random parameters which can be set manually or seeded randomly."
+              text={
+                <p>
+                  All assets, including the terrain, fauna and flora, are
+                  generated entirely from code and a random seed.
+                  <span className={styles.infinigen_name}> INFINIGEN</span> does
+                  not rely on any third-party asset libraries. Users can modify
+                  the generation code for any asset to change the distribution
+                  of resulting meshes and materials. The code for each asset
+                  contains a set of random parameters which can be set manually
+                  or seeded randomly.
+                </p>
+              }
             >
               <img
                 src={"img/procedural.png"}
@@ -50,8 +58,16 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
           <div className="col col--6">
             <Capability
               header="Diverse"
-              text="Infinigen contains dozens of pre-written templates of different types of terrain, fauna and flora. Each template is a Python class defining a distribution of assets with randomizable parameters.
-              Users can extend the existing system by writing their own asset generators."
+              text={
+                <p>
+                  <span className={styles.infinigen_name}>INFINIGEN </span>
+                  contains dozens of pre-written templates of different types of
+                  terrain, fauna and flora. Each template is a Python class
+                  defining a distribution of assets with randomizable
+                  parameters. Users can extend the existing system by writing
+                  their own asset generators.
+                </p>
+              }
             >
               <img
                 src={"img/diverse.png"}
@@ -64,14 +80,22 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
           <div className="col col--6">
             <Capability
               header="Real Geometry"
-              text="Infinigen treats researchers as first-class citizens;
-              all high-frequency detail is modeled using high-resolution geometry, so our annotations are 100% accurate.
-              Infinigen doesn't use bump/normal-maps, full-transparency, or any other techniques which add the illusion of detail that isn't really there."
+              text={
+                <p>
+                  <span className={styles.infinigen_name}>INFINIGEN </span>
+                  treats researchers as first-class citizens; all high-frequency
+                  detail is modeled using high-resolution geometry, so our
+                  annotations are 100% accurate.{" "}
+                  <span className={styles.infinigen_name}>INFINIGEN</span>{" "}
+                  doesn't use bump/normal-maps, full-transparency, or any other
+                  techniques which add the illusion of detail that isn't there.
+                </p>
+              }
             >
               <div className={clsx("row", styles.real_vs_fake_imgs)}>
                 <div className="col col--6">
                   <div>
-                    <img src={"img/real_geo.png"}></img>
+                    <img src={"img/fake_geo.png"}></img>
                   </div>
                   <div style={{ textAlign: "center" }}>
                     Art, Games & Movies use
@@ -95,7 +119,8 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
                     ></img>
                   </div>
                   <div style={{ textAlign: "center" }}>
-                    Infinigen uses
+                    <span className={styles.infinigen_name}>INFINIGEN</span>{" "}
+                    uses
                     <br />
                     <span
                       style={{
@@ -115,7 +140,15 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
           <div className="col col--6">
             <Capability
               header="High-Quality Annotations"
-              text="Infinigen generates dense annotations for a variety of computer vision tasks, including optical flow, 3D scene flow, depth, surface normals, panoptic segmentation, occlusion boundaries, and various render-passes (albedo, specular, etc.)."
+              text={
+                <p>
+                  <span className={styles.infinigen_name}>INFINIGEN </span>
+                  generates dense annotations for a variety of computer vision
+                  tasks, including optical flow, 3D scene flow, depth, surface
+                  normals, panoptic segmentation, occlusion boundaries, and
+                  various render-passes (albedo, specular, etc.).
+                </p>
+              }
             >
               <div className={clsx("row", styles.real_vs_fake_imgs)}>
                 <div className="col col--6">

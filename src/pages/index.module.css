@@ -28,6 +28,13 @@ li {
   color: rgb(66, 80, 102);
 }
 
+.infinigen_name {
+  font-family: "Google Sans", sans-serif;
+  font-weight: 100;
+  letter-spacing: -0.25px;
+}
+
+
 h1 {
   /* font-family: "Helvetica"; */
   font-family: "Google Sans", sans-serif;

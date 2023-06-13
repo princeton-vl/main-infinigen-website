@@ -18,7 +18,8 @@ export default function PaperInfo(): JSX.Element {
         <div className={"row"}>
           <div className="col col--12" style={{ textAlign: "center" }}>
             <h1 className="hero__title">
-              Infinite Photorealistic Worlds using Procedural Generation
+              Infinite Photorealistic Worlds using <br />
+              Procedural Generation
             </h1>
           </div>
         </div>
