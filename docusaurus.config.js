@@ -166,14 +166,14 @@ const config = {
           { to: "faq", label: "FAQ", position: "left" },
           // { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "https://twitter.com",
-            // label: "GitHub",
+            to: "https://twitter.com",
+            // label: "Follow us on twitter",
             position: "right",
             className: "header-twitter-link",
             "aria-label": "Twitter page",
           },
           {
-            href: "https://www.google.com",
+            to: "https://www.google.com",
             // label: "GitHub",
             position: "right",
             className: "header-lab-link",
