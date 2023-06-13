@@ -14,16 +14,16 @@ import { Grid, Pagination, Navigation } from "swiper";
 
 const GTTile = () => {
   return (
-    <div class="card-demo">
-      <div class="card">
-        <div class="card__image">
+    <div className="card-demo">
+      <div className="card">
+        <div className="card__image">
           <img
             src="https://images.unsplash.com/photo-1506624183912-c602f4a21ca7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
             alt="Image alt text"
             title="Logo Title Text 1"
           />
         </div>
-        <div class="card__body">
+        <div className="card__body">
           <h4>
             <center>Occlusion Boundaries</center>
           </h4>

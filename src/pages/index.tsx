@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
+// import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import RowOfInfinigenFeatures from "@site/src/components/RowOfInfinigenFeatures";
 import ImageGallery from "react-image-gallery";
 import GTPreview from "../../src/components/GTPreview.tsx";

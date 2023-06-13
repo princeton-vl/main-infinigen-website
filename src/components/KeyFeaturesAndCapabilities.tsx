@@ -18,9 +18,7 @@ const Capability = (props) => {
         </div>
         <div className={"row"}>
           <div className="col col--1" />
-          <div className="col col--10">
-            <p>{props.text}</p>
-          </div>
+          <div className="col col--10">{props.text}</div>
         </div>
       </div>
     </div>
