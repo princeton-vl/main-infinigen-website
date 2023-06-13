@@ -69,13 +69,7 @@ function ContributorsList({ children, people, shuffle }) {
 export default function Team({ children }) {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`${siteConfig.title} Gallery`}
-      description="Description will go into a meta tag in <head />"
-    >
-      <h1 style={{ textAlign: "center" }} className="margin-top--lg">
-        Current
-      </h1>
+    <>
       <div className="row">
         <div className="col col--3"></div>
         <div className="col col--6">
@@ -107,6 +101,6 @@ export default function Team({ children }) {
           ></ContributorsList>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }
