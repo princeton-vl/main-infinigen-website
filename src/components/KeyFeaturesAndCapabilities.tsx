@@ -78,7 +78,6 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
                     <br />
                     <span
                       style={{
-                        borderRadius: "2px",
                         color: "red",
                         padding: "0.2rem",
                         fontWeight: "bold",
@@ -100,7 +99,6 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
                     <br />
                     <span
                       style={{
-                        borderRadius: "2px",
                         color: "green",
                         padding: "0.2rem",
                         fontWeight: "bold",

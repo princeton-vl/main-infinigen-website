@@ -10,6 +10,7 @@ import GTPreview from "../../src/components/GTPreview.tsx";
 import YouTube, { YouTubeProps } from "react-youtube";
 import AboutInfinigen from "@site/src/components/AboutInfinigen";
 import KeyFeaturesAndCapabilities from "@site/src/components/KeyFeaturesAndCapabilities";
+import PaperInfo from "@site/src/components/PaperInfo";
 
 import styles from "./index.module.css";
 
@@ -132,6 +133,7 @@ export default function Home(): JSX.Element {
         <InfinigenHeader />
         <AboutInfinigen />
         <KeyFeaturesAndCapabilities />
+        <PaperInfo />
         <RowOfInfinigenFeatures />
         <MyGallery />
 
