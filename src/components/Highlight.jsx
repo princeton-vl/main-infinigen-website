@@ -65,5 +65,8 @@ export default function ContributorsList({ children, people, shuffle }) {
     shuffle_list(all_divs);
   }
 
+  console.log("Finally!");
+  console.log(<div>{all_divs}</div>);
+
   return <div>{all_divs}</div>;
 }
