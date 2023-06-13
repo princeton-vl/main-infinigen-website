@@ -18,7 +18,7 @@ export default function AboutInfinigen(): JSX.Element {
         <div className="row">
           <div className={clsx("col col--7", styles.about_infinigen_left)}>
             <img
-              src={"img/random_sample.png"}
+              src={"img/random_sample.jpeg"}
               className={clsx(
                 styles.about_infinigen_img
                 // styles.vertical_center
