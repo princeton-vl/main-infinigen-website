@@ -25,7 +25,7 @@ function shuffle_list(array) {
 }
 
 function Contributor({ children, name, filename, website, description }) {
-  var path = require("@site/static/img/contributors/" + filename).default;
+  const path = require("@site/static/img/contributors/" + filename).default;
 
   return (
     <div className="card margin-top--sm">
