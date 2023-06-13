@@ -157,7 +157,11 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
             >
               <div className={clsx("row", styles.real_vs_fake_imgs)}>
                 <div
-                  className={clsx("col-sm-6", styles.annotation_example_col)}
+                  className={clsx(
+                    "col-sm-6",
+                    "margin-top--sm",
+                    styles.annotation_example_col
+                  )}
                 >
                   <div>
                     <img
@@ -167,7 +171,11 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
                   </div>
                 </div>
                 <div
-                  className={clsx("col-sm-6", styles.annotation_example_col)}
+                  className={clsx(
+                    "col-sm-6",
+                    "margin-top--sm",
+                    styles.annotation_example_col
+                  )}
                 >
                   <div>
                     <img
@@ -186,7 +194,11 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
                 )}
               >
                 <div
-                  className={clsx("col-sm-6", styles.annotation_example_col)}
+                  className={clsx(
+                    "col-sm-6",
+                    "margin-top--sm",
+                    styles.annotation_example_col
+                  )}
                 >
                   <div>
                     <img
@@ -196,7 +208,11 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
                   </div>
                 </div>
                 <div
-                  className={clsx("col-sm-6", styles.annotation_example_col)}
+                  className={clsx(
+                    "col-sm-6",
+                    "margin-top--sm",
+                    styles.annotation_example_col
+                  )}
                 >
                   <div>
                     <img
