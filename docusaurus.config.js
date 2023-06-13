@@ -79,6 +79,15 @@ const config = {
         sidebarPath: require.resolve("./sidebars.js"),
       },
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "docs-team",
+        path: "docs-team",
+        routeBasePath: "docs-team",
+        sidebarPath: require.resolve("./sidebars.js"),
+      },
+    ],
     // [
     //   "@docusaurus/plugin-content-docs",
     //   {
@@ -143,8 +152,14 @@ const config = {
             "aria-label": "GitHub repository",
           },
           {
-            to: "/docs-contributing/begin", // ./docs-documentation/Intro.md
+            to: "/docs-team/begin", // ./docs-documentation/Intro.md
             label: "Team",
+            position: "left",
+            activeBaseRegex: `/docs-team/`,
+          },
+          {
+            to: "/docs-contributing/begin", // ./docs-documentation/Intro.md
+            label: "Contributing",
             position: "left",
             activeBaseRegex: `/docs-contributing/`,
           },
