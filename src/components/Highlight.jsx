@@ -52,7 +52,7 @@ export default function ContributorsList({ children, people, shuffle }) {
     const person = people[i];
     all_divs.push(
       <Contributor
-        key={i}
+        key={person.name}
         filename={person.filename}
         name={person.name}
         website={person.website}
