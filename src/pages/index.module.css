@@ -74,7 +74,11 @@ h1 {
 }
 
 .capability_image {
-  width: 200px;
+  /* width: 200px; */
+}
+
+.real_vs_fake_imgs {
+  /* height: 100px; */
 }
 
 .list_item {
