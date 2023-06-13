@@ -25,7 +25,7 @@ function shuffle_list(array) {
 }
 
 function Contributor({ children, name, filename, website, description }) {
-  const path = require("@site/static/img/contributors/" + filename).default;
+  let path = require("@site/static/img/contributors/" + filename).default;
 
   return (
     <div className="card margin-top--sm">
@@ -54,6 +54,7 @@ export default function ContributorsList({ children, people, shuffle }) {
   let all_divs = [];
 
   if (allDivs.length == 0) {
+    console.log("First");
     for (let i = 0; i < num_items; i++) {
       const person = people[i];
       all_divs.push(
@@ -72,6 +73,7 @@ export default function ContributorsList({ children, people, shuffle }) {
     }
     setAllDivs(all_divs);
   } else {
+    console.log("Second");
     all_divs = allDivs;
   }
 
