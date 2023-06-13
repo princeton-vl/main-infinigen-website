@@ -59,6 +59,7 @@ export default function ContributorsList({ children, people, shuffle }) {
         description={person.description}
       />
     );
+    console.log(all_divs[i]);
   }
   if (shuffle) {
     shuffle_list(all_divs);
