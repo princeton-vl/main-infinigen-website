@@ -32,7 +32,7 @@ export default function AboutInfinigen(): JSX.Element {
             <p>
               Infinigen is a procedural generator of 3D scenes. It is optimized for computer vision research, 
               and can generate diverse 3D training data. 
-              It is based on <href url="blender.org">Blender</href>, and is free and open-source.  
+              It is based on <a href="blender.org">Blender</a>, and is free and open-source.  
             </p>
             <ul>
               <ListItem />
