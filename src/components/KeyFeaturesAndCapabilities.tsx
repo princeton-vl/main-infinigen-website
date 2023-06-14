@@ -38,14 +38,9 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
               header="Procedural"
               text={
                 <p>
-                  All assets, including the terrain, fauna and flora, are
-                  generated entirely from code and a random seed.
+                  Infinigen generates all assets, including all shapes and materials, entirely from randomized mathematical rules, 
                   <span className={styles.infinigen_name}> Infinigen</span> does
-                  not rely on any third-party asset libraries. Users can modify
-                  the generation code for any asset to change the distribution
-                  of resulting meshes and materials. The code for each asset
-                  contains a set of random parameters which can be set manually
-                  or seeded randomly.
+                  not relying on external collections of assets. Users have full control the generation of assets by overriding default parameters for randomization. 
                 </p>
               }
             >
@@ -61,11 +56,7 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
               text={
                 <p>
                   <span className={styles.infinigen_name}>Infinigen </span>
-                  contains dozens of pre-written templates of different types of
-                  terrain, fauna and flora. Each template is a Python class
-                  defining a distribution of assets with randomizable
-                  parameters. Users can extend the existing system by writing
-                  their own asset generators.
+                  provides generators for diverse objects and scenes, currently focused on the natural world, including plants, animals, terrains, and natural phenomena such as fire, cloud, rain, and snow. 
                 </p>
               }
             >
@@ -83,12 +74,10 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
               text={
                 <p>
                   <span className={styles.infinigen_name}>Infinigen </span>
-                  treats researchers as first-class citizens; all high-frequency
-                  detail is modeled using high-resolution geometry, so our
-                  annotations are 100% accurate.{" "}
-                  <span className={styles.infinigen_name}>Infinigen</span>{" "}
-                  doesn't use bump/normal-maps, full-transparency, or any other
-                  techniques which add the illusion of detail that isn't there.
+                  is optimized for computer vision research, particularly 3D vision.
+                  <span className={styles.infinigen_name}>Infinigen</span>
+                  does not use bump/normal-maps, full-transparency, or other
+                  techniques which fake geometric detail. All fine details of geometry from <span className={styles.infinigen_name}>Infinigen</span> are real, ensuring accurate 3D ground truth. 
                 </p>
               }
             >
@@ -144,14 +133,13 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
 
           <div className="col-sm-6">
             <Capability
-              header="High-Quality Annotations"
+              header="Automatic Annotations"
               text={
                 <p>
                   <span className={styles.infinigen_name}>Infinigen </span>
-                  generates dense annotations for a variety of computer vision
+                  can automatically generate high-quality annotations for a variety of computer vision
                   tasks, including optical flow, 3D scene flow, depth, surface
-                  normals, panoptic segmentation, occlusion boundaries, and
-                  various render-passes (albedo, specular, etc.).
+                  normals, panoptic segmentation, occlusion boundaries. Because users have full access to the rendering process, the annotations are easily customizable. 
                 </p>
               }
             >
