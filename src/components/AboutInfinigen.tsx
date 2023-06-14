@@ -30,8 +30,8 @@ export default function AboutInfinigen(): JSX.Element {
               About <span className={styles.infinigen_name}>Infinigen</span>
             </h1>
             <p>
-              Infinigen is a procedural generator of 3D scenes. Optimized for computer vision research, Infinigen 
-              can generate diverse, high-quality 3D training data. 
+              Infinigen is a procedural generator of 3D scenes and synthetic images. Optimized for computer vision research, Infinigen 
+               generates diverse, high-quality 3D training data. 
               Infinigen is based on <a href="https://blender.org">Blender</a> and is free and open-source.  
             </p>
             <a class="twitter-timeline" data-height="180" href="https://twitter.com/PrincetonVL">Tweets from PrincetonVL</a> 
