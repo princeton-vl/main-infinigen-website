@@ -34,7 +34,7 @@ export default function AboutInfinigen(): JSX.Element {
               can generate diverse, high-quality 3D training data. 
               Infinigen is based on <a href="https://blender.org">Blender</a> and is free and open-source.  
             </p>
-            <a class="twitter-timeline" data-height="100" href="https://twitter.com/PrincetonVL?ref_src=twsrc%5Etfw">News</a> 
+            <a class="twitter-timeline" href="https://twitter.com/PrincetonVL">Tweets by PrincetonVL</a> 
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         </div>
