@@ -1,8 +1,68 @@
 ---
-sidebar_label: "Downloading and Installing Infinigen"
-sidebar_position: 2
+id: Creating stereo pairs
+sidebar_position: 3
+description: Create a Markdown Document
+slug: /part2
 ---
 
-# Hello
+### Running single scenes
 
-This is my **first Infinigen document**!
+To get started, do the following to generate a coarse terrain:
+
+```
+cd worldgen
+../blender/blender --background -noaudio --python generate.py -- --seed 0 --task coarse --output_folder outputs/dev/coarse
+```
+
+This will produce a file at `outputs/dev/coarse/scene.blend`, which you can inspect in blender.
+
+"desert" can be other gin files.
+
+Then, on a machine with a display, open the produced blender file to inspect results:
+`blender outputs/dev/scene.blend`
+
+After this, do the following to generate a fine terrain based on camera views:
+
+```
+../blender/blender --background -noaudio --python generate.py -- --seed 0 --task populate fine_terrain --input_folder outputs/dev/coarse --output_folder outputs/dev/fine
+```
+
+"main.frames" can be any frame in the blend file
+if you want to subdivide multi view, which may be useful for video, set, e.g., 'main.frames = [1, 2]'
+
+### Running on a SLURM cluster
+
+##### Render batches of images on SLURM for visualization
+
+```
+python -m tools.manage_datagen_jobs --output_folder outputs/myjob --num_scenes 200 --pipeline_configs pvl stereo --cleanup big_files
+```
+
+to use gpu (high_quality_terrain in configs to make more use of gpu)
+
+```
+python -m tools.manage_datagen_jobs --configs high_quality_terrain --output_folder outputs/myjob --num_scenes 200 --pipeline_configs pvl enable_gpu stereo --cleanup big_files
+```
+
+##### Render stereo pairs at large scale on SLURM, with auto upload and cleanup
+
+```
+python -m tools.manage_datagen_jobs --output_folder outputs/myjob --num_scenes 50000 --pipeline_configs pvl stereo --warmup_sec 3000 --cleanup all --upload
+```
+
+In single frame case, add `-p SphericalMesher.complete_depth_test=0` to above two commands to skip dense pixel wise complete depth test
+
+## Setting up desktop ssh access
+
+```
+sudo apt-get install openssh-server
+sudo systemctl enable ssh --now
+```
+
+Now do `hostname -I` and add the result to Alex's Lab Logistics spreadsheet. The IP may change when you reboot, which will require you to repeat this step. Ideally, avoid rebooting the PC.
+
+## Check for files with no Copyright statement
+
+```
+grep --include \*.py --include \*.cpp --include \*.h -riL "Copyright" worldgen
+```

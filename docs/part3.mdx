@@ -1,8 +1,31 @@
 ---
-sidebar_label: "Creating a stereo image-pair"
-sidebar_position: 3
+id: "Generating individual assets"
+sidebar_label: "Generating individual assets"
+sidebar_position: 4
+slug: /part3
 ---
 
-# Hello
+## Creating asset grid figures
 
-This is my **first Infinigen document**!
+```
+../blender/blender --background -noaudio --python tools/asset_grid.py -- -f CarnivoreFactory -n 10 -r 1024x1024 -s 500 --gpu
+```
+
+## Generating Assets
+
+Remember to recompile for sake of reproducibleness.
+
+To pre-generate assets locally:
+
+```
+../blender/blender --background -noaudio --python tools/generate_terrain_assets.py -- -f ~/render/assets/May27
+```
+
+To pre-generate assets on a SLURM cluster
+
+```
+python tools/submit_terrain_assets.py -b ../blender/blender -f "/n/fs/pvl-progen/terrain-assets/FOLDER" -s 0 -e NUMBER
+
+```
+
+Replace FOLDER and NUMBER as you need.

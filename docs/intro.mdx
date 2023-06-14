@@ -1,30 +1,48 @@
 ---
-sidebar_label: "Getting Started"
+sidebar_label: "Installation"
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Installation
 
-# Procgen
+Our installation instructions have been tested on the following systems:
 
-Procedurally generated datasets.
+- Apple Silicon (M1/M2) (≤ MacOS Monterey)
+- Ubuntu 22
+- Windows WSL
 
-![image](https://user-images.githubusercontent.com/5783450/210371169-e177b46c-fa56-4cfe-8056-685b41b550af.png)
+:::caution Known issues
+
+- Apple Silicon (M1/M2) (MacOS Monterey)
+
+:::
+
+For x86 architectures, we also have [Docker intructions](#docker-instructions)
+
+For help with installation, please post to our Github issues page.
 
 ## Setup
 
-First, we create a new python env with necessary dependencies
+Clone the infinigen repo:
 
 ```
-conda create --name procgen python=3.10
-conda activate procgen
+git clone --recursive <TODO>
 ```
 
-If not on IONIC, install necessary apt dependencies:
+Create a conda environment:
+
+```
+conda create --name infinigen python=3.10
+conda activate infinigen
+```
+
+**(Optional, Ubuntu)** in order to use our OpenGL-based system for producing dense annotations, install the following dependencies:
 
 ```
 sudo apt-get install libglm-dev libglew-dev libglfw3-dev libgles2-mesa-dev zlib1g-dev
 ```
+
+Alternatively, we support generating ground-truth from Blender's built-in render passes.
 
 Finally, run the install script
 
@@ -34,7 +52,7 @@ bash install.sh
 
 If you want to run with CUDA, compile on a CUDA machine.
 
-### Manual Compilation
+### Troubleshooting
 
 If the above didnt work for you, or you wish to rebuild part of the project, below are instructions for manually compiling the terrain-related C++ code
 
@@ -46,135 +64,72 @@ blender-3.1.2-linux-x64/3.1/python/bin/python3.10 setup_linux.py build_ext --inp
 CC="${HOMEBREW_PREFIX}/opt/llvm/bin/clang++" /path/to/Blender.app/Contents/Resources/3.1/python/bin/python3.10 setup_macos.py build_ext --inplace
 ```
 
-## Contributing
+## Docker Instructions
 
-### Rules
+We also provide instructions for running our system in a docker container.
 
-- This project is developed against python3.10.x, blender 3.1.2. You must use these versions.
-- `install.sh` must always set up the project from scratch
-  - If you make changes that require additional packages, you must modify requirements.txt and commit it alongside the changes.
-  - If your code needs compiling, it must happen when install.sh is run
-- If you use any tutorials, resources or external code, you must document them in the spreadsheet pinned on slack
-- For each feature you work on, make an appropriately named branch.
-- When a feature is "finished", run ~20 renders on IONIC to test it, then make a Pull Request
-- Code style
-  - Use 4 spaces indentation
-  - No 'from X import \*'
-  - Avoid sys.path.append except in driver scripts directly run by blender
+### Linux
 
-### Running single scenes
+Install the Docker Engine by following the steps [here](https://docs.docker.com/engine/install/ubuntu/)
 
-To get started, do the following to generate a coarse terrain:
+In `/procgen/`, run
 
 ```
-cd worldgen
-../blender/blender --background -noaudio --python generate.py -- --seed 0 --task coarse --output_folder outputs/dev/coarse
+cd docker
 ```
 
-This will produce a file at `outputs/dev/coarse/scene.blend`, which you can inspect in blender.
-
-"desert" can be other gin files.
-
-Then, on a machine with a display, open the produced blender file to inspect results:
-`blender outputs/dev/scene.blend`
-
-After this, do the following to generate a fine terrain based on camera views:
-
 ```
-../blender/blender --background -noaudio --python generate.py -- --seed 0 --task populate fine_terrain --input_folder outputs/dev/coarse --output_folder outputs/dev/fine
+bash make_docker.sh
 ```
 
-"main.frames" can be any frame in the blend file
-if you want to subdivide multi view, which may be useful for video, set, e.g., 'main.frames = [1, 2]'
-
-### Setting up paths
-
-It is best practice to have the pipeline put its output in /n/fs/scratch. For your convinience, you may want to do these symlinks:
+Alternatively, to run Infinigen without GPU passthrough in the Docker container, run `bash make_docker.sh --noGPU`
 
 ```
-cd worldgen
-mkdir -p /n/fs/scratch/$USER/procgen_outputs
-ln -s /n/fs/scratch/$USER/procgen_outputs outputs
-ln -s /n/fs/scratch/$USER/procgen_outputs /n/fs/pvl-progen/www/$USER/outputs_scratch
+docker exec -it infinigen bash
 ```
 
-Finally, you will need to let infinigen know where to find it's bank of pre-generated assets. If you are on IONIC, you can add
-`export INFINIGEN_ASSET_FOLDER=/n/fs/pvl-progen/terrain-assets/` to your bashrc. If you dont want to use pre-generated assets, and are okay with slow runtime, do `export INFINIGEN_ASSET_FOLDER=''`. Otherwise, you must download the relevant versions yourself. You must make sure that this folder contains a copy of the version of the assets currently specified in config/base.gin's `asset_version` field.
-
-### Data Generation Examples
-
-##### Render batches of images on SLURM for visualization
-
 ```
-python -m tools.manage_datagen_jobs --output_folder outputs/myjob --num_scenes 200 --pipeline_configs pvl stereo --cleanup big_files
+source setup.sh
 ```
 
-to use gpu (high_quality_terrain in configs to make more use of gpu)
+### Windows
+
+[Install](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview) WSL 2 (with WSLg) and Ubuntu. Make sure that you are either on the latest version of Windows 10 or on Windows 11.
+
+In Powershell, run `wsl -l -v` to verify that WSL is using version 2. If not, refer to [this](https://learn.microsoft.com/en-us/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2.) guide on upgrading.
+
+Install [Docker Desktop](https://www.docker.com/products/docker-desktop/) and make sure that "Use the WSL 2 based engine ..." is enabled in Settings. Keep the Docker Desktop application running.
+
+In Powershell, run `ubuntu` to enter the Linux subsystem and then run
 
 ```
-python -m tools.manage_datagen_jobs --configs high_quality_terrain --output_folder outputs/myjob --num_scenes 200 --pipeline_configs pvl enable_gpu stereo --cleanup big_files
+git clone https://github.com/princeton-vl/procgen.git
 ```
 
-##### Render stereo pairs at large scale on SLURM, with auto upload and cleanup
+Make sure that you have a valid [SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) in the Linux subsystem.
+
+Verify that `echo $DISPLAY` returns `:0`. If not, WSLg was not properly installed.
+
+Then,
 
 ```
-python -m tools.manage_datagen_jobs --output_folder outputs/myjob --num_scenes 50000 --pipeline_configs pvl stereo --warmup_sec 3000 --cleanup all --upload
+cd docker
 ```
 
-In single frame case, add `-p SphericalMesher.complete_depth_test=0` to above two commands to skip dense pixel wise complete depth test
-
-##### Render videos on a desktop workstation
-
 ```
-python -m tools.manage_datagen_jobs --output_folder outputs/myjob --num_scenes 50 --pipeline_configs local_64GB monocular_video --cleanup big_files
+bash make_docker.sh
 ```
 
-In most of the above commands we assume you are on a slurm cluster. If you want to run locally, replace `pvl` with `desktop` or `desktop_small` (for 256GB or 128GB ram workstations), or make your own tools/pipeline_config file and configure compute as you see fit. If you want something other than stereo/video, replace `stereo`/`stereo_video` with `monocular` or `monocular_flow` or some other option from `tools/pipeline_configs`. Note that the pipeline config can only affect what jobs are run (ie how many cameras, how many timesteps), not what those jobs produce. IE, if you want particular passes to be output, you will need to specify that with a `--config` option not a `--pipeline_config`
-
-We use wandb to log stats. If you dont want to deal with this, add `--wandb_mode disabled` to any of the above commands. If you are in PVL, send your username to Alex Raistrick to be added to our wandb group.
-
-## Creating asset grid figures
+In Docker Desktop, you should see that there is now an active container. Run
 
 ```
-../blender/blender --background -noaudio --python tools/asset_grid.py -- -f CarnivoreFactory -n 10 -r 1024x1024 -s 500 --gpu
+docker exec -it infinigen bash
 ```
 
-## Counting Lines of Code
-
 ```
-pygount --suffix=gin,py --folders-to-skip dependencies --format summary
+source setup.sh
 ```
 
-## Generating Assets
+### Apple Silicon (M1/M2)
 
-Remember to recompile for sake of reproducibleness.
-
-To pre-generate assets locally:
-
-```
-../blender/blender --background -noaudio --python tools/generate_terrain_assets.py -- -f ~/render/assets/May27
-```
-
-To pre-generate assets on a SLURM cluster
-
-```
-python tools/submit_terrain_assets.py -b ../blender/blender -f "/n/fs/pvl-progen/terrain-assets/FOLDER" -s 0 -e NUMBER
-
-```
-
-Replace FOLDER and NUMBER as you need.
-
-## Setting up desktop ssh access
-
-```
-sudo apt-get install openssh-server
-sudo systemctl enable ssh --now
-```
-
-Now do `hostname -I` and add the result to Alex's Lab Logistics spreadsheet. The IP may change when you reboot, which will require you to repeat this step. Ideally, avoid rebooting the PC.
-
-## Check for files with no Copyright statement
-
-```
-grep --include \*.py --include \*.cpp --include \*.h -riL "Copyright" worldgen
-```
+Infinigen does not support containers for Apple Silicon devices due to issues in Docker's emulation of x86 architecture.
