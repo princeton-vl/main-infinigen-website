@@ -134,20 +134,6 @@ export default function Home(): JSX.Element {
         <AboutInfinigen />
         <KeyFeaturesAndCapabilities />
         <PaperInfo />
-        <RowOfInfinigenFeatures />
-        <MyGallery />
-
-        <RowOfInfinigenFeatures />
-        <div className="container">
-          <div className="row">
-            <div className="col col--0" />
-            <div className="col col--12">
-              <GTPreview />
-            </div>
-
-            <div className="col col--0" />
-          </div>
-        </div>
       </main>
     </Layout>
   );
