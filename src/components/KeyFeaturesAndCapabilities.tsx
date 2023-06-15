@@ -93,8 +93,6 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
                     <img src={"img/fake_geo.png"}></img>
                   </div>
                   <div style={{ textAlign: "center" }}>
-                    Art, Games & Movies:
-                    <br />
                     <span
                       style={{
                         color: "red",
@@ -114,8 +112,6 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
                     ></img>
                   </div>
                   <div style={{ textAlign: "center" }}>
-                    <span className={styles.infinigen_name}>Infinigen</span>:{" "}
-                    <br />
                     <span
                       style={{
                         color: "green",
