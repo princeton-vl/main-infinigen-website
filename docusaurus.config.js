@@ -189,7 +189,7 @@ const config = {
             items: [
               {
                 label: "Get Started",
-                to: "/docs/intro",
+                to: "/docs/category/installation-instructions",
               },
             ],
           },

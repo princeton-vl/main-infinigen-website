@@ -32,6 +32,7 @@
     "react-image-lightbox": "^5.1.4",
     "react-paginate": "^8.2.0",
     "react-scroll-parallax": "^3.4.2",
+    "react-twitter-embed": "^4.0.4",
     "react-youtube": "^10.1.0",
     "swiper": "^8.4.7"
   },
