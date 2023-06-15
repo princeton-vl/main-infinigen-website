@@ -1,0 +1,18 @@
+---
+id: "Hello World"
+sidebar_label: "Hello World"
+sidebar_position: 3
+slug: /helloworld.mdx
+---
+
+import AssetPreview from "../src/components/AssetPreview";
+
+We can include image viewers like this directly in markdown:
+
+<AssetPreview
+  image_urls={[
+    "hello_world/Image.png",
+    "hello_world/Depth.png",
+    "hello_world/Normals.jpg",
+  ]}
+/>
