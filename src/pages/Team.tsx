@@ -55,7 +55,7 @@ function ContributorsList({ children, people, shuffle }) {
       // console.log(all_divs[i]);
     }
     if (shuffle) {
-      shuffle_list(all_divs);
+      all_divs = shuffle_list(all_divs).slice();
     }
     setAllDivs(all_divs);
   } else {
