@@ -165,13 +165,13 @@ const config = {
           },
           { to: "faq", label: "FAQ", position: "left" },
           // { to: "/blog", label: "Blog", position: "left" },
-          {
-            to: "https://twitter.com",
-            // label: "Follow us on twitter",
-            position: "right",
-            className: "header-twitter-link",
-            "aria-label": "Twitter page",
-          },
+          // {
+          //   to: "https://twitter.com",
+          //   // label: "Follow us on twitter",
+          //   position: "right",
+          //   className: "header-twitter-link",
+          //   "aria-label": "Twitter page",
+          // },
           {
             to: "https://www.google.com",
             // label: "GitHub",
