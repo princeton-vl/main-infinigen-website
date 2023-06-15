@@ -1,21 +1,15 @@
 ---
-id: '"Hello World" Tutorial'
-sidebar_label: "Hello World"
+id: "Hello World Example"
+sidebar_label: "Hello World Example"
 sidebar_position: 3
 slug: /helloworld.mdx
 ---
 
 import AssetPreview from "../src/components/AssetPreview";
 
-In this tutorial, we will show you how to generate a single image with Infinigen, with depth and surface normal annotations.
+## Instructions
 
-This tutorial does not require a GPU, and assumes all optional compilation steps were skipped.
-
-:::caution Memory Requirements
-
-sd
-
-:::
+In this tutorial, we will show you how to generate a single image with Infinigen, with depth and surface normal annotations:
 
 <AssetPreview
   image_urls={[
@@ -25,9 +19,48 @@ sd
   ]}
 />
 
+This tutorial does not require a GPU, and assumes all optional compilation steps were skipped.
+
+:::caution Memory Requirements
+
+This tutorial requires at least 20GB of CPU memory.
+
+:::
+
+To generate this image, run:
+
 ```bash
 python -m tools.manage_datagen_jobs --num_scenes 1 --specific_seed 46fa3103 \
--o test_$RANDOM -p full/render_image.num_samples=200  --cleanup none \
+-o outputs -p full/render_image.num_samples=200  --cleanup none \
 --pipeline_configs local_16GB monocular blender_gt --config desert fast_terrain_assets \
---wandb disabled --pipeline_overrides LocalScheduleHandler.use_gpu=True
+--wandb disabled --pipeline_overrides LocalScheduleHandler.use_gpu=False
 ```
+
+The full pipeline should take 20 minutes to 1 hour.
+
+Once the pipeline is finished running, all steps will show as succeeded:
+
+```bash
+------------------------------------------------------------
+test_13180 06/15 08:09AM -> 06/15 08:16AM
+concurrent_max                 : 1
+disk_usage                     : 0.86
+succeeded/all                  : 5
+succeeded/blendergt            : 1
+succeeded/coarse               : 1
+succeeded/fineterrain          : 1
+succeeded/populate             : 1
+succeeded/short                : 1
+------------------------------------------------------------
+```
+
+The resulting images and dense annotations will be located in: `outputs/46fa3103/frames_0_0_0001_0`
+
+## Understanding the command
+
+- `manage_datagen_jobs` is the primary python script with which we launch data-generation jobs
+- `-p full/render_image.num_samples=200` sets the number of render samples to 200
+- `--pipeline_configs local_16GB monocular blender_gt` load settings specified in worldgen/tools/pipeline_configs/\*.gin:
+  - local_16GB.gin: Use configurations designed for a ~16GB computer.
+  - monocular.gin: Rendering one image, at a single timestep.
+  - blender_gt.gin: Generate dense annotations using blender's cycles rendering engine.
