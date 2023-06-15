@@ -52,14 +52,9 @@ bash install.sh
 If you want to run with CUDA, compile on a CUDA machine.
 :::caution Troubleshooting
 
-If the above didnt work for you, or you wish to rebuild part of the project, below are instructions for manually compiling the terrain-related C++ code
-
+If you want to run without non-Blender groundtruth compilation and without CUDA terrain even on a CUDA machine, run
 ```
-cd /worldgen/terrain/cpp_utils
-# on linux including ionic
-blender-3.1.2-linux-x64/3.1/python/bin/python3.10 setup_linux.py build_ext --inplace
-# or the following on Mac
-CC="${HOMEBREW_PREFIX}/opt/llvm/bin/clang++" /path/to/Blender.app/Contents/Resources/3.1/python/bin/python3.10 setup_macos.py build_ext --inplace
+bash install_simple.sh
 ```
 :::
 ## Setup for Windows
