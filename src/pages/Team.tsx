@@ -60,7 +60,7 @@ function ContributorsList({ children, people, shuffle }) {
     setAllDivs(all_divs);
   } else {
     console.log("Second");
-    all_divs = allDivs;
+    all_divs = allDivs.slice();
   }
   console.log(all_divs);
 
