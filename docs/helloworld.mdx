@@ -27,11 +27,17 @@ This tutorial requires at least 20GB of CPU memory.
 
 :::
 
+:::caution Reproducibility
+
+The placement of assets may look different due to package version difference
+
+:::
+
 To generate this image, run:
 
 ```bash
 python -m tools.manage_datagen_jobs --num_scenes 1 --specific_seed 46fa3103 \
--o outputs -p full/render_image.num_samples=200  --cleanup none \
+-o outputs -p full/render_image.num_samples=200  OpaqueSphericalMesher.pixels_per_cube=3 --cleanup none \
 --pipeline_configs local_16GB monocular blender_gt --config desert fast_terrain_assets \
 --wandb disabled --pipeline_overrides LocalScheduleHandler.use_gpu=False
 ```
@@ -59,7 +65,7 @@ The resulting images and dense annotations will be located in: `outputs/46fa3103
 ## Understanding the command
 
 - `manage_datagen_jobs` is the primary python script with which we launch data-generation jobs
-- `-p full/render_image.num_samples=200` sets the number of render samples to 200
+- `-p full/render_image.num_samples=200 OpaqueSphericalMesher.pixels_per_cube=3` sets the number of render samples to 200 and sets terrain face size to 3 pixels
 - `--pipeline_configs local_16GB monocular blender_gt` load settings specified in worldgen/tools/pipeline_configs/\*.gin:
   - local_16GB.gin: Use configurations designed for a ~16GB computer.
   - monocular.gin: Rendering one image, at a single timestep.
