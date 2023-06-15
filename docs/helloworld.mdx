@@ -1,5 +1,5 @@
 ---
-id: "Hello World"
+id: '"Hello World" Tutorial'
 sidebar_label: "Hello World"
 sidebar_position: 3
 slug: /helloworld.mdx
@@ -7,7 +7,15 @@ slug: /helloworld.mdx
 
 import AssetPreview from "../src/components/AssetPreview";
 
-We can include image viewers like this directly in markdown:
+In this tutorial, we will show you how to generate a single image with Infinigen, with depth and surface normal annotations.
+
+This tutorial does not require a GPU, and assumes all optional compilation steps were skipped.
+
+:::caution Memory Requirements
+
+sd
+
+:::
 
 <AssetPreview
   image_urls={[
@@ -16,3 +24,10 @@ We can include image viewers like this directly in markdown:
     "hello_world/Normals.jpg",
   ]}
 />
+
+```bash
+python -m tools.manage_datagen_jobs --num_scenes 1 --specific_seed 46fa3103 \
+-o test_$RANDOM -p full/render_image.num_samples=200  --cleanup none \
+--pipeline_configs local_16GB monocular blender_gt --config desert fast_terrain_assets \
+--wandb disabled --pipeline_overrides LocalScheduleHandler.use_gpu=True
+```
