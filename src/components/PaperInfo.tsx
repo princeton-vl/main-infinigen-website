@@ -8,9 +8,13 @@ import styles from "../pages/index.module.css";
 export default function PaperInfo(): JSX.Element {
   const bibtex =
     "\
-  Bibtex will need to be put \n\
-  in this text box \n\
-  conference on cv and pattern recog 2023";
+@inproceedings{raistrick2023infinite,\n\
+  title={Infinite Photorealistic Worlds Using Procedural Generation},\n\
+  author={Raistrick, Alexander and Lipson, Lahav and Ma, Zeyu and Mei, Lingjie and Wang, Mingzhe and Zuo, Yiming and Kayan, Karhan and Wen, Hongyu and Han, Beining and Wang, Yihan and others},\n\
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},\n\
+  pages={12630--12641},\n\
+  year={2023}\n\
+}";
   return (
     <section className={clsx("margin-top--lg")}>
       <div className={"container " + styles.stay_within_navbar}>
