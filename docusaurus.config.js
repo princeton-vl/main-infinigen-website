@@ -133,20 +133,20 @@ const config = {
           },
           {
             to: "/docs-documentation/begin", // ./docs-documentation/Intro.md
-            label: "Documentation (Coming Soon)",
+            label: "Docs (Coming Soon)",
             position: "left",
             activeBaseRegex: `/docs-documentation/`,
             className: "documentation-coming-soon",
           },
-          {
-            to: "/docs-get-started/gallery", // ./docs-documentation/Intro.md
-            label: "Downloads",
-            position: "left",
-            activeBaseRegex: `/docs-get-started/`,
-          },
+          // {
+          //   to: "/docs-get-started/gallery", // ./docs-documentation/Intro.md
+          //   label: "Downloads",
+          //   position: "left",
+          //   activeBaseRegex: `/docs-get-started/`,
+          // },
           // { to: "InfGridGallery", label: "Gallery", position: "left" },
           {
-            to: "https://github.com/princeton-vl",
+            to: "https://github.com/princeton-vl/infinigen",
             label: "GitHub",
             position: "left",
             // className: "header-github-link",
