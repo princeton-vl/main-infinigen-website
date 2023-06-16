@@ -164,7 +164,7 @@ const config = {
             position: "left",
             activeBaseRegex: `/docs-contributing/`,
           },
-          { to: "faq", label: "FAQ", position: "left" },
+          // { to: "faq", label: "FAQ", position: "left" },
           // { to: "/blog", label: "Blog", position: "left" },
           // {
           //   to: "https://twitter.com",
