@@ -1,27 +1,19 @@
 ---
-sidebar_label: "Regular Installation Instructions"
+sidebar_label: "Installation"
 sidebar_position: 1
 ---
 
 # Installation
 
-Our installation instructions have been tested on the following systems:
+Installation is tested and working on the following platforms:
 
 - Apple Silicon (M1/M2) (≤ MacOS Monterey)
 - Ubuntu 22
 - Windows WSL
 
-:::caution Known issues
-
-- Apple Silicon (M1/M2) (MacOS Ventura)
+For x86 architectures, you can also try our [Docker intructions](./docker.mdx). Apple Silicon (M1/M2) with MacOS Ventura may face problems finding required C headers, more coming soon. 
 
 :::
-
-For x86 architectures, we also have [Docker intructions](./docker.mdx)
-
-For help with installation, please post to our Github issues page.
-
-## Setup
 
 Clone the infinigen repo:
 
@@ -36,30 +28,23 @@ conda create --name infinigen python=3.10
 conda activate infinigen
 ```
 
-:::tip (Optional, Ubuntu)
-In order to use our OpenGL-based system for producing dense annotations, install the following dependencies:
+To use our OpenGL ground-truth system you must install the following dependencies.
 
 ```
 sudo apt-get install libglm-dev libglew-dev libglfw3-dev libgles2-mesa-dev zlib1g-dev
 ```
 
-Alternatively, we support generating dense annotations from Blender's built-in render passes.
-:::
+Use appropriate installation commands for your platform. If you do not have sudo access, ask your administrator, or install them using conda and set your $CPATH (more coming soon). If you do not install them, installation of `process_mesh` will crash, but this is fine so long as you use `blender_gt` not `opengl_gt`.
 
-Finally, run the install script
+Finally, run the install script.
 
 ```
 bash install.sh
 ```
 
-If you want CUDA optimizations, simply run install.sh on a device with a CUDA-enabled graphics card.
-:::caution Troubleshooting
+To use GPU-accelerated terrain, you must run `install.sh` on a machine with a GPU and CUDA installed. To disable all GPU-oriented or advanced features, run `SIMPLE=1 bash install.sh` instead.
 
-If you want to run without OpenGL-based groundtruth compilation and without CUDA terrain even on a CUDA-enabled machine, run
-
-```
-SIMPLE=1 bash install.sh
-```
+Please make a Github Issue for help with any problems. 
 
 :::
 
