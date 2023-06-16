@@ -159,12 +159,13 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
               }
             >
               <div className="row">
-                {/* <div className="col col-sm-12"> */}
-                <img
-                  src={"quad.png"}
-                  // style={{ border: "0.5px solid #1a1e13" }}
-                  className={styles.gt_quad}
-                ></img>
+                <div className="col col--12">
+                  <img
+                    src={"quad.png"}
+                    style={{ border: "0.5px solid #1a1e13" }}
+                    className={styles.gt_quad}
+                  ></img>
+                </div>
                 {/* </div> */}
               </div>
             </Capability>
