@@ -38,12 +38,11 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
               header="Procedural"
               text={
                 <p>
-                  Infinigen generates all assets, including all shapes and
-                  materials, entirely from randomized mathematical rules,
-                  <span className={styles.infinigen_name}> Infinigen</span> does
-                  not relying on external collections of assets. Users have full
+                  Infinigen is a procedural generator that creates everything entirely from randomized mathematical rules, including all shapes and
+                  materials, from macro structures to micro details. 
+                  <span className={styles.infinigen_name}> Infinigen</span> can create unlimited variations. Users have full
                   control the generation of assets by overriding default
-                  parameters for randomization.
+                  parameters of randomization.
                 </p>
               }
             >
