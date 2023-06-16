@@ -132,8 +132,8 @@ export default function Home(): JSX.Element {
       <main>
         <InfinigenHeader />
         <AboutInfinigen />
-        <KeyFeaturesAndCapabilities />
         <PaperInfo />
+        <KeyFeaturesAndCapabilities />
       </main>
     </Layout>
   );
