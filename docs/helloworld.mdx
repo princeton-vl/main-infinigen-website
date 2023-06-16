@@ -23,13 +23,13 @@ This tutorial does not require a GPU, and assumes all optional compilation steps
 
 :::caution Memory Requirements
 
-This tutorial requires at least 20GB of CPU memory.
+These commands consume in excess of 15GB of memory. Both these issues will be resolved soon.
 
 :::
 
 :::caution Reproducibility
 
-The placement of assets (e.g. rocks, plants) may look different depending on dependency version differences. For example, [this is another possible output.](https://infinigen.cs.princeton.edu/hello_world/alternate_image.png)
+You may obtain a rearranged scene due to platform-specific library versions.
 
 :::
 
@@ -42,11 +42,12 @@ The current example does not yet work for Mac OS, we will add more examples soon
 To generate this image, run:
 
 ```bash
-python -m tools.manage_datagen_jobs --num_scenes 1 --specific_seed 46fa3103 \
--o outputs -p full/render_image.num_samples=200  OpaqueSphericalMesher.pixels_per_cube=3 \
-animate_cameras.follow_poi_chance=0 --cleanup none \
---pipeline_configs local_16GB monocular blender_gt --config desert fast_terrain_assets \
---wandb disabled --pipeline_overrides LocalScheduleHandler.use_gpu=False
+cd worldgen
+mkdir outputs
+../blender/blender --background -noaudio --python generate.py -- --seed 3be70e09 --task coarse -g desert simple --output_folder outputs/helloworld/coarse
+../blender/blender --background -noaudio --python generate.py -- --seed 3be70e09 --task populate fine_terrain -g desert simple --input_folder outputs/helloworld/coarse --output_folder outputs/helloworld/fine
+../blender/blender --background -noaudio --python generate.py -- --seed 3be70e09 --task render -g desert simple --input_folder outputs/helloworld/fine --output_folder output/helloworld/frames
+../blender/blender --background -noaudio --python generate.py -- --seed 3be70e09 --task render -g desert simple --input_folder outputs/helloworld/fine --output_folder output/helloworld/frames -p render.render_image_func=@flat/render_image
 ```
 
 For GPU-based rendering, change `LocalScheduleHandler.use_gpu=False` to `True`
