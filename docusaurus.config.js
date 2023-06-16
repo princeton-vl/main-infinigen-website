@@ -197,13 +197,13 @@ const config = {
           {
             title: "Community",
             items: [
-              {
-                label: "Youtube",
-                href: "https://google.com",
-              },
+              // {
+              //   label: "Youtube",
+              //   href: "https://google.com",
+              // },
               {
                 label: "Twitter",
-                href: "https://google.com",
+                href: "https://twitter.com/PrincetonVL",
               },
             ],
           },
@@ -216,7 +216,7 @@ const config = {
               // },
               {
                 label: "GitHub",
-                href: "https://google.com",
+                href: "https://github.com/princeton-vl/infinigen",
               },
             ],
           },
