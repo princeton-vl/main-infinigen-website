@@ -58,10 +58,10 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
               text={
                 <p>
                   <span className={styles.infinigen_name}>Infinigen </span>
-                  provides generators for diverse objects and scenes, currently
-                  focused on the natural world, including plants, animals,
+                  provides generators for diverse objects and scenes in the natural world including plants, animals,
                   terrains, and natural phenomena such as fire, cloud, rain, and
-                  snow.
+                  snow. The current focus on nature is motivated by the observation that mammalian vision evolved in the natural world. 
+                  However, Infinigen is expected to expand over time to cover built environments and artificial objects. 
                 </p>
               }
             >
