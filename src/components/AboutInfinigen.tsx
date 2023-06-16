@@ -38,7 +38,8 @@ export default function AboutInfinigen(): JSX.Element {
               generates diverse high-quality 3D training data. Infinigen is
               based on <a href="https://blender.org">Blender</a> and is free and
               open-source (GPL licensed). Infinigen is being actively developed
-              to expand its capabilities and coverage.
+              to expand its capabilities and coverage. Everyone is welcome to{" "}
+              <a href="./docs-contributing">contribute</a>.
             </p>
             <a
               class="twitter-timeline"
