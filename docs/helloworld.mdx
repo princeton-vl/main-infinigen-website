@@ -15,7 +15,7 @@ In this tutorial, we will show you how to generate a single image with Infinigen
   image_urls={[
     "hello_world/Image.png",
     "hello_world/Depth.png",
-    "hello_world/Normals.jpg",
+    "hello_world/Normals.png",
   ]}
 />
 
@@ -74,7 +74,6 @@ The resulting images and dense annotations will be located in: `outputs/46fa3103
 - `--config desert fast_terrain_assets` load settings specified in worldgen/configs/\*.gin:
   - desert.gin: desert scene
   - fast_terrain_assets.gin: use one terrain tile and run less erosion iterations
-
 
 :::tip Optional
 - If you have a CUDA machine, to have higher resolution and higher quality of terrain, change `LocalScheduleHandler.use_gpu` to `True`, remove `OpaqueSphericalMesher.pixels_per_cube=3` (or smaller) in `-p` and add `high_quality_terrain` in `-g`.

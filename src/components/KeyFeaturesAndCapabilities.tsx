@@ -29,7 +29,7 @@ const Capability = (props) => {
 
 export default function KeyFeaturesAndCapabilities(): JSX.Element {
   return (
-    <section style={{ marginTop: "50px" }}>
+    <section style={{ marginTop: "50px", marginBottom: "50px" }}>
       <div className={"container " + styles.stay_within_navbar}>
         <div style={{ marginBottom: "-50px" }}>
           <h1>Key Features & Capabilities</h1>
