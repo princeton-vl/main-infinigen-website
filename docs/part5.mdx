@@ -25,14 +25,57 @@ Infinigen covers 14 different scene types, each with their own gin configuration
 
 For single scenes, scene types are specified with the `--gin_config` or `-g` flag. 
 For instance, we can generate a coarse terrain for a river scene with:
-```
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="Linux"
+  values={[
+      { label: 'Linux/WSL', value: 'Linux', },
+      { label: 'MacOS', value: 'Mac', },
+  ]}
+>
+<TabItem value="Linux">
+
+```Linux
 ../blender/blender --background -noaudio --python generate.py -- --seed 0 --task coarse --output_folder outputs/dev/coarse --gin_config river
 ```
+
+</TabItem>
+<TabItem value="Mac">
+
+```Mac
+../Blender.app/Contents/MacOS/Blender  --background -noaudio --python generate.py -- --seed 0 --task coarse --output_folder outputs/dev/coarse --gin_config river
+```
+</TabItem>
+</Tabs>
+
 We can then generate a full river scene with populated assets and fine terrain: 
 
-```
+<Tabs
+  defaultValue="Linux"
+  values={[
+      { label: 'Linux/WSL', value: 'Linux', },
+      { label: 'MacOS', value: 'Mac', },
+  ]}
+>
+<TabItem value="Linux">
+
+```Linux
 ../blender/blender --background -noaudio --python generate.py -- --seed 0 --task populate fine_terrain --input_folder outputs/dev/coarse --output_folder outputs/dev/fine --gin_config river
 ```
+
+</TabItem>
+<TabItem value="Mac">
+
+```Mac
+../Blender.app/Contents/MacOS/Blender --background -noaudio --python generate.py -- --seed 0 --task populate fine_terrain --input_folder outputs/dev/coarse --output_folder outputs/dev/fine --gin_config river
+```
+</TabItem>
+</Tabs>
+
+
 
 ### Running Pipelines with Specific Scene Types
 The scene types can also be specified in for a full pipeline using `--config`.
