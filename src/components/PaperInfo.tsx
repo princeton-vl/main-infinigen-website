@@ -78,7 +78,7 @@ export default function PaperInfo(): JSX.Element {
           >
             <a
               className={clsx("button button--info", styles.read_the_paper)}
-              href="https://www.google.com"
+              href="http://arxiv.org/abs/2306.09310"
             >
               <img src="img/paper.svg" className={styles.icon} />
               Read the paper
