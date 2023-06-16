@@ -49,6 +49,8 @@ animate_cameras.follow_poi_chance=0 --cleanup none \
 --wandb disabled --pipeline_overrides LocalScheduleHandler.use_gpu=False
 ```
 
+For GPU-based rendering, change `LocalScheduleHandler.use_gpu=False` to `True`
+
 The full pipeline should take 20 minutes to 1 hour.
 
 Once the pipeline is finished running, all steps will show as succeeded:
