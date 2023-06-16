@@ -56,7 +56,6 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
           <div className="col-sm-6">
             <Capability
               header="Diverse"
-              style={{ border: "0.5px solid #1a1e13" }}
               text={
                 <p>
                   <span className={styles.infinigen_name}>Infinigen </span>
@@ -69,6 +68,7 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
             >
               <img
                 src={"img/diverse.png"}
+                style={{ border: "0.5px solid #1a1e13" }}
                 className={styles.capability_image}
               ></img>
             </Capability>
