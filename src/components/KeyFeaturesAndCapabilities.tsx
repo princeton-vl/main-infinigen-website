@@ -38,12 +38,11 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
               header="Procedural"
               text={
                 <p>
-                  Infinigen generates all assets, including all shapes and
-                  materials, entirely from randomized mathematical rules,
-                  <span className={styles.infinigen_name}> Infinigen</span> does
-                  not relying on external collections of assets. Users have full
+                  Infinigen is a procedural generator that creates everything entirely from randomized mathematical rules, including all shapes and
+                  materials, from macro structures to micro details. 
+                  <span className={styles.infinigen_name}> Infinigen</span> can create unlimited variations. Users have full
                   control the generation of assets by overriding default
-                  parameters for randomization.
+                  parameters of randomization.
                 </p>
               }
             >
@@ -59,10 +58,10 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
               text={
                 <p>
                   <span className={styles.infinigen_name}>Infinigen </span>
-                  provides generators for diverse objects and scenes, currently
-                  focused on the natural world, including plants, animals,
+                  provides generators for diverse objects and scenes in the natural world including plants, animals,
                   terrains, and natural phenomena such as fire, cloud, rain, and
-                  snow.
+                  snow. The current focus on nature is motivated by the observation that mammalian vision evolved in the natural world. 
+                  However, Infinigen is expected to expand over time to cover built environments and artificial objects. 
                 </p>
               }
             >
