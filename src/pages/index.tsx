@@ -126,7 +126,7 @@ export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Princeton Vision & Learning Lab`}
+      title={`Infinigen | Princeton Vision & Learning Lab`}
       description="Description will go into a meta tag in <head />"
     >
       <main>
