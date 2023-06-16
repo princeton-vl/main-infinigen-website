@@ -156,73 +156,14 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
                 </p>
               }
             >
-              <div className={clsx("row", styles.real_vs_fake_imgs)}>
-                <div
-                  className={clsx(
-                    "col-sm-6",
-                    "margin-top--sm",
-                    styles.annotation_example_col
-                  )}
-                >
-                  <div>
-                    <img
-                      style={{ border: "1px solid #1a1e13" }}
-                      src={"img/depth_example.png"}
-                    ></img>
-                  </div>
-                </div>
-                <div
-                  className={clsx(
-                    "col-sm-6",
-                    "margin-top--sm",
-                    styles.annotation_example_col
-                  )}
-                >
-                  <div>
-                    <img
-                      style={{ border: "1px solid #1a1e13" }}
-                      src={"img/surface_normal_example.png"}
-                      className={styles.capability_image}
-                    ></img>
-                  </div>
-                </div>
-              </div>
-              <div
-                className={clsx(
-                  "row",
-                  "margin-top--md",
-                  styles.real_vs_fake_imgs
-                )}
-              >
-                <div
-                  className={clsx(
-                    "col-sm-6",
-                    "margin-top--sm",
-                    styles.annotation_example_col
-                  )}
-                >
-                  <div>
-                    <img
-                      style={{ border: "1px solid #1a1e13" }}
-                      src={"img/segmentation_example.png"}
-                    ></img>
-                  </div>
-                </div>
-                <div
-                  className={clsx(
-                    "col-sm-6",
-                    "margin-top--sm",
-                    styles.annotation_example_col
-                  )}
-                >
-                  <div>
-                    <img
-                      style={{ border: "1px solid #1a1e13" }}
-                      src={"img/flow_example.png"}
-                      className={styles.capability_image}
-                    ></img>
-                  </div>
-                </div>
+              <div className="row">
+                {/* <div className="col col-sm-12"> */}
+                <img
+                  src={"quad.png"}
+                  // style={{ border: "0.5px solid #1a1e13" }}
+                  className={styles.gt_quad}
+                ></img>
+                {/* </div> */}
               </div>
             </Capability>
           </div>
