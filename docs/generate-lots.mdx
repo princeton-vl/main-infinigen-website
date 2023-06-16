@@ -1,0 +1,26 @@
+---
+id: "Generate lots of data"
+sidebar_label: "Generate lots of data"
+sidebar_position: 3
+slug: /generate-lots.mdx
+---
+
+We provide a utility to help generate lots of data. It is highly customizable, with more documentation coming soon. Try out the following commands, or create your own. Each will run several full scenes as demonstrated above. More documentation coming soon.
+
+### Render a videos on a 'local' machine (a desktop workstation, or a single large compute node on which you are directly running the command)
+
+```
+python -m tools.manage_datagen_jobs --output_folder outputs/myjob --num_scenes 50 --pipeline_configs local_64GB monocular_video --cleanup big_files
+```
+
+### Render a batch of of images, starting from a SLURM cluster's head node
+
+```
+python -m tools.manage_datagen_jobs --output_folder outputs/myjob --num_scenes 50 --pipeline_configs slurm monocular --cleanup big_files
+```
+
+### Customization
+
+The `--pipeline_configs` broadly determine the compute resources to be used, and the number of jobs to be run (which determines monocular vs stereo vs video). Options are available in `tools/pipeline_configs`. You must pick one config to determine compute type (ie `local_64GB` or `slurm`) and one to determine the dataset type (such as `monocular` or `monocular_video`).
+
+Run `python -m tools.manage_datagen_jobs --help` for more options.
