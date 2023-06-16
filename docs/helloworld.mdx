@@ -77,6 +77,7 @@ The resulting images and dense annotations will be located in: `outputs/46fa3103
 
 
 :::tip Optional
-If you have a CUDA machine, to have higher resolution and higher quality of terrain, change `LocalScheduleHandler.use_gpu` to `True`, remove `OpaqueSphericalMesher.pixels_per_cube=3` (or smaller) in `-p` and add `high_quality_terrain` in `-g`.
-If you have more time, remove 'fast_terrain_assets' to have more variety of terrain and more erosion patterns.
+- If you have a CUDA machine, to have higher resolution and higher quality of terrain, change `LocalScheduleHandler.use_gpu` to `True`, remove `OpaqueSphericalMesher.pixels_per_cube=3` (or smaller) in `-p` and add `high_quality_terrain` in `-g`.
+- If you have more time, remove `fast_terrain_assets` to have more variety of terrain and more erosion patterns.
+- In this example and next stereo pair example, but not later video example add `-p SphericalMesher.complete_depth_test=0` to skip dense depth test for consistency issue
 :::
