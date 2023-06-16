@@ -86,10 +86,10 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
               header="Real Geometry"
               text={
                 <p>
-                  <span className={styles.infinigen_name}>Infinigen </span>
+                  Infinigen
                   is optimized for computer vision research, particularly 3D
                   vision.
-                  <span className={styles.infinigen_name}>Infinigen</span>
+                  Infinigen 
                   does not use bump/normal-maps, full-transparency, or other
                   techniques which fake geometric detail. All fine details of
                   geometry from{" "}
