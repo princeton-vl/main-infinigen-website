@@ -147,7 +147,7 @@ const config = {
           // { to: "InfGridGallery", label: "Gallery", position: "left" },
           {
             to: "https://github.com/princeton-vl/infinigen",
-            label: "GitHub",
+            label: "GitHub (expected 6/18)",
             position: "left",
             // className: "header-github-link",
             "aria-label": "GitHub repository",
