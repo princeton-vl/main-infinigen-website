@@ -82,7 +82,7 @@ function Example() {
   return (
     <YouTube
       className={styles.youtube_example}
-      videoId="2g811Eo7K8U"
+      videoId="8eldvaN8d0Q"
       opts={opts}
       onReady={onPlayerReady}
     />
