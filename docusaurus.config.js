@@ -133,19 +133,20 @@ const config = {
           },
           {
             to: "/docs-documentation/begin", // ./docs-documentation/Intro.md
-            label: "Documentation",
+            label: "Docs (Coming Soon)",
             position: "left",
             activeBaseRegex: `/docs-documentation/`,
+            className: "documentation-coming-soon",
           },
-          {
-            to: "/docs-get-started/gallery", // ./docs-documentation/Intro.md
-            label: "Downloads",
-            position: "left",
-            activeBaseRegex: `/docs-get-started/`,
-          },
+          // {
+          //   to: "/docs-get-started/gallery", // ./docs-documentation/Intro.md
+          //   label: "Downloads",
+          //   position: "left",
+          //   activeBaseRegex: `/docs-get-started/`,
+          // },
           // { to: "InfGridGallery", label: "Gallery", position: "left" },
           {
-            to: "https://github.com/princeton-vl",
+            to: "https://github.com/princeton-vl/infinigen",
             label: "GitHub",
             position: "left",
             // className: "header-github-link",
@@ -163,7 +164,7 @@ const config = {
             position: "left",
             activeBaseRegex: `/docs-contributing/`,
           },
-          { to: "faq", label: "FAQ", position: "left" },
+          // { to: "faq", label: "FAQ", position: "left" },
           // { to: "/blog", label: "Blog", position: "left" },
           // {
           //   to: "https://twitter.com",
@@ -196,13 +197,13 @@ const config = {
           {
             title: "Community",
             items: [
-              {
-                label: "Youtube",
-                href: "https://google.com",
-              },
+              // {
+              //   label: "Youtube",
+              //   href: "https://google.com",
+              // },
               {
                 label: "Twitter",
-                href: "https://google.com",
+                href: "https://twitter.com/PrincetonVL",
               },
             ],
           },
@@ -215,7 +216,7 @@ const config = {
               // },
               {
                 label: "GitHub",
-                href: "https://google.com",
+                href: "https://github.com/princeton-vl/infinigen",
               },
             ],
           },

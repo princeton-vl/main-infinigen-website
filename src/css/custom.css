@@ -86,7 +86,14 @@
   background: url("@site/static/logos/lab_logo_name.svg") no-repeat;
   content: "";
   display: flex;
-  height: 240px;
-  width: 240px;
-  margin-bottom: -185px;
+  height: 200px;
+  width: 200px;
+  margin-bottom: -157px;
+}
+
+.documentation-coming-soon {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: rgb(111, 111, 111);
 }
