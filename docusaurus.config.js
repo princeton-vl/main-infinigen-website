@@ -173,7 +173,7 @@ const config = {
           //   "aria-label": "Twitter page",
           // },
           {
-            to: "https://www.google.com",
+            to: "https://pvl.cs.princeton.edu/",
             // label: "GitHub",
             position: "right",
             className: "header-lab-link",
