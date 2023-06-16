@@ -9,8 +9,8 @@ slug: /part2
 
 To get started, do the following to generate a coarse terrain:
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 <Tabs
   defaultValue="Linux"
@@ -33,6 +33,7 @@ cd worldgen
 cd worldgen
 ../Blender.app/Contents/MacOS/Blender --background -noaudio --python generate.py -- --seed 0 --task coarse --output_folder outputs/dev/coarse
 ```
+
 </TabItem>
 </Tabs>
 
@@ -65,6 +66,7 @@ After this, do the following to generate a fine terrain based on camera views:
 cd worldgen
 ../Blender.app/Contents/MacOS/Blender --background -noaudio --python generate.py -- --seed 0 --task populate fine_terrain --input_folder outputs/dev/coarse --output_folder outputs/dev/fine
 ```
+
 </TabItem>
 </Tabs>
 
@@ -92,18 +94,3 @@ python -m tools.manage_datagen_jobs --output_folder outputs/myjob --num_scenes 5
 ```
 
 In single frame case, add `-p SphericalMesher.complete_depth_test=0` to above two commands to skip dense pixel wise complete depth test
-
-## Setting up desktop ssh access
-
-```
-sudo apt-get install openssh-server
-sudo systemctl enable ssh --now
-```
-
-Now do `hostname -I` and add the result to Alex's Lab Logistics spreadsheet. The IP may change when you reboot, which will require you to repeat this step. Ideally, avoid rebooting the PC.
-
-## Check for files with no Copyright statement
-
-```
-grep --include \*.py --include \*.cpp --include \*.h -riL "Copyright" worldgen
-```
