@@ -43,7 +43,7 @@ In order to use our OpenGL-based system for producing dense annotations, install
 sudo apt-get install libglm-dev libglew-dev libglfw3-dev libgles2-mesa-dev zlib1g-dev
 ```
 
-Alternatively, we support generating ground-truth from Blender's built-in render passes.
+Alternatively, we support generating dense annotations from Blender's built-in render passes.
 :::
 
 Finally, run the install script
@@ -52,10 +52,10 @@ Finally, run the install script
 bash install.sh
 ```
 
-If you want to run with CUDA, compile on a CUDA machine.
+If you want CUDA optimizations, simply run install.sh on a device with a CUDA-enabled graphics card.
 :::caution Troubleshooting
 
-If you want to run without OpenGL-based groundtruth compilation and without CUDA terrain even on a CUDA machine, run
+If you want to run without OpenGL-based groundtruth compilation and without CUDA terrain even on a CUDA-enabled machine, run
 
 ```
 SIMPLE=1 bash install.sh
