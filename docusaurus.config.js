@@ -125,15 +125,15 @@ const config = {
           srcDark: "logos/INFINIGEN_Dark_Background.svg",
         },
         items: [
-          // {
-          //   type: "docSidebar",
-          //   sidebarId: "tutorialSidebar",
-          //   position: "left",
-          //   label: "Get Started",
-          // },
+          {
+            type: "docSidebar",
+            sidebarId: "tutorialSidebar",
+            position: "left",
+            label: "Get Started",
+          },
           {
             to: "/docs-documentation/begin", // ./docs-documentation/Intro.md
-            label: "Code (Coming 06/16/23)",
+            label: "Docs (Coming Soon)",
             position: "left",
             activeBaseRegex: `/docs-documentation/`,
             className: "documentation-coming-soon",
@@ -145,25 +145,25 @@ const config = {
           //   activeBaseRegex: `/docs-get-started/`,
           // },
           // { to: "InfGridGallery", label: "Gallery", position: "left" },
-          // {
-          //   to: "https://github.com/princeton-vl/infinigen",
-          //   label: "GitHub",
-          //   position: "left",
-          //   // className: "header-github-link",
-          //   "aria-label": "GitHub repository",
-          // },
+          {
+            to: "https://github.com/princeton-vl/infinigen",
+            label: "GitHub",
+            position: "left",
+            // className: "header-github-link",
+            "aria-label": "GitHub repository",
+          },
           {
             to: "/docs-team/begin", // ./docs-documentation/Intro.md
             label: "Team",
             position: "left",
             activeBaseRegex: `/docs-team/`,
           },
-          // {
-          //   to: "/docs-contributing/begin", // ./docs-documentation/Intro.md
-          //   label: "Contributing",
-          //   position: "left",
-          //   activeBaseRegex: `/docs-contributing/`,
-          // },
+          {
+            to: "/docs-contributing/begin", // ./docs-documentation/Intro.md
+            label: "Contributing",
+            position: "left",
+            activeBaseRegex: `/docs-contributing/`,
+          },
           // { to: "faq", label: "FAQ", position: "left" },
           // { to: "/blog", label: "Blog", position: "left" },
           // {
