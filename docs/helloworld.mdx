@@ -70,3 +70,8 @@ The resulting images and dense annotations will be located in: `outputs/46fa3103
   - local_16GB.gin: Use configurations designed for a ~16GB computer.
   - monocular.gin: Rendering one image, at a single timestep.
   - blender_gt.gin: Generate dense annotations using blender's cycles rendering engine.
+
+:::tip Optional
+If you have a CUDA machine, to have higher resolution and higher quality of terrain, remove `OpaqueSphericalMesher.pixels_per_cube=3` (or smaller) in `-p` and add `high_quality_terrain` in `-g`.
+If you have more time, remove 'fast_terrain_assets' to have more variety of terrain and more erosion patterns.
+:::
