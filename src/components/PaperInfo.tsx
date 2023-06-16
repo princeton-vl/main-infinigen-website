@@ -30,23 +30,28 @@ export default function PaperInfo(): JSX.Element {
         <div className={"row"}>
           <div className={clsx("col col--12", styles.author_list)}>
             <span>
-              <a href="https://www.google.com">Alexander Raistrick*</a>,{" "}
-              <a href="https://www.google.com">Lahav Lipson*</a>,{" "}
-              <a href="https://www.google.com">Zeyu Ma*</a> ( * equal
+              <a href="http://araistrick.com">Alexander Raistrick*</a>,{" "}
+              <a href="https://www.lahavlipson.com">Lahav Lipson*</a>,{" "}
+              <a href="https://mazeyu.github.io">Zeyu Ma*</a> ( * equal
               contribution, alphabetical order )
               <br />
-              <a href="https://www.google.com">Lingjie Mei</a>,{" "}
-              <a href="https://www.google.com">Mingzhe Wang</a>,{" "}
-              <a href="https://www.google.com">Yiming Zuo</a>,{" "}
-              <a href="https://www.google.com">Karhan Kayan</a>,{" "}
-              <a href="https://www.google.com">Hongyu Wen</a>,{" "}
-              <a href="https://www.google.com">Beining Han</a>, <br />
-              <a href="https://www.google.com">Yihan Wang</a>,
-              <a href="https://www.google.com">Alejandro Newell</a>,{" "}
-              <a href="https://www.google.com">Hei Law</a>,{" "}
-              <a href="https://www.google.com">Ankit Goyal</a>,{" "}
-              <a href="https://www.google.com">Kaiyu Yang</a>,{" "}
-              <a href="https://www.google.com">Jia Deng</a>
+              <a href="https://www.cs.princeton.edu/~lm5483/">
+                Lingjie Mei
+              </a>,{" "}
+              <a href="https://www.cs.princeton.edu/~mingzhew">Mingzhe Wang</a>,{" "}
+              <a href="https://zuoym15.github.io">Yiming Zuo</a>,{" "}
+              <a href="https://kkayan.com">Karhan Kayan</a>,{" "}
+              <a href="https://hermera.github.io">Hongyu Wen</a>,{" "}
+              <a href="https://pvl.cs.princeton.edu/people.html">Beining Han</a>
+              , <br />
+              <a href="https://pvl.cs.princeton.edu/people.html">Yihan Wang</a>,
+              <a href="http://www-personal.umich.edu/~alnewell/index.html">
+                Alejandro Newell
+              </a>
+              , <a href="https://heilaw.github.io">Hei Law</a>,{" "}
+              <a href="https://imankgoyal.github.io">Ankit Goyal</a>,{" "}
+              <a href="https://yangky11.github.io">Kaiyu Yang</a>,{" "}
+              <a href="http://www.cs.princeton.edu/~jiadeng">Jia Deng</a>
             </span>
           </div>
         </div>
