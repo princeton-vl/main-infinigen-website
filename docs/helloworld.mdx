@@ -29,13 +29,13 @@ This tutorial requires at least 20GB of CPU memory.
 
 :::caution Reproducibility
 
-The placement of assets may look different due to package version difference.
+The placement of assets (e.g. rocks, plants) may look different due to package version differences.
 
 :::
 
 :::caution System
 
-The current command does not work for Mac OS yet, please read the page on stereo pairs for solutions.
+The current example does not yet work for Mac OS, we will add more examples soon.
 
 :::
 
@@ -55,7 +55,7 @@ Once the pipeline is finished running, all steps will show as succeeded:
 
 ```bash
 ------------------------------------------------------------
-test_13180 06/15 08:09AM -> 06/15 08:16AM
+<output_folder> 06/15 08:09AM -> 06/15 08:16AM
 concurrent_max                 : 1
 disk_usage                     : 0.86
 succeeded/all                  : 5
@@ -71,18 +71,21 @@ The resulting images and dense annotations will be located in: `outputs/46fa3103
 
 ## Understanding the command
 
-- `manage_datagen_jobs` is the primary python script with which we launch data-generation jobs
-- `-p full/render_image.num_samples=200 OpaqueSphericalMesher.pixels_per_cube=3 animate_cameras.follow_poi_chance=0` sets the number of render samples to 200, sets terrain face size to 3 pixels, and disable object-following camera for simplicity
-- `--pipeline_configs local_16GB monocular blender_gt` load settings specified in worldgen/tools/pipeline_configs/\*.gin:
-  - local_16GB.gin: Use configurations designed for a ~16GB computer.
-  - monocular.gin: Rendering one image, at a single timestep.
+- `manage_datagen_jobs` is the primary python script with which we launch data-generation jobs.
+- `--specific_seed 46fa3103` sets the initial random seed.
+- `-p full/render_image.num_samples=200 OpaqueSphericalMesher.pixels_per_cube=3 animate_cameras.follow_poi_chance=0` sets the number of render samples to 200, sets terrain face size to 3 pixels, and disables the object-following camera for simplicity.
+- `--pipeline_configs local_16GB monocular blender_gt` loads settings specified in worldgen/tools/pipeline_configs/\*.gin:
+  - local_16GB.gin: Use configurations designed for a ~16GB memory computer.
+  - monocular.gin: Render one image, at a single timestep.
   - blender_gt.gin: Generate dense annotations using blender's cycles rendering engine.
-- `--config desert fast_terrain_assets` load settings specified in worldgen/configs/\*.gin:
+- `--config desert fast_terrain_assets` loads settings specified in worldgen/configs/\*.gin:
   - desert.gin: desert scene
-  - fast_terrain_assets.gin: use one terrain tile and run less erosion iterations
+  - fast_terrain_assets.gin: use one terrain tile and run fewer erosion iterations.
 
 :::tip Optional
-- If you have a CUDA machine, to have higher resolution and higher quality of terrain, change `LocalScheduleHandler.use_gpu` to `True`, remove `OpaqueSphericalMesher.pixels_per_cube=3` (or smaller) in `-p` and add `high_quality_terrain` in `-g`.
-- If you have more time, remove `fast_terrain_assets` to have more variety of terrain and more erosion patterns.
-- In this example and next stereo pair example, but not later video example add `-p SphericalMesher.complete_depth_test=0` to skip dense depth test for consistency issue
+
+- If you have a CUDA-enabled graphics card and would like higher resolution and higher quality terrain, change `LocalScheduleHandler.use_gpu` to `True`, remove `OpaqueSphericalMesher.pixels_per_cube=3` (or smaller) in `-p` and add `high_quality_terrain` in `-g`.
+- Remove `fast_terrain_assets` to have more variety of terrain and more erosion patterns.
+- In this example add `-p SphericalMesher.complete_depth_test=0` to skip dense depth test for consistency issue.
+
 :::

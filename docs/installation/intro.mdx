@@ -35,11 +35,14 @@ Create a conda environment:
 conda create --name infinigen python=3.10
 conda activate infinigen
 ```
+
 :::tip (Optional, Ubuntu)
 In order to use our OpenGL-based system for producing dense annotations, install the following dependencies:
+
 ```
 sudo apt-get install libglm-dev libglew-dev libglfw3-dev libgles2-mesa-dev zlib1g-dev
 ```
+
 Alternatively, we support generating ground-truth from Blender's built-in render passes.
 :::
 
@@ -52,11 +55,14 @@ bash install.sh
 If you want to run with CUDA, compile on a CUDA machine.
 :::caution Troubleshooting
 
-If you want to run without non-Blender groundtruth compilation and without CUDA terrain even on a CUDA machine, run
+If you want to run without OpenGL-based groundtruth compilation and without CUDA terrain even on a CUDA machine, run
+
 ```
 SIMPLE=1 bash install.sh
 ```
+
 :::
+
 ## Setup for Windows
 
 Instruction for compiling Infinigen on a Windows system.
@@ -65,13 +71,11 @@ Instruction for compiling Infinigen on a Windows system.
 
 [Install](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview) WSL 2 (with WSLg) and Ubuntu. Make sure that you are either on the latest version of Windows 10 or on Windows 11.
 
+In Powershell, run `wsl -l -v` to verify that WSL is using version 2. If not, refer to [this](https://learn.microsoft.com/en-us/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2.) guide on upgrading.
 
-In Powershell, run ```wsl -l -v``` to verify that WSL is using version 2. If not, refer to [this](https://learn.microsoft.com/en-us/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2.) guide on upgrading.
+In Powershell, run `ubuntu` to enter the Linux subsystem.
 
-
-In Powershell, run ```ubuntu``` to enter the Linux subsystem.
-
-Verify that ```echo $DISPLAY``` returns ```:0```. 
+Verify that `echo $DISPLAY` returns `:0`.
 
 If not, WSLg was not properly set up. If you had previous installations of WSL/Ubuntu, try uninstalling and doing a fresh install of both. You may proceed without WSLg, but the OpenGL ground truth will not work. Scene and asset generation will still run normally and we support alternative generation of the ground-truth from Blender's built-in render passes.
 
@@ -79,12 +83,15 @@ If not, WSLg was not properly set up. If you had previous installations of WSL/U
 Follow the instructions [here](https://docs.nvidia.com/cuda/wsl-user-guide/index.html#cuda-support-for-wsl-2) to install CUDA on WSL2. This step can be skipped if not using OpenGL.
 :::
 Install Anaconda in WSL
+
 ```
 wget https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh
 ```
+
 ```
 bash Anaconda3-2023.03-1-Linux-x86_64.sh
 ```
+
 Clone the Infinigen repo
 
 ```
@@ -102,13 +109,15 @@ conda activate infinigen
 
 :::tip (Optional)
 In order to use our OpenGL-based system for producing dense annotations, install the following dependencies:
+
 ```
 sudo apt-get install libglm-dev libglew-dev libglfw3-dev libgles2-mesa-dev zlib1g-dev
 ```
+
 :::
 
-Finally, run the install script in ```/infinigen/```
+Finally, run the install script in `/infinigen/`
+
 ```
 bash install.sh
 ```
-
