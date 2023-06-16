@@ -9,10 +9,32 @@ slug: /part2
 
 To get started, do the following to generate a coarse terrain:
 
-```
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="Linux"
+  values={[
+      { label: 'Linux/WSL', value: 'Linux', },
+      { label: 'MacOS', value: 'Mac', },
+  ]}
+>
+<TabItem value="Linux">
+
+```Linux
 cd worldgen
 ../blender/blender --background -noaudio --python generate.py -- --seed 0 --task coarse --output_folder outputs/dev/coarse
 ```
+
+</TabItem>
+<TabItem value="Mac">
+
+```Mac
+cd worldgen
+../Blender.app/Contents/MacOS/Blender --background -noaudio --python generate.py -- --seed 0 --task coarse --output_folder outputs/dev/coarse
+```
+</TabItem>
+</Tabs>
 
 This will produce a file at `outputs/dev/coarse/scene.blend`, which you can inspect in blender.
 
@@ -23,9 +45,28 @@ Then, on a machine with a display, open the produced blender file to inspect res
 
 After this, do the following to generate a fine terrain based on camera views:
 
-```
+<Tabs
+  defaultValue="Linux"
+  values={[
+      { label: 'Linux/WSL', value: 'Linux', },
+      { label: 'MacOS', value: 'Mac', },
+  ]}
+>
+<TabItem value="Linux">
+
+```Linux
 ../blender/blender --background -noaudio --python generate.py -- --seed 0 --task populate fine_terrain --input_folder outputs/dev/coarse --output_folder outputs/dev/fine
 ```
+
+</TabItem>
+<TabItem value="Mac">
+
+```Mac
+cd worldgen
+../Blender.app/Contents/MacOS/Blender --background -noaudio --python generate.py -- --seed 0 --task populate fine_terrain --input_folder outputs/dev/coarse --output_folder outputs/dev/fine
+```
+</TabItem>
+</Tabs>
 
 "main.frames" can be any frame in the blend file
 if you want to subdivide multi view, which may be useful for video, set, e.g., 'main.frames = [1, 2]'

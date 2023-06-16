@@ -9,9 +9,34 @@ slug: /part3
 
 In ```/infinigen/worldgen/```, run 
 
-```
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="Linux"
+  values={[
+      { label: 'Linux/WSL', value: 'Linux', },
+      { label: 'MacOS', value: 'Mac', },
+  ]}
+>
+<TabItem value="Linux">
+
+```Linux
 ../blender/blender --background -noaudio --python tools/asset_grid.py -- -f CarnivoreFactory -n 10 -r 1024x1024 -s --gpu
 ```
+
+</TabItem>
+<TabItem value="Mac">
+
+```Mac
+../Blender.app/Contents/MacOS/Blender --background -noaudio --python tools/asset_grid.py -- -f CarnivoreFactory -n 10 -r 1024x1024 -s --gpu
+```
+
+</TabItem>
+</Tabs>
+
+
+
 This will generate 10 different carnivore assets, each with a .blend file and image render, which can be inspected in ```/worldgen/outputs```.
 
 ```-f``` controls the type of asset generated. ```-n``` controls how many different assets are generated. ```-r``` controls the resolution
@@ -95,14 +120,25 @@ Some factories may be deprecated or only used to build other assets.
 
 To pre-generate assets locally:
 
-```
+<Tabs
+  defaultValue="Linux"
+  values={[
+      { label: 'Linux/WSL', value: 'Linux', },
+      { label: 'MacOS', value: 'Mac', },
+  ]}
+>
+<TabItem value="Linux">
+
+```Linux
 ../blender/blender --background -noaudio --python tools/generate_terrain_assets.py -- -f ~/render/assets
 ```
 
-To pre-generate assets on a SLURM cluster
+</TabItem>
+<TabItem value="Mac">
 
-```
-python tools/submit_terrain_assets.py -b ../blender/blender -f "/n/fs/pvl-progen/terrain-assets/FOLDER" -s 0 -e NUMBER
+```Mac
+../Blender.app/Contents/MacOS/Blender --background -noaudio --python tools/generate_terrain_assets.py -- -f ~/render/assets
 ```
 
-Replace FOLDER and NUMBER 
+</TabItem>
+</Tabs>
