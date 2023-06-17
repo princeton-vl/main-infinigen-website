@@ -24,33 +24,6 @@ function shuffle_list(array: any[]) {
   return array;
 }
 
-interface Props {
-  name: string;
-  description: string;
-  filename: string;
-  website: string;
-}
-
-const Contributor: React.FC<Props> = (props) => {
-  const { name, description, filename, website } = props;
-
-  return (
-    <div key={name}>
-      <img
-        className="avatar__photo"
-        key={filename}
-        src={
-          "https://infinigen.cs.princeton.edu/contributors/" +
-          filename +
-          "?time=" +
-          new Date()
-        }
-      />
-      {name}
-    </div>
-  );
-};
-
 function ContributorsList({ children, people, shuffle }) {
   const renderCounter = useRef(0);
   renderCounter.current = renderCounter.current + 1;
@@ -94,6 +67,33 @@ function ContributorsList({ children, people, shuffle }) {
   return <div>{all_divs}</div>;
 }
 
+interface Props {
+  name: string;
+  description: string;
+  filename: string;
+  website: string;
+}
+
+const Contributor: React.FC<Props> = (props) => {
+  const { name, description, filename, website } = props;
+
+  return (
+    <div key={name}>
+      <img
+        className="avatar__photo"
+        key={filename}
+        src={
+          "https://infinigen.cs.princeton.edu/contributors/" +
+          filename +
+          "?time=" +
+          new Date()
+        }
+      />
+      {name}
+    </div>
+  );
+};
+
 export default function Team({ children }) {
   const { siteConfig } = useDocusaurusContext();
 
@@ -120,15 +120,20 @@ export default function Team({ children }) {
     },
   ];
 
+  const shuffled = shuffle_list(people);
+
   return (
     <>
       <div className="row">
         <div className="col col--3"></div>
         <div className="col col--6">
           {/* <ContributorsList shuffle={true} people={}></ContributorsList> */}
-          {shuffle_list(people).map((person) => (
-            <Contributor {...person} key={person.name} />
-          ))}
+          {/* {shuffle_list(people).map((person) => ( */}
+          {/* <Contributor {...person} key={person.name} /> */}
+          {/* ))} */}
+          <Contributor {...shuffled[0]} />
+          <Contributor {...shuffled[1]} />
+          <Contributor {...shuffled[2]} />
         </div>
       </div>
     </>
