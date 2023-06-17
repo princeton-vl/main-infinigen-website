@@ -72,10 +72,12 @@ Different configurations may result in large memory spikes, or very long runtime
 
 Please check the [Github issues page](https://github.com/princeton-vl/infinigen/issues) for help debugging.
 
-Before posting a new issue, please:
+Before posting a new issue, please include:
 
-- add `--debug` to generate.py or manage_datagen_jobs for more detailed logs in stdout. Include these logs in your report.
-- Include your compute platform:
+- stdout logs after running with
+  - `--debug`
+  - `/usr/bin/time -v`
+- your compute platform:
   - Operating System
   - Memory
   - Graphics Card (if any)
