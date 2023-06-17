@@ -149,7 +149,7 @@ const config = {
             to: "https://github.com/princeton-vl/infinigen",
             label: "GitHub (expected 6/18)",
             position: "left",
-            className: "documentation-coming-soon",
+            //className: "documentation-coming-soon",
             "aria-label": "GitHub repository",
           },
           {
