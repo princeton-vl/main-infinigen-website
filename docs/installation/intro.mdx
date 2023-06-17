@@ -11,7 +11,7 @@ Installation is tested and working on the following platforms:
 - Ubuntu 22
 - Windows WSL
 
-For x86 architectures, you can also try our [Docker intructions](./docker.mdx). Apple Silicon (M1/M2) with MacOS Ventura may face problems finding required C headers, more coming soon. 
+For x86 architectures, you can also try our [Docker intructions](./docker.mdx). Apple Silicon (M1/M2) with MacOS Ventura may face problems finding required C headers, more coming soon.
 
 Clone the infinigen repo:
 
@@ -26,12 +26,6 @@ conda create --name infinigen python=3.10
 conda activate infinigen
 ```
 
-To use our optional OpenGL ground-truth system you must install the following dependencies.
-
-```
-sudo apt-get install libglm-dev libglew-dev libglfw3-dev libgles2-mesa-dev zlib1g-dev
-```
-
 Use appropriate installation commands for your platform. If you do not have sudo access, ask your administrator, or install them using conda and set your $CPATH (more coming soon). If you do not install them, installation of `process_mesh` will crash, but this is fine so long as you use `blender_gt` not `opengl_gt`.
 
 Finally, run the install script.
@@ -42,7 +36,32 @@ bash install.sh
 
 To use GPU-accelerated terrain, you must run `install.sh` on a machine with a GPU and CUDA installed. To disable all GPU-oriented or advanced features, run `SIMPLE=1 bash install.sh` instead.
 
-Please make a Github Issue for help with any problems. 
+Please make a Github Issue for help with any problems.
+
+### (Optional) OpenGL Ground Truth Installation
+
+The above default install instructions enable you to run the full Infinigen scene generation system, but will only support the `blender_gt` ground truth config.
+
+This section will allow you to use our own `opengl_gt` ground truth extraction config, which avoids rendering twice in blender, and provides additional labels such occlusion boundaries, sub-object segmentation, 3D flow and easy 3D bounding boxes.
+
+This section is intended only for power-users, and is currently _only supported on Linux_.
+
+```
+git submodule init
+git submodule update
+sudo apt-get install libglm-dev libglew-dev libglfw3-dev libgles2-mesa-dev zlib1g-dev
+```
+
+If you do not have sudo access, you may attempt the following:
+
+- install them manually set your $CPATH variables appropriately.
+- ask your administrator to install them on your behalf
+
+Finally, run
+
+```
+bash install.sh opengl
+```
 
 ## Setup for Windows
 
