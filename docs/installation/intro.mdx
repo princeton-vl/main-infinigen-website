@@ -119,3 +119,29 @@ Finally, run the install script in `/infinigen/`
 ```
 bash install.sh
 ```
+
+## Mac OS
+
+Uninstall Xcode Command Tools
+
+```
+sudo rm -rf /Library/Developer/CommandLineTools
+```
+
+Uninstall homebrew LLVM
+
+```
+brew uninstall llvm
+```
+
+```
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
+
+```
+
+Run
+
+```
+bash install.sh
+```
