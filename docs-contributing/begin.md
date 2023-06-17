@@ -5,8 +5,7 @@ sidebar_position: 1
 
 # Contributing to Infinigen
 
-There are three ways to contribute to Infinigen.
-
-- **Contributing code** to [the Infinigen repo](https://github.com/princeton-vl/infinigen).
-- **Contributing procedural generators** as Blender node graphs. This does not require any coding. Anyone who knows how to use Blender nodes can contribute because Infinigen provides tools to automatically translate Blender node graphs to Python code. A tutorial on how to do this is coming soon. Please stay tuned.
-- **Contributing pre-generated data**. Procedural generation of 3D assets and rendering of images can be computationally expensive. It can cost several hours of GPU time to generate and render one scene. Fortunately, pre-computed data can be shared and re-used easily. Please stay tuned for a repository of pre-generated data.
+We welcome contributions! You can contribute in many ways:
+- **Contribute code to this repository** - we welcome code contributions. More guidelines coming soon.
+- **Contribute procedural generators** - `worldgen/nodes/node_transpiler/dev_script.py` provides tools to convert artist-friendly [Blender Nodes](https://docs.blender.org/manual/en/2.79/render/blender_render/materials/nodes/introduction.html) into python code. Tutorials and guidelines coming soon.
+- **Contribute pre-generated data** - Anyone can contribute their computing power to create data and share it with the community. Please stay tuned for a repository of pre-generated data.
