@@ -89,6 +89,10 @@
   height: 200px;
   width: 200px;
   margin-bottom: -157px;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: black;
 }
 
 .documentation-coming-soon {
