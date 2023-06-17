@@ -4,7 +4,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 
 // From https://stackoverflow.com/a/2450976
-function shuffle_list(array) {
+function shuffle_list(array: any[]) {
   let currentIndex = array.length,
     randomIndex;
 
@@ -23,6 +23,33 @@ function shuffle_list(array) {
 
   return array;
 }
+
+interface Props {
+  name: string;
+  description: string;
+  filename: string;
+  website: string;
+}
+
+const Contributor: React.FC<Props> = (props) => {
+  const { name, description, filename, website } = props;
+
+  return (
+    <div key={name}>
+      <img
+        className="avatar__photo"
+        key={filename}
+        src={
+          "https://infinigen.cs.princeton.edu/contributors/" +
+          filename +
+          "?time=" +
+          new Date()
+        }
+      />
+      {name}
+    </div>
+  );
+};
 
 function ContributorsList({ children, people, shuffle }) {
   const renderCounter = useRef(0);
@@ -69,37 +96,39 @@ function ContributorsList({ children, people, shuffle }) {
 
 export default function Team({ children }) {
   const { siteConfig } = useDocusaurusContext();
+
+  const people = [
+    {
+      name: "Alexander Raistrick",
+      description:
+        "Team coordination, developed the creature system, transpiler and scene composition.",
+      filename: "raistrick.jpeg",
+      website: "http://araistrick.com/",
+    },
+    {
+      name: "Lahav Lipson",
+      description:
+        "Trained models and implemented dense annotations and rendering.",
+      filename: "lahav.jpeg",
+      website: "https://www.lahavlipson.com/",
+    },
+    {
+      name: "Zeyu Ma",
+      description: "Developed the terrain system and camera selection.",
+      filename: "zeyu.png",
+      website: "https://mazeyu.github.io/",
+    },
+  ];
+
   return (
     <>
       <div className="row">
         <div className="col col--3"></div>
         <div className="col col--6">
-          <ContributorsList
-            shuffle={true}
-            people={[
-              {
-                name: "Alexander Raistrick",
-                description:
-                  "Team coordination, developed the creature system, transpiler and scene composition.",
-                filename: "raistrick.jpeg",
-                website: "http://araistrick.com/",
-              },
-              {
-                name: "Lahav Lipson",
-                description:
-                  "Trained models and implemented dense annotations and rendering.",
-                filename: "lahav.jpeg",
-                website: "https://www.lahavlipson.com/",
-              },
-              {
-                name: "Zeyu Ma",
-                description:
-                  "Developed the terrain system and camera selection.",
-                filename: "zeyu.png",
-                website: "https://mazeyu.github.io/",
-              },
-            ]}
-          ></ContributorsList>
+          {/* <ContributorsList shuffle={true} people={}></ContributorsList> */}
+          {shuffle_list(people).map((person) => (
+            <Contributor {...person} key={name} />
+          ))}
         </div>
       </div>
     </>
