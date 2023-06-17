@@ -11,18 +11,13 @@ import AssetPreview from "../src/components/AssetPreview";
 
 In this tutorial, we will show you how to generate a single image with Infinigen with depth annotations:
 
-<AssetPreview
-  image_urls={[
-    "hello_world/Image.png",
-    "hello_world/Depth.png",
-  ]}
-/>
+<AssetPreview image_urls={["hello_world/Image.png", "hello_world/Depth.png"]} />
 
 This tutorial does not require a GPU, and assumes all optional compilation steps were skipped.
 
 :::caution Memory Requirements
 
-These commands consume in excess of 15GB of memory. 
+These commands consume in excess of 15GB of memory.
 
 :::
 
@@ -64,3 +59,19 @@ Change the seed to any number to get different scenes
 Remove 'simple' to generate more detailed (EXPENSIVE) scenes
 Read and customize generate.py to understand how infinigen works under the hood.
 Append `-p compose_scene.grass_chance=1.0` to the first command to force grass (or any of generate.py's 'run_stage' asset names) to appear in the scene. You can modify the kwargs `@gin.configurable()` python function in the entire repo via this mechanism.
+
+:::info resources requirements
+
+As you experiment with the system using your own settings and random seeds, it will crash with some frequency (due to the wide variance of resources required across scenes, and for various other reasons).
+
+Sometimes, the solution is to pick a different random seed
+
+:::
+
+:::info github issues
+
+Please check the [Github issues page](https://github.com/princeton-vl/infinigen/issues)
+
+Add `--debug` to generate.py or manage_datagen_jobs for more detailed logs. Please include these logs when creating issues on Github.
+
+:::
