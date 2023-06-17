@@ -127,7 +127,7 @@ export default function Team({ children }) {
         <div className="col col--6">
           {/* <ContributorsList shuffle={true} people={}></ContributorsList> */}
           {shuffle_list(people).map((person) => (
-            <Contributor {...person} key={name} />
+            <Contributor {...person} key={person.name} />
           ))}
         </div>
       </div>
