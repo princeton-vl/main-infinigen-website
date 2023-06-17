@@ -125,12 +125,12 @@ const config = {
           srcDark: "logos/INFINIGEN_Dark_Background.svg",
         },
         items: [
-          {
-            type: "docSidebar",
-            sidebarId: "tutorialSidebar",
-            position: "left",
-            label: "Get Started",
-          },
+          // {
+          //   type: "docSidebar",
+          //   sidebarId: "tutorialSidebar",
+          //   position: "left",
+          //   label: "Get Started",
+          // },
           {
             to: "/docs-documentation/begin", // ./docs-documentation/Intro.md
             label: "Docs (Coming Soon)",
