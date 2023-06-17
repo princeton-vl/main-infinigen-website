@@ -42,8 +42,8 @@ cd worldgen
 mkdir outputs
 ../blender/blender --background -noaudio --python generate.py -- --seed 3be70e09 --task coarse -g desert simple --output_folder outputs/helloworld/coarse
 ../blender/blender --background -noaudio --python generate.py -- --seed 3be70e09 --task populate fine_terrain -g desert simple --input_folder outputs/helloworld/coarse --output_folder outputs/helloworld/fine
-../blender/blender --background -noaudio --python generate.py -- --seed 3be70e09 --task render -g desert simple --input_folder outputs/helloworld/fine --output_folder output/helloworld/frames
-../blender/blender --background -noaudio --python generate.py -- --seed 3be70e09 --task render -g desert simple --input_folder outputs/helloworld/fine --output_folder output/helloworld/frames -p render.render_image_func=@flat/render_image
+../blender/blender --background -noaudio --python generate.py -- --seed 3be70e09 --task render -g desert simple --input_folder outputs/helloworld/fine --output_folder outputs/helloworld/frames
+../blender/blender --background -noaudio --python generate.py -- --seed 3be70e09 --task render -g desert simple --input_folder outputs/helloworld/fine --output_folder outputs/helloworld/frames -p render.render_image_func=@flat/render_image
 ```
 
 The full pipeline should take 20 minutes to 1 hour.
