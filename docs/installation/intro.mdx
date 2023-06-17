@@ -119,3 +119,30 @@ Finally, run the install script in `/infinigen/`
 ```
 bash install.sh
 ```
+
+## Setup for MacOS
+
+Instruction for compiling Infinigen on a MacOS system.
+
+### Installing LLVM
+
+Install LLVM with Homebrew
+
+```
+brew install llvm
+```
+
+Set environment variables
+
+```
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
+```
+
+Install Infinigen
+
+```
+bash install.sh
+```
+
+If you got errors related to LLVM, please consider uninstall Xcode Command Line Tools and reinstall LLVM using Homebrew.
