@@ -185,15 +185,15 @@ const config = {
       footer: {
         style: "dark",
         links: [
-          {
-            title: "Docs",
-            items: [
-              {
-                label: "Get Started",
-                to: "/docs/category/installation-instructions",
-              },
-            ],
-          },
+          // {
+          //   title: "Docs",
+          //   items: [
+          //     {
+          //       label: "Get Started",
+          //       to: "/docs/category/installation-instructions",
+          //     },
+          //   ],
+          // },
           {
             title: "Community",
             items: [
