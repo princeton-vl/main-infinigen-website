@@ -82,7 +82,7 @@ function Example() {
   return (
     <YouTube
       className={styles.youtube_example}
-      videoId="8eldvaN8d0Q"
+      videoId="6tgspeI-GHY"
       opts={opts}
       onReady={onPlayerReady}
     />
@@ -96,7 +96,7 @@ const InfinigenHeader = () => {
       <div className={styles.youtube_inner}>
         <iframe
           className={styles.iframe_youtube}
-          src="https://www.youtube.com/embed/8eldvaN8d0Q"
+          src="https://www.youtube.com/embed/6tgspeI-GHY"
         ></iframe>
       </div>
     </div>
