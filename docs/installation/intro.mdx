@@ -135,8 +135,8 @@ brew install llvm
 Set environment variables
 
 ```
-export LDFLAGS="-L/usr/local/opt/llvm/lib"
-export CPPFLAGS="-I/usr/local/opt/llvm/include"
+export LDFLAGS="-L/path/to/llvm/lib"
+export CPPFLAGS="-I/path/to/llvm/include"
 ```
 
 Install Infinigen
@@ -145,4 +145,4 @@ Install Infinigen
 bash install.sh
 ```
 
-If you got errors related to LLVM, please consider uninstall Xcode Command Line Tools and reinstall LLVM using Homebrew.
+If you got errors related to LLVM, please consider uninstall Xcode Command Line Tools and then reinstall LLVM using Homebrew.
