@@ -131,13 +131,13 @@ const config = {
           //   position: "left",
           //   label: "Get Started",
           // },
-          {
-            to: "/docs-documentation/begin", // ./docs-documentation/Intro.md
-            label: "Docs (Coming Soon)",
-            position: "left",
-            activeBaseRegex: `/docs-documentation/`,
-            className: "documentation-coming-soon",
-          },
+          // {
+          //  to: "/docs-documentation/begin", // ./docs-documentation/Intro.md
+          //  label: "Docs (Coming Soon)",
+          //  position: "left",
+          //  activeBaseRegex: `/docs-documentation/`,
+          //  className: "documentation-coming-soon",
+          //},
           // {
           //   to: "/docs-get-started/gallery", // ./docs-documentation/Intro.md
           //   label: "Downloads",
