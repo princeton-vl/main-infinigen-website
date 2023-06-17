@@ -60,7 +60,7 @@ Remove 'simple' to generate more detailed (EXPENSIVE) scenes
 Read and customize generate.py to understand how infinigen works under the hood.
 Append `-p compose_scene.grass_chance=1.0` to the first command to force grass (or any of generate.py's 'run_stage' asset names) to appear in the scene. You can modify the kwargs `@gin.configurable()` python function in the entire repo via this mechanism.
 
-:::caution resources requirements
+:::caution experimenting with Infinigen
 
 As you experiment with the system using your own settings and random seeds, it will crash with some frequency (due to the wide variance of resources required across scenes, and for various other reasons).
 
