@@ -8,7 +8,7 @@ import styles from "../pages/index.module.css";
 export default function PaperInfo(): JSX.Element {
   const bibtex =
     "\
-@inproceedings{raistrick2023infinite,\n\
+@inproceedings{infinigen2023infinite,\n\
   title={Infinite Photorealistic Worlds Using Procedural Generation},\n\
   author={Raistrick, Alexander and Lipson, Lahav and Ma, Zeyu and Mei, Lingjie and Wang, Mingzhe and Zuo, Yiming and Kayan, Karhan and Wen, Hongyu and Han, Beining and Wang, Yihan and Newell, Alejandro and Law, Hei and Goyal, Ankit and Yang, Kaiyu and Deng, Jia},\n\
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},\n\
