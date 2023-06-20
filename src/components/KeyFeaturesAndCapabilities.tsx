@@ -73,7 +73,7 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
               }
             >
               <img
-                src={"img/diverse.png"}
+                src={"img/diverse.jpeg"}
                 style={{ border: "0.5px solid #1a1e13" }}
                 className={styles.capability_image}
               ></img>
@@ -86,13 +86,10 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
               header="Real Geometry"
               text={
                 <p>
-                  Infinigen
-                  is optimized for computer vision research, particularly 3D
-                  vision.
-                  Infinigen 
-                  does not use bump/normal-maps, full-transparency, or other
-                  techniques which fake geometric detail. All fine details of
-                  geometry from{" "}
+                  Infinigen is optimized for computer vision research,
+                  particularly 3D vision. Infinigen does not use
+                  bump/normal-maps, full-transparency, or other techniques which
+                  fake geometric detail. All fine details of geometry from{" "}
                   <span className={styles.infinigen_name}>Infinigen</span> are
                   real, ensuring accurate 3D ground truth.
                 </p>
@@ -161,7 +158,7 @@ export default function KeyFeaturesAndCapabilities(): JSX.Element {
               <div className="row">
                 <div className="col col--12">
                   <img
-                    src={"quad.png"}
+                    src={"img/quad.png"}
                     style={{ border: "0.5px solid #1a1e13" }}
                     className={styles.gt_quad}
                   ></img>
