@@ -21,6 +21,7 @@ let items = require("@site/static/gallery_data.json"); //(with path)
 
 const ImageComponent = (props) => {
   const { imageProps } = props;
+  console.log("Layzee load! " + imageProps.src);
 
   return (
     <LazyLoadImage
