@@ -144,7 +144,7 @@ const config = {
           //   position: "left",
           //   activeBaseRegex: `/docs-get-started/`,
           // },
-          // { to: "InfGridGallery", label: "Gallery", position: "left" },
+          { to: "InfGridGallery", label: "Gallery", position: "left" },
           {
             to: "https://github.com/princeton-vl/infinigen",
             label: "GitHub",

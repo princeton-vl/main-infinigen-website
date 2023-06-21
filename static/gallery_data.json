@@ -4,7 +4,10 @@
         "original": "https:/infinigen.cs.princeton.edu/gallery_images/6c9b13a7.png",
         "width": 320,
         "height": 180,
-        "caption": "Caption goes here."
+        "tags": [
+            { "value": "6c9b13a7", "title": "Seed" }
+          ],
+        "caption": "Seed: 6c9b13a7"
     },
     {
         "src": "https:/infinigen.cs.princeton.edu/gallery_thumbnails/456cccee.jpg",

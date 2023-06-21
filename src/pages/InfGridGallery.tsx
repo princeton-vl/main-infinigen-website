@@ -14,7 +14,7 @@ export interface CustomImage extends Image {
   original: string;
 }
 
-const itemsPerPage = 43;
+const itemsPerPage = 400;
 
 let items = require("@site/static/gallery_data.json"); //(with path)
 
@@ -23,10 +23,6 @@ export default function InfGridGallery({ children }) {
 
   const [itemOffset, setItemOffset] = useState(0);
 
-  // const num_total_pages = Math.max(
-  // 1,
-  // Math.ceil(images.length / IMAGES_PER_PAGE)
-  // );
   const endOffset = itemOffset + itemsPerPage;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   const images = items.slice(itemOffset, endOffset);
