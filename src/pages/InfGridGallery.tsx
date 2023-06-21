@@ -9,6 +9,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import { Image } from "react-grid-gallery";
 import ReactPaginate from "react-paginate";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export interface CustomImage extends Image {
   original: string;
@@ -17,6 +18,18 @@ export interface CustomImage extends Image {
 const itemsPerPage = 400;
 
 let items = require("@site/static/gallery_data.json"); //(with path)
+
+const ImageComponent = (props) => {
+  const { imageProps } = props;
+
+  return (
+    <LazyLoadImage
+      height={imageProps.style.width}
+      width={imageProps.style.width}
+      src={imageProps.src}
+    />
+  );
+};
 
 export default function InfGridGallery({ children }) {
   const { siteConfig } = useDocusaurusContext();
@@ -84,6 +97,7 @@ export default function InfGridGallery({ children }) {
           defaultContainerWidth={300} // needed for some reason.
           onClick={handleClick}
           enableImageSelection={false}
+          thumbnailImageComponent={ImageComponent}
         />
         {!!currentImage && (
           /* @ts-ignore */
