@@ -15,7 +15,7 @@ export interface CustomImage extends Image {
   original: string;
 }
 
-const itemsPerPage = 400;
+const itemsPerPage = 100000;
 
 let items = require("@site/static/gallery_data.json"); //(with path)
 
@@ -72,7 +72,7 @@ export default function InfGridGallery({ children }) {
       description="Description will go into a meta tag in <head />"
     >
       <div>
-        <div className={styles.gallery_pagination}>
+        {/* <div className={styles.gallery_pagination}>
           <ReactPaginate
             breakLabel="..."
             nextLabel="next >"
@@ -92,7 +92,7 @@ export default function InfGridGallery({ children }) {
             activeClassName="active"
             renderOnZeroPageCount={null}
           />
-        </div>
+        </div> */}
         <Gallery
           images={images}
           defaultContainerWidth={300} // needed for some reason.
