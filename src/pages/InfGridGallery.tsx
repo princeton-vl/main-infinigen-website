@@ -7,7 +7,7 @@ import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import { Image } from "react-grid-gallery";
+import { Image, ThumbnailImageProps } from "react-grid-gallery";
 import ReactPaginate from "react-paginate";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -19,12 +19,12 @@ const itemsPerPage = 100000;
 
 let items = require("@site/static/gallery_data.json"); //(with path)
 
-const ImageComponent = (props) => {
+const ImageComponent = (props: ThumbnailImageProps) => {
   const { imageProps } = props;
-  console.log("Layzee load! " + imageProps.src);
 
   return (
     <LazyLoadImage
+      style={{ objectFit: "cover" }}
       height={imageProps.style.width}
       width={imageProps.style.width}
       src={imageProps.src}
