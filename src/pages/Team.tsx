@@ -120,7 +120,7 @@ export default function Team({ children }) {
   ]);
 
   // const shuffled = shuffle_list(people);
-  useLayoutEffect(() => {
+  useEffect(() => {
     setPeople((people) => [...shuffle_list(people)]);
   }, []);
 
