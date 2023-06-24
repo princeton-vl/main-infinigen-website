@@ -118,11 +118,15 @@ export default function Team({ children }) {
       website: "https://mazeyu.github.io/",
     },
   ]);
+  const [shuffled, setShuffled] = useState(false);
 
   // const shuffled = shuffle_list(people);
   useEffect(() => {
     setPeople((people) => [...shuffle_list(people)]);
+    setShuffled(true);
   }, []);
+
+  if (!shuffled) return <></>;
 
   return (
     <>
