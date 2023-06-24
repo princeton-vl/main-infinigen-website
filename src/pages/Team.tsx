@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import "react-image-lightbox/style.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
@@ -96,8 +96,7 @@ const Contributor: React.FC<Props> = (props) => {
 
 export default function Team({ children }) {
   const { siteConfig } = useDocusaurusContext();
-
-  const people = [
+  const [people, setPeople] = useState([
     {
       name: "Alexander Raistrick",
       description:
@@ -118,9 +117,12 @@ export default function Team({ children }) {
       filename: "zeyu.png",
       website: "https://mazeyu.github.io/",
     },
-  ];
+  ]);
 
-  const shuffled = shuffle_list(people);
+  // const shuffled = shuffle_list(people);
+  useLayoutEffect(() => {
+    setPeople((people) => [...shuffle_list(people)]);
+  }, []);
 
   return (
     <>
@@ -131,9 +133,9 @@ export default function Team({ children }) {
           {/* {shuffle_list(people).map((person) => ( */}
           {/* <Contributor {...person} key={person.name} /> */}
           {/* ))} */}
-          <Contributor {...shuffled[0]} />
-          <Contributor {...shuffled[1]} />
-          <Contributor {...shuffled[2]} />
+          <Contributor {...people[0]} />
+          <Contributor {...people[1]} />
+          <Contributor {...people[2]} />
         </div>
       </div>
     </>
