@@ -47,13 +47,14 @@ function Contributor({ children, name, filename, website, description }) {
   );
 }
 
-export default function ContributorsList({ children, peoples, shuffle }) {
-  const [people, setPeople] = useState(peoples);
+export default function ContributorsList({ children, persons, shuffle }) {
+  const [people, setPeople] = useState(persons);
   const [shuffled, setShuffled] = useState(false);
 
-  // const shuffled = shuffle_list(people);
   useEffect(() => {
-    setPeople((people) => [...shuffle_list(people)]);
+    if (shuffle) {
+      setPeople((people) => [...shuffle_list(people)]);
+    }
     setShuffled(true);
   }, []);
 
@@ -74,13 +75,7 @@ export default function ContributorsList({ children, peoples, shuffle }) {
         description={person.description}
       />
     );
-    // console.log(all_divs[i]);
   }
-
-  // const [allDivs, setItemOffset] = useState({});
-
-  // console.log("Finally!");
-  console.log(<div>{all_divs}</div>);
 
   return <div>{all_divs}</div>;
 }
