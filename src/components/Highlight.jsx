@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import styles from "../pages/index.module.css";
 // import React, { useRef } from "react";
@@ -35,7 +35,7 @@ function Contributor({ children, name, filename, website, description }) {
       <a href={website}>
         <div className="card__header">
           <div className="avatar">
-            {/* <img className="avatar__photo" key={filename} src={imgURL} /> */}
+            <img className="avatar__photo" key={filename} src={imgURL} />
             <div className="avatar__intro">
               <div className="avatar__name">{name}</div>
               <small className="avatar__subtitle">{description}</small>
@@ -47,37 +47,34 @@ function Contributor({ children, name, filename, website, description }) {
   );
 }
 
-export default function ContributorsList({ children, people, shuffle }) {
-  const renderCounter = useRef(0);
-  renderCounter.current = renderCounter.current + 1;
-  // console.log("Rendered! " + renderCounter.current);
+export default function ContributorsList({ children, peoples, shuffle }) {
+  const [people, setPeople] = useState(peoples);
+  const [shuffled, setShuffled] = useState(false);
+
+  // const shuffled = shuffle_list(people);
+  useEffect(() => {
+    setPeople((people) => [...shuffle_list(people)]);
+    setShuffled(true);
+  }, []);
+
+  if (!shuffled) return <></>;
+
   const num_items = people.length;
 
-  const [allDivs, setAllDivs] = useState([]);
   let all_divs = [];
 
-  if (allDivs.length == 0) {
-    console.log("First");
-    for (let i = 0; i < num_items; i++) {
-      const person = people[i];
-      all_divs.push(
-        <Contributor
-          key={person.name}
-          filename={person.filename}
-          name={person.name}
-          website={person.website}
-          description={person.description}
-        />
-      );
-      // console.log(all_divs[i]);
-    }
-    if (shuffle) {
-      shuffle_list(all_divs);
-    }
-    setAllDivs(all_divs);
-  } else {
-    console.log("Second");
-    all_divs = allDivs;
+  for (let i = 0; i < num_items; i++) {
+    const person = people[i];
+    all_divs.push(
+      <Contributor
+        key={person.name}
+        filename={person.filename}
+        name={person.name}
+        website={person.website}
+        description={person.description}
+      />
+    );
+    // console.log(all_divs[i]);
   }
 
   // const [allDivs, setItemOffset] = useState({});
