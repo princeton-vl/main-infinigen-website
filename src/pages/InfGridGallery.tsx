@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import clsx from "clsx";
 import styles from "../pages/index.module.css";
 import { useState } from "react";
@@ -17,8 +17,6 @@ export interface CustomImage extends Image {
 
 const itemsPerPage = 100000;
 
-let items = require("@site/static/gallery_data.json"); //(with path)
-
 const ImageComponent = (props: ThumbnailImageProps) => {
   const { imageProps } = props;
 
@@ -35,15 +33,23 @@ const ImageComponent = (props: ThumbnailImageProps) => {
 export default function InfGridGallery({ children }) {
   const { siteConfig } = useDocusaurusContext();
 
+  const [items, setItems] = useState([]);
   const [itemOffset, setItemOffset] = useState(0);
+  const [index, setIndex] = useState(-1);
+
+  useEffect(() => {
+    fetch("https://infinigen.cs.princeton.edu/gallery_data.json")
+      .then((result) => result.json())
+      .then((json) => {
+        setItems(json);
+      });
+  }, []);
 
   const endOffset = itemOffset + itemsPerPage;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   const images = items.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(items.length / itemsPerPage);
   console.log("Pagecount: " + pageCount);
-
-  const [index, setIndex] = useState(-1);
 
   const currentImage = images[index];
   const nextIndex = (index + 1) % images.length;
@@ -95,7 +101,6 @@ export default function InfGridGallery({ children }) {
         </div> */}
         <Gallery
           images={images}
-          defaultContainerWidth={300} // needed for some reason.
           onClick={handleClick}
           enableImageSelection={false}
           thumbnailImageComponent={ImageComponent}
