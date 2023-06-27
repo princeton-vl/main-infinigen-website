@@ -4,7 +4,10 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 // import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import RowOfInfinigenFeatures from "@site/src/components/RowOfInfinigenFeatures";
 import ImageGallery from "react-image-gallery";
+import GTPreview from "../../src/components/GTPreview.tsx";
+import YouTube, { YouTubeProps } from "react-youtube";
 import AboutInfinigen from "@site/src/components/AboutInfinigen";
 import KeyFeaturesAndCapabilities from "@site/src/components/KeyFeaturesAndCapabilities";
 import PaperInfo from "@site/src/components/PaperInfo";
@@ -63,15 +66,31 @@ const HomepageHeader = () => {
 
 const InfinigenHeader = () => {
   const { siteConfig } = useDocusaurusContext();
+
+  const onPlayerReady: YouTubeProps["onReady"] = (event) => {
+    // access to player in all event handlers via event.target
+    event.target.pauseVideo();
+  };
+
+  const opts: YouTubeProps["opts"] = {
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
+
   return (
     <div className={styles.youtube_outer}>
       <div className={styles.youtube_inner}>
-        <iframe
-          onLoad={() => console.log("Loaded Successfully")}
-          onError={() => console.log("Oh no, it errored")}
-          className={styles.iframe_youtube}
-          src="https://www.youtube.com/embed/6tgspeI-GHY"
-        ></iframe>
+        <div className={styles.iframe_youtube}>
+          <YouTube
+            videoId="6tgspeI-GHY"
+            iframeClassName={styles.iframe_youtube}
+            // onReady={onPlayerReady}
+            onError={() => console.log("Oh no it failed!")}
+            onReady={() => console.log("It succeeded!")}
+          />
+        </div>
       </div>
     </div>
   );
