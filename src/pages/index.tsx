@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -72,6 +72,26 @@ const InfinigenHeader = () => {
     event.target.pauseVideo();
   };
 
+  const [youtubeFailed, setYoutubeFailed] = useState(false);
+
+  if (youtubeFailed) {
+    return (
+      <div className={styles.youtube_outer}>
+        <div className={styles.youtube_inner}>
+          <iframe
+            className={styles.iframe_youtube}
+            src="//player.bilibili.com/player.html?aid=445316975&bvid=BV1qj411S7rn&cid=1177667423&page=1"
+            scrolling="no"
+            border="0"
+            frameborder="no"
+            framespacing="0"
+            allowfullscreen="true"
+          ></iframe>
+        </div>
+      </div>
+    );
+  }
+
   const opts: YouTubeProps["opts"] = {
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
@@ -86,10 +106,7 @@ const InfinigenHeader = () => {
           <YouTube
             videoId="6tgspeI-GHY"
             iframeClassName={styles.iframe_youtube}
-            // onReady={onPlayerReady}
-            onError={(event) => console.log("Oh no it failed!")}
-            onReady={(event) => console.log("It succeeded!")}
-            onStateChange={(event) => console.log("It changed!")}
+            onError={(event) => setYoutubeFailed(true)}
           />
         </div>
       </div>
