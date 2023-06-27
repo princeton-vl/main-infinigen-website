@@ -4,10 +4,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 // import HomepageFeatures from "@site/src/components/HomepageFeatures";
-import RowOfInfinigenFeatures from "@site/src/components/RowOfInfinigenFeatures";
 import ImageGallery from "react-image-gallery";
-import GTPreview from "../../src/components/GTPreview.tsx";
-import YouTube, { YouTubeProps } from "react-youtube";
 import AboutInfinigen from "@site/src/components/AboutInfinigen";
 import KeyFeaturesAndCapabilities from "@site/src/components/KeyFeaturesAndCapabilities";
 import PaperInfo from "@site/src/components/PaperInfo";
@@ -63,31 +60,6 @@ const HomepageHeader = () => {
     </header>
   );
 };
-
-function Example() {
-  const onPlayerReady: YouTubeProps["onReady"] = (event) => {
-    // access to player in all event handlers via event.target
-    event.target.pauseVideo();
-  };
-
-  const opts: YouTubeProps["opts"] = {
-    height: "390",
-    width: "640",
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-    },
-  };
-
-  return (
-    <YouTube
-      className={styles.youtube_example}
-      videoId="6tgspeI-GHY"
-      opts={opts}
-      onReady={onPlayerReady}
-    />
-  );
-}
 
 const InfinigenHeader = () => {
   const { siteConfig } = useDocusaurusContext();
