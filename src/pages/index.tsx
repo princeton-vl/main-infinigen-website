@@ -87,8 +87,9 @@ const InfinigenHeader = () => {
             videoId="6tgspeI-GHY"
             iframeClassName={styles.iframe_youtube}
             // onReady={onPlayerReady}
-            onError={() => console.log("Oh no it failed!")}
-            onReady={() => console.log("It succeeded!")}
+            onError={(event) => console.log("Oh no it failed!")}
+            onReady={(event) => console.log("It succeeded!")}
+            onStateChange={(event) => console.log("It changed!")}
           />
         </div>
       </div>
