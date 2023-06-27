@@ -67,6 +67,8 @@ const InfinigenHeader = () => {
     <div className={styles.youtube_outer}>
       <div className={styles.youtube_inner}>
         <iframe
+          onLoad={() => console.log("Loaded Successfully")}
+          onError={() => console.log("Oh no, it errored")}
           className={styles.iframe_youtube}
           src="https://www.youtube.com/embed/6tgspeI-GHY"
         ></iframe>
