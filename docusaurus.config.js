@@ -112,7 +112,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: "img/docusaurus-social-card.jpg",
+      image: "img/social_card.png",
       colorMode: {
         defaultMode: "light",
         disableSwitch: true,
@@ -164,6 +164,7 @@ const config = {
             position: "left",
             activeBaseRegex: `/docs-contributing/`,
           },
+          { to: "roadmap", label: "Roadmap", position: "left" },
           // { to: "faq", label: "FAQ", position: "left" },
           // { to: "/blog", label: "Blog", position: "left" },
           // {

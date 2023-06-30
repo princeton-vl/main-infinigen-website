@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -64,15 +64,35 @@ const HomepageHeader = () => {
   );
 };
 
-function Example() {
+const InfinigenHeader = () => {
+  const { siteConfig } = useDocusaurusContext();
+
   const onPlayerReady: YouTubeProps["onReady"] = (event) => {
     // access to player in all event handlers via event.target
     event.target.pauseVideo();
   };
 
+  const [youtubeFailed, setYoutubeFailed] = useState(false);
+
+  if (youtubeFailed) {
+    return (
+      <div className={styles.youtube_outer}>
+        <div className={styles.youtube_inner}>
+          <iframe
+            className={styles.iframe_youtube}
+            src="//player.bilibili.com/player.html?aid=445316975&bvid=BV1qj411S7rn&cid=1177667423&page=1"
+            scrolling="no"
+            border="0"
+            frameborder="no"
+            framespacing="0"
+            allowfullscreen="true"
+          ></iframe>
+        </div>
+      </div>
+    );
+  }
+
   const opts: YouTubeProps["opts"] = {
-    height: "390",
-    width: "640",
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
@@ -80,24 +100,15 @@ function Example() {
   };
 
   return (
-    <YouTube
-      className={styles.youtube_example}
-      videoId="6tgspeI-GHY"
-      opts={opts}
-      onReady={onPlayerReady}
-    />
-  );
-}
-
-const InfinigenHeader = () => {
-  const { siteConfig } = useDocusaurusContext();
-  return (
     <div className={styles.youtube_outer}>
       <div className={styles.youtube_inner}>
-        <iframe
-          className={styles.iframe_youtube}
-          src="https://www.youtube.com/embed/6tgspeI-GHY"
-        ></iframe>
+        <div className={styles.iframe_youtube}>
+          <YouTube
+            videoId="6tgspeI-GHY"
+            iframeClassName={styles.iframe_youtube}
+            onError={(event) => setYoutubeFailed(true)}
+          />
+        </div>
       </div>
     </div>
   );

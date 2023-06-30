@@ -37,12 +37,12 @@ export default function AboutInfinigen(): JSX.Element {
               . Infinigen is optimized for computer vision research and
               generates diverse high-quality 3D training data. Infinigen is
               based on <a href="https://blender.org">Blender</a> and is free and
-              open-source (BSD 3-Clause License). Infinigen is being actively developed
-              to expand its capabilities and coverage. Everyone is welcome to{" "}
-              <a href="./docs-contributing">contribute</a>.
+              open-source (BSD 3-Clause License). Infinigen is being actively
+              developed to expand its capabilities and coverage. Everyone is
+              welcome to <a href="./docs-contributing">contribute</a>.
             </p>
             <a
-              class="twitter-timeline"
+              className="twitter-timeline"
               data-height="180"
               href="https://twitter.com/PrincetonVL"
             >
@@ -51,7 +51,7 @@ export default function AboutInfinigen(): JSX.Element {
             <script
               async
               src="https://platform.twitter.com/widgets.js"
-              charset="utf-8"
+              charSet="utf-8"
             ></script>
           </div>
         </div>
