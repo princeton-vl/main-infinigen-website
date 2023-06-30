@@ -5,7 +5,7 @@ title: Roadmap
 # Planned Roadmap
 
 #### Jun 30 2023 - v1.0.1 released
-- Main repository updated to use a BSD-3 license, with limited exceptions (link?)
+- Main repository updated to use a BSD-3 license
 - Line credits now shown for all authors
 - We are actively accepting PR's and feature requests! Please submit requests via the [REQUEST] git issue template
 - <b> If possible, please clone a new copy of the repo when you update </b>
