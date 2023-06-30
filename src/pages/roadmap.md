@@ -8,7 +8,7 @@ title: Roadmap
 - Main repository updated to use a BSD-3 license
 - Line credits now shown for all authors
 - We are actively accepting PR's and feature requests! Please submit requests via the [REQUEST] git issue template
-- <b> If possible, please clone a new copy of the repo when you update. [We apologize for the inconvenience.](https://github.com/princeton-vl/infinigen#installation) </b>
+- <b> If possible, please clone a new copy of the repo when you update.  <a href="https://github.com/princeton-vl/infinigen#installation">We apologize for the inconvenience.</a>
 
 #### Mid July
 - Code release for water, fire and smoke simulations shown in the intro video.
