@@ -4,11 +4,13 @@ title: Roadmap
 
 # Planned Roadmap
 
+We are actively accepting PR's and feature requests! <a href="https://github.com/princeton-vl/infinigen/issues/new?assignees=&labels=&projects=&template=request.md&title=%5BREQUEST%5D"> Please submit requests via the [REQUEST] git issue template </a>
+
 #### Jun 30 2023 - v1.0.1 released
 
 - Main repository updated to use a BSD-3 license
 - Line credits now shown for all authors
-- We are actively accepting PR's and feature requests! Please submit requests via the [REQUEST] git issue template
+- [Documentation](https://github.com/princeton-vl/infinigen_internal/blob/main/GroundTruthAnnotations.md) for our powerful custom ground-truth extraction system.
 - <b> If possible, please clone a new copy of the repo when you update. <a href="https://github.com/princeton-vl/infinigen#installation">We apologize for the inconvenience.</a></b>
 
 #### Mid July
