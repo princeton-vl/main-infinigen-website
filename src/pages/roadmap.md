@@ -4,7 +4,7 @@ title: Roadmap
 
 # Planned Roadmap
 
-We are actively accepting PR's and feature requests! <a href="https://github.com/princeton-vl/infinigen/issues/new?assignees=&labels=&projects=&template=request.md&title=%5BREQUEST%5D"> Please submit requests via the [REQUEST] git issue template </a>
+We are actively accepting PR's and feature requests! <a href="https://github.com/princeton-vl/infinigen/issues/new?assignees=&labels=&projects=&template=request.md&title=%5BREQUEST%5D"> Please submit requests via git issues </a>
 
 #### Jun 30 2023 - v1.0.1 released
 
