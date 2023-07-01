@@ -21,9 +21,9 @@ We are actively accepting PR's and feature requests! <a href="https://github.com
 - Scene reproducibility improvements.
 - Disk usage and system stability improvements.
 - Tutorial on how to generate specific assets rather than full scenes.
+- Tutorial on how to create your own procedural assets.
 
 #### End of July
 
 - Initial pre-generated data release. We will continuously render and release new data from this point onwards.
-- Tutorial on how to create your own procedural assets.
 - (more to be announced)
