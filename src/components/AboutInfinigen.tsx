@@ -1,6 +1,18 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "../pages/index.module.css";
+import {
+  TwitterTimelineEmbed,
+  TwitterShareButton,
+  TwitterFollowButton,
+  TwitterHashtagButton,
+  TwitterMentionButton,
+  TwitterTweetEmbed,
+  TwitterMomentShare,
+  TwitterDMButton,
+  TwitterVideoEmbed,
+  TwitterOnAirButton,
+} from "react-twitter-embed";
 
 const ListItem = () => {
   return (
@@ -41,18 +53,11 @@ export default function AboutInfinigen(): JSX.Element {
               developed to expand its capabilities and coverage. Everyone is
               welcome to <a href="./docs-contributing">contribute</a>.
             </p>
-            <a
-              className="twitter-timeline"
-              data-height="180"
-              href="https://twitter.com/PrincetonVL"
-            >
-              Tweets from PrincetonVL
-            </a>
-            <script
-              async
-              src="https://platform.twitter.com/widgets.js"
-              charSet="utf-8"
-            ></script>
+            <TwitterTimelineEmbed
+              sourceType="profile"
+              screenName="PrincetonVL"
+              options={{ height: 180 }}
+            />
           </div>
         </div>
       </div>
