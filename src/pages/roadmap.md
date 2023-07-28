@@ -13,17 +13,22 @@ We are actively accepting PR's and feature requests! <a href="https://github.com
 - [Documentation on using our ground-truth extraction system](https://github.com/princeton-vl/infinigen/blob/main/GroundTruthAnnotations.md)
 - <b> If possible, please clone a new copy of the repo when you update. <a href="https://github.com/princeton-vl/infinigen#installation">We apologize for the inconvenience.</a></b>
 
-#### Mid July
+#### July 28 2023 - v1.0.2 released
+- *Configuring Infinigen* & initial *Generating Individual Assets* documentation
+- Code release for improved tree branches and fruit placement shown intro video
+- Code release for two new plant species
+- Terrain reproducibility & disk usage improvements
 
+#### Early August - v1.0.3
+- Documentation on implementing your own procedural asset.
 - Code release for water, fire and smoke simulations shown in the intro video.
-- Code release for improved tree branches and fruit placement shown in intro video.
-- Code release for two additional plant species.
-- Scene reproducibility improvements.
-- Disk usage and system stability improvements.
-- Tutorial on how to generate specific assets rather than full scenes.
-- Tutorial on how to create your own procedural assets.
 
-#### End of July
+#### Mid August - Initial pre-generated data release
+- We will continuously generate and release data from this point onward.
 
-- Initial pre-generated data release. We will continuously render and release new data from this point onwards.
-- (more to be announced)
+#### End of August - v1.1.0
+- Installation improvements
+- Blender 3.6 support
+- Improved python API & code documentation
+
+(more to be announced)
