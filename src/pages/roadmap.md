@@ -19,16 +19,16 @@ We are actively accepting PR's and feature requests! <a href="https://github.com
 - Code release for two new plant species
 - Terrain reproducibility & disk usage improvements
 
-#### Early August - v1.0.3
+#### August 15 2023 - v1.0.3 released
 - Documentation on implementing your own procedural asset.
 - Code release for water, fire and smoke simulations shown in the intro video.
 
-#### Mid August - Initial pre-generated data release
-- We will continuously generate and release data from this point onward.
-
-#### End of August - v1.1.0
+#### Early September - v1.1.0
 - Installation improvements
 - Blender 3.6 support
 - Improved python API & code documentation
+
+#### End of September - Initial pre-generated data release
+- We will continuously generate and release data from this point onward.
 
 (more to be announced)
