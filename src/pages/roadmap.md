@@ -23,12 +23,12 @@ We are actively accepting PR's and feature requests! <a href="https://github.com
 - Documentation on implementing your own procedural asset.
 - Code release for water, fire and smoke simulations shown in the intro video.
 
-#### Early September - v1.1.0
-- Installation improvements
-- Blender 3.6 support
-- Improved python API & code documentation
-
 #### End of September - Initial pre-generated data release
 - We will continuously generate and release data from this point onward.
+
+#### Early October - v1.1.0
+- Installation improvements
+- Blender 3.6 support
+- Improved python API
 
 (more to be announced)
