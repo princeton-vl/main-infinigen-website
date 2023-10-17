@@ -23,12 +23,13 @@ We are actively accepting PR's and feature requests! <a href="https://github.com
 - Documentation on implementing your own procedural asset.
 - Code release for water, fire and smoke simulations shown in the intro video.
 
-#### End of September - Initial pre-generated data release
-- We will continuously generate and release data from this point onward.
+#### October 16 2023 - v1.0.4 released
+- Preliminary data release - [see these instructions](https://github.com/princeton-vl/infinigen/blob/main/docs/PreGeneratedData.md) to download the 10 available stereo videos.
+- More data coming soon
 
-#### Early October - v1.1.0
-- Installation improvements
-- Blender 3.6 support
-- Improved python API
+#### October 16 2023 - v1.1.1 beta preview branch released
+- Get early access on the [1.1.1 release candidate branch](https://github.com/princeton-vl/infinigen/tree/rc_1.1.1)
+- Pip installation, packaged infinigen as a portable python module
+- Updated to Blender 3.6
 
 (more to be announced)
