@@ -181,6 +181,12 @@ const config = {
             className: "header-lab-link",
             // "aria-label": "Twitter page",
           },
+          {
+            to: "https://github.com/princeton-vl/infinigen/blob/main/docs/PreGeneratedData.md",
+            label: "Data Download",
+            position: "left",
+            //className: "documentation-coming-soon",
+          },
         ],
       },
       footer: {
