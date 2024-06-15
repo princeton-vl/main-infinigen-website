@@ -152,12 +152,12 @@ const config = {
             //className: "documentation-coming-soon",
             "aria-label": "GitHub repository",
           },
-          {
-            to: "/docs-team/begin", // ./docs-documentation/Intro.md
-            label: "Team",
-            position: "left",
-            activeBaseRegex: `/docs-team/`,
-          },
+          // {
+          //   to: "/docs-team/begin", // ./docs-documentation/Intro.md
+          //   label: "Team",
+          //   position: "left",
+          //   activeBaseRegex: `/docs-team/`,
+          // },
           {
             to: "/docs-contributing/begin", // ./docs-documentation/Intro.md
             label: "Contributing",
