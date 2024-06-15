@@ -121,27 +121,26 @@ year={2024}\n\
               <div className={clsx("col col--12", styles.author_list)}>
                 <span>
                   <a href="http://araistrick.com">Alexander Raistrick*</a>,{" "}
-                  <a href="https://www.lahavlipson.com">Lingjie Mei*</a>,{" "}
-                  <a href="https://mazeyu.github.io">Karhan Kayan*</a>,{" "}
-                  <a href="https://www.cs.princeton.edu/~lm5483/">David Yan</a>,
-                  <a href="https://www.cs.princeton.edu/~mingzhew">
-                    Yiming Zuo
+                  <a href="https://www.cs.princeton.edu/~lm5483/name.html">
+                    Lingjie Mei*
                   </a>
-                  , <a href="https://zuoym15.github.io">Beining Han</a>,{" "}
-                  <a href="https://kkayan.com">Hongyu Wen</a>,{" "}
-                  <a href="https://hermera.github.io">Meenal Parakh</a>,{" "}
+                  , <a href="https://mazeyu.github.io">Karhan Kayan*</a>,{" "}
+                  <a href="https://david-yan1.github.io/">David Yan</a>,
+                  <a href="https://zuoym15.github.io">Yiming Zuo</a>,{" "}
                   <a href="https://pvl.cs.princeton.edu/people.html">
+                    Beining Han
+                  </a>
+                  , <a href="https://hermera.github.io">Hongyu Wen</a>,{" "}
+                  <a href="https://pvl.cs.princeton.edu/people.html">
+                    Meenal Parakh
+                  </a>
+                  ,{" "}
+                  <a href="https://stamatisalex.github.io/">
                     Stamatis Alexandropoulos
                   </a>
-                  ,{" "}
-                  <a href="https://pvl.cs.princeton.edu/people.html">
-                    Lahav Lipson
-                  </a>
-                  ,{" "}
-                  <a href="http://www-personal.umich.edu/~alnewell/index.html">
-                    Zeyu Ma
-                  </a>
-                  , <a href="http://www.cs.princeton.edu/~jiadeng">Jia Deng</a>
+                  , <a href="https://www.lahavlipson.com">Lahav Lipson</a>,{" "}
+                  <a href="https://mazeyu.github.io">Zeyu Ma</a>,{" "}
+                  <a href="http://www.cs.princeton.edu/~jiadeng">Jia Deng</a>
                   <br />( *equal contribution, random order )
                 </span>
               </div>
