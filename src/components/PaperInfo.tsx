@@ -18,11 +18,11 @@ export default function PaperInfo(): JSX.Element {
   const bibtex_indoors =
     "\
 @inproceedings{FILL THIS OUT,\n\
-title={Infinigen Indoors: Photorealistic Indoor Scenes using Procedural Generation},\n\
-author={FILL THIS OUT},\n\
-booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},\n\
-pages={FILL THIS OUT},\n\
-year={2024}\n\
+  title={Infinigen Indoors: Photorealistic Indoor Scenes using Procedural Generation},\n\
+  author={FILL THIS OUT},\n\
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},\n\
+  pages={FILL THIS OUT},\n\
+  year={2024}\n\
 }";
   return (
     <section className={clsx("margin-top--lg")}>
