@@ -17,12 +17,13 @@ export default function PaperInfo(): JSX.Element {
 }";
   const bibtex_indoors =
     "\
-@inproceedings{FILL THIS OUT,\n\
-  title={Infinigen Indoors: Photorealistic Indoor Scenes using Procedural Generation},\n\
-  author={FILL THIS OUT},\n\
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},\n\
-  pages={FILL THIS OUT},\n\
-  year={2024}\n\
+@inproceedings{infinigen2024indoors,\n\
+    author={Raistrick, Alexander and Mei, Lingjie and Kayan, Karhan and Yan, David and Zuo, Yiming and Han, Beining and Wen, Hongyu and Parakh, Meenal and Alexandropoulos, Stamatis and Lipson, Lahav and Ma, Zeyu and Deng, Jia},\n\
+    title={Infinigen Indoors: Photorealistic Indoor Scenes using Procedural Generation},\n\
+    booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},\n\
+    month={June},\n\
+    year={2024},\n\
+    pages={21783-21794}\n\
 }";
   return (
     <section className={clsx("margin-top--lg")}>
