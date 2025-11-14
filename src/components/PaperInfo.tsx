@@ -27,7 +27,7 @@ export default function PaperInfo(): JSX.Element {
 }";
   const bibtex_sim =
   "\
-@misc{joshi2025proceduralgenerationarticulatedsimulationready,\n\
+@misc{joshi2025infinigenarticulated,\n\
       title={Procedural Generation of Articulated Simulation-Ready Assets},\n\
       author={Abhishek Joshi and Beining Han and Jack Nugent and Max Gonzalez Saez-Diez and Yiming Zuo and Jonathan Liu and Hongyu Wen and Stamatis Alexandropoulos and Karhan Kayan and Anna Calveri and Tao Sun and Gaowen Liu and Yi Shao and Alexander Raistrick and Jia Deng},\n\
       year={2025},\n\
@@ -204,21 +204,21 @@ export default function PaperInfo(): JSX.Element {
             <div className={"row"}>
               <div className={clsx("col col--12", styles.author_list)}>
                 <span>
-                  <a href="https://abhihjoshi.github.io/"> Abhishek Joshi</a>, {" "},
-                  <a href="https://pvl.cs.princeton.edu/people.html">Beining Han</a>, {" "},
-                  <a href="https://pvl.cs.princeton.edu/people.html">Jack Nugent</a>, {" "},
-                  <a href="https://pvl.cs.princeton.edu/people.html">Max Gonzalez Saez-Diez</a>, {" "},
-                  <a href="https://zuoym15.github.io">Yiming Zuo</a>, {" "},
-                  <a href="https://pvl.cs.princeton.edu/people.html">Jonathan Liu</a>, {" "},
-                  <a href="https://hermera.github.io">Hongyu Wen</a>, {" "},
-                  <a href="https://pvl.cs.princeton.edu/people.html">Stamatis Alexandropoulos</a>, {" "},
-                  <a href="https://pvl.cs.princeton.edu/people.html">Karhan Kayan</a>, {" "},
-                  <a href="https://pvl.cs.princeton.edu/people.html">Anna Calveri</a>, {" "},
-                  <a href="https://pvl.cs.princeton.edu/people.html">Tao Sun</a>, {" "},
-                  <a href="https://pvl.cs.princeton.edu/people.html">Gaowen Liu</a>, {" "},
-                  <a href="https://pvl.cs.princeton.edu/people.html">Yi Shao</a>, {" "},
-                  <a href="http://araistrick.com">Alexander Raistrick*</a>, {" "},
-                  <a href="http://www.cs.princeton.edu/~jiadeng">Jia Deng</a> {" "},
+                  <a href="https://abhihjoshi.github.io/"> Abhishek Joshi</a>, {" "}
+                  <a href="https://pvl.cs.princeton.edu/people.html">Beining Han</a>, {" "}
+                  <a href="https://pvl.cs.princeton.edu/people.html">Jack Nugent</a>, {" "}
+                  <a href="https://pvl.cs.princeton.edu/people.html">Max Gonzalez Saez-Diez</a>, {" "}
+                  <a href="https://zuoym15.github.io">Yiming Zuo</a>, {" "}
+                  <a href="https://pvl.cs.princeton.edu/people.html">Jonathan Liu</a>, {" "}
+                  <a href="https://hermera.github.io">Hongyu Wen</a>, {" "}
+                  <a href="https://pvl.cs.princeton.edu/people.html">Stamatis Alexandropoulos</a>, {" "}
+                  <a href="https://pvl.cs.princeton.edu/people.html">Karhan Kayan</a>, {" "}
+                  <a href="https://pvl.cs.princeton.edu/people.html">Anna Calveri</a>, {" "}
+                  <a href="https://pvl.cs.princeton.edu/people.html">Tao Sun</a>, {" "}
+                  <a href="https://pvl.cs.princeton.edu/people.html">Gaowen Liu</a>, {" "}
+                  <a href="https://pvl.cs.princeton.edu/people.html">Yi Shao</a>, {" "}
+                  <a href="http://araistrick.com">Alexander Raistrick*</a>, {" "}
+                  <a href="http://www.cs.princeton.edu/~jiadeng">Jia Deng</a> {" "}
                 </span>
               </div>
             </div>
