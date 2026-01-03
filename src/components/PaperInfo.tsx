@@ -222,7 +222,7 @@ export default function PaperInfo(): JSX.Element {
                 </span>
               </div>
             </div>
-            <div className={"row"}>
+            {/* <div className={"row"}>
               <div
                 className={clsx(
                   "col col--12",
@@ -235,7 +235,7 @@ export default function PaperInfo(): JSX.Element {
                   2024
                 </span>
               </div>
-            </div>
+            </div> */}
             <div className={"row"}>
               <div
                 className={clsx(
