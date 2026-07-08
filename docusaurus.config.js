@@ -164,6 +164,11 @@ const config = {
             position: "left",
             activeBaseRegex: `/docs-contributing/`,
           },
+          {
+            to: "https://infinigen.cs.princeton.edu/docs",
+            label: "Documentation",
+            position: "left",
+          },
           // { to: "roadmap", label: "Roadmap", position: "left" },
           // { to: "faq", label: "FAQ", position: "left" },
           // { to: "/blog", label: "Blog", position: "left" },
@@ -182,7 +187,7 @@ const config = {
             // "aria-label": "Twitter page",
           },
           {
-            to: "https://github.com/princeton-vl/infinigen/blob/main/docs/PreGeneratedData.md",
+            to: "https://github.com/princeton-vl/infinigen/blob/main/docs/source/PreGeneratedData.md",
             label: "Data Download",
             position: "left",
             //className: "documentation-coming-soon",
