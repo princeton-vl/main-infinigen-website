@@ -288,7 +288,7 @@ export default function PaperInfo(): JSX.Element {
                   <a href="https://hermera.github.io">Hongyu Wen</a>,{" "}
                   <a href="https://pvl.cs.princeton.edu/people.html">Dylan Li</a>,{" "}
                   <a href="https://zuoym15.github.io">Yiming Zuo</a>,{" "}
-                  <a href="https://pvl.cs.princeton.edu/people.html">Erich Liang</a>,{" "}
+                  <a href="https://erichliang.github.io/">Erich Liang</a>,{" "}
                   <a href="http://www.cs.princeton.edu/~jiadeng">Jia Deng</a>
                 </span>
               </div>
