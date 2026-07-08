@@ -28,7 +28,7 @@ export default function AboutInfinigen(): JSX.Element {
     <section className={clsx("margin-top--lg")}>
       <div className={styles.stay_within_navbar + " container"}>
         <div className="row">
-          <div className={clsx("col col--6", styles.about_infinigen_left)}>
+          <div className={clsx("col col--4", styles.about_infinigen_left)}>
             <img
               src={"img/random_sample.jpeg"}
               className={clsx(
@@ -37,9 +37,18 @@ export default function AboutInfinigen(): JSX.Element {
               )}
             ></img>
           </div>
-          <div className={clsx("col col--6", styles.about_infinigen_left)}>
+          <div className={clsx("col col--4", styles.about_infinigen_left)}>
             <img
               src={"img/random_sample_indoors.jpeg"}
+              className={clsx(
+                styles.about_infinigen_img
+                // styles.vertical_center
+              )}
+            ></img>
+          </div>
+          <div className={clsx("col col--4", styles.about_infinigen_left)}>
+            <img
+              src={"img/random_sample_articulated.gif"}
               className={clsx(
                 styles.about_infinigen_img
                 // styles.vertical_center
