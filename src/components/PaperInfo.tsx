@@ -36,6 +36,17 @@ export default function PaperInfo(): JSX.Element {
       primaryClass={cs.RO},\n\
       url={https://arxiv.org/abs/2505.10755},\n\
 }";
+  const bibtex_procfunc =
+  "\
+@misc{raistrick2026procfunc,\n\
+      title={ProcFunc: Function-Oriented Abstractions for Procedural 3D Generation in Python},\n\
+      author={Alexander Raistrick and Karhan Kayan and Jack Nugent and David Yan and Lingjie Mei and Meenal Parakh and Hongyu Wen and Dylan Li and Yiming Zuo and Erich Liang and Jia Deng},\n\
+      year={2026},\n\
+      eprint={2604.26943},\n\
+      archivePrefix={arXiv},\n\
+      primaryClass={cs.CV},\n\
+      url={https://arxiv.org/abs/2604.26943},\n\
+}";
   return (
     <section className={clsx("margin-top--lg")}>
       <div className={"container " + styles.stay_within_navbar}>
@@ -257,7 +268,53 @@ export default function PaperInfo(): JSX.Element {
               <code>{bibtex_sim}</code>
             </pre>
           </div>
-          
+
+          <div className="col col--6">
+            <h1 className={styles.paper_header} style={{ textAlign: "center" }}>
+              <b>
+                ProcFunc: Function-Oriented Abstractions for Procedural 3D
+                Generation in Python
+              </b>
+            </h1>
+            <div className={"row"}>
+              <div className={clsx("col col--12", styles.author_list)}>
+                <span>
+                  <a href="http://araistrick.com">Alexander Raistrick</a>,{" "}
+                  <a href="https://kkayan.com">Karhan Kayan</a>,{" "}
+                  <a href="https://pvl.cs.princeton.edu/people.html">Jack Nugent</a>,{" "}
+                  <a href="https://david-yan1.github.io/">David Yan</a>,{" "}
+                  <a href="https://www.cs.princeton.edu/~lm5483/">Lingjie Mei</a>,{" "}
+                  <a href="https://pvl.cs.princeton.edu/people.html">Meenal Parakh</a>,{" "}
+                  <a href="https://hermera.github.io">Hongyu Wen</a>,{" "}
+                  <a href="https://pvl.cs.princeton.edu/people.html">Dylan Li</a>,{" "}
+                  <a href="https://zuoym15.github.io">Yiming Zuo</a>,{" "}
+                  <a href="https://pvl.cs.princeton.edu/people.html">Erich Liang</a>,{" "}
+                  <a href="http://www.cs.princeton.edu/~jiadeng">Jia Deng</a>
+                </span>
+              </div>
+            </div>
+            <div className={"row"}>
+              <div
+                className={clsx(
+                  "col col--12",
+                  "margin-vert--sm",
+                  styles.author_list
+                )}
+              >
+                <a
+                  className={clsx("button button--info", styles.read_the_paper)}
+                  href="https://arxiv.org/abs/2604.26943"
+                >
+                  <img src="img/paper.svg" className={styles.icon} />
+                  Read the paper
+                </a>
+              </div>
+            </div>
+            <pre>
+              <code>{bibtex_procfunc}</code>
+            </pre>
+          </div>
+
         </div>
       </div>
     </section>
