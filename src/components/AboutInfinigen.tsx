@@ -47,13 +47,14 @@ export default function AboutInfinigen(): JSX.Element {
             ></img>
           </div>
           <div className={clsx("col col--4", styles.about_infinigen_left)}>
-            <img
-              src={"img/random_sample_articulated.gif"}
-              className={clsx(
-                styles.about_infinigen_img
-                // styles.vertical_center
-              )}
-            ></img>
+            <video
+              src={"img/random_sample_articulated.mp4"}
+              className={clsx(styles.about_infinigen_img)}
+              autoPlay
+              loop
+              muted
+              playsInline
+            ></video>
           </div>
           <div className="row margin-top--md">
             <div className={clsx("col col--12")}>
